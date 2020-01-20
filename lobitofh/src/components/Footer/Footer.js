@@ -2,8 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Listitems from '../../Carrouselts/listitems';
-import Cartas from '../../Carrouselts/Cartas';
+import Listitems from '../Reactivescom/listitems';
+import Cartas from '../Reactivescom/Cartas';
 
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';

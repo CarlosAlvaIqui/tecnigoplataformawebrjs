@@ -1,0 +1,27 @@
+.miradio{
+    border-radius: 50%;
+    margin-left:90px;
+
+}
+
+.morio{
+    background: linear-gradient(-45deg, #EE7752,#E73C7E,#26A6D5,#23D5AB);
+    background-size: 400% 400%;
+    position: relative;
+    animation: change 5s ease-in-out;
+}
+
+@keyframes change{
+    0%{
+        background-position: 0 50%;
+
+    }
+    50%{
+        background-position:100% 50% ;
+
+    }
+    100%{
+        background-position: 0 50%;
+
+    }
+}

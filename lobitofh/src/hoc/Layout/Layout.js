@@ -1,8 +1,12 @@
 import React, { Fragment } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 
 import Header from '../../components/Header/Header';
-import Footer from '../../components/Header/Footer/Footer'
+import Footer from '../../components/Footer/Footer'
+
+
 const Layout = props => {
+
     return (
         <Fragment>
             <Header />

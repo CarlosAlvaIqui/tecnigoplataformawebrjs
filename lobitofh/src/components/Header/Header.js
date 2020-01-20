@@ -186,7 +186,7 @@ export default function PrimarySearchAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-          <Link className="nav-bar-brand" to="/ayaya">
+          <Link className="nav-bar-brand" to="/Details">
                 Detalles App
             </Link> 
           </Typography>
