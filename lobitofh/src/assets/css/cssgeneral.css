@@ -1,14 +1,19 @@
 .miradio{
     border-radius: 50%;
-    margin-left:90px;
-
 }
-
+.hoversito{
+    cursor: pointer;
+    margin-left: 48px;
+width: 100px;
+}
 .morio{
-    background: linear-gradient(-45deg, #EE7752,#E73C7E,#26A6D5,#23D5AB);
+    background: linear-gradient(-45deg, #150958,#3B3092,#00A775,#005B94);
     background-size: 400% 400%;
     position: relative;
-    animation: change 5s ease-in-out;
+    
+    animation-duration: 5s;
+    animation-name: change;
+    animation-fill-mode: forwards;
 }
 
 @keyframes change{
@@ -21,7 +26,269 @@
 
     }
     100%{
-        background-position: 0 50%;
 
     }
+}
+
+.content {
+    padding: 80px 0;
+}
+.tpuser{
+    height: 80vh;
+    background-image: url("https://www.gamba.fm/wp-content/uploads/2018/04/celular-en-mano.jpg");
+
+}
+.nextc{
+    background: white;
+    height: 70vh;
+}
+.secontc{
+    background: #2c3e50;
+    height: 60vh;
+    margin-top: 40px;
+    margin-bottom: 140px;
+}
+.myrightbtn{
+    
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-fill-mode: forwards;
+    margin-top: 10%;
+
+}
+.myleftbtn{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+    margin-top: 10%;
+
+    animation-duration: 3s;
+    animation-name: slideinlf;
+    animation-fill-mode: forwards;
+}
+@keyframes slidein {
+    from {
+      margin-left: 0%;
+      opacity: 0;
+    }
+  
+    to {
+        margin-top: 20%;
+      margin-left: 40%;
+    }
+
+  }
+@keyframes slideinlf {
+    from {
+      margin-right: 0%;
+      opacity: 0;
+
+    }
+  
+    to {
+        margin-top: 20%;
+
+      margin-right: 40%;
+    }
+  }
+
+  .pstyle{
+        color: white;
+        font-size: 80px;
+        margin-left: 40%;
+        margin-top: 70px;
+        margin-bottom: -80px;
+        animation-duration: 3s;
+        animation-name: pstile;
+        animation-fill-mode: forwards;
+  }
+
+  @keyframes pstile {
+    from {
+      opacity: 0;
+      animation-duration: 3s;
+      animation-name: title;
+      animation-fill-mode: forwards;
+    }
+  
+    to {
+        margin-top: -70px;
+      margin-right: 40%;
+    }
+  }
+  .inputnormal{
+      width: 460px;
+  }
+  .henav{
+padding-left: 80px;
+padding-right:80px;  
+}
+
+.ttl1{
+    font-size: 35px;
+    color: white;
+    padding-top: 40px;
+    animation-duration: 3s;
+    animation-name: ttl;
+    animation-fill-mode: forwards;
+}
+
+@keyframes ttl {
+    from {
+      opacity: 0;
+
+    }
+  
+    to {  
+      margin-left: 43%;
+    }
+  }
+.sctitle{
+    font-size: 42px;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 18px;
+    animation-duration: 3s;
+    animation-name: scttl;
+    animation-fill-mode: forwards;
+}
+
+@keyframes scttl {
+    from {
+      opacity: 0;
+
+    }
+  
+    to {
+      margin-left: 12%;
+    }
+  }
+
+  .modalappe{
+    animation-duration: 2s;
+    animation-name: maapp;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes maapp {
+    from {
+      opacity: 0;
+
+    }
+  
+    to {
+        opacity: 100;
+
+    }
+  }
+
+  .imgdeli{   
+    margin-top: -90px;
+  }
+  .sometitle{
+margin-left: 250px;  }
+
+.sppaddin{
+  padding: 60px;
+}
+.sppaddinlts{
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  
+}
+
+.spst{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 35px;
+padding-right: 20px;
+color:white;
+
+}
+.tiendasappggl{
+  margin-top: 90px;
+  float: right;
+}
+
+.frmregistro{
+  padding-top: 60px;
+  padding-bottom: 40px;
+  padding-right:60px ;
+}
+
+.containergrid{
+background-color: green;
+}
+
+.bback{
+  width: 100%;
+}
+.zawardo{
+  background: linear-gradient(-20deg, #150958,#00A775,#005B94);
+  width: 100%;
+}
+
+.spancss{
+  color:white;
+  text-decoration: none;
+  animation-duration: 3s;
+  animation-name: maapp;
+  animation-fill-mode: forwards;
+}
+
+.ttservice{
+color: white;
+font-size: 25px;
+animation-duration: 3s;
+animation-name: mee;
+animation-fill-mode: forwards;
+}
+
+.spantextp{
+  color: white;
+  font-size: 18px;
+  animation-duration: 3s;
+  animation-name: mee2;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes mee {
+  from {
+    opacity: 0;
+
+  }
+
+  to {
+      margin-left: 45%;
+
+  }
+}
+@keyframes mee2 {
+  from {
+    opacity: 0;
+
+  }
+
+  to {
+      margin-left: 35%;
+
+  }
 }

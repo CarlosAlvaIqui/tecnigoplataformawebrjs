@@ -13,7 +13,14 @@ class Exradiusimg extends Component {
     render(){
 
         return(
-            <img src={aimage} alt="Paris" className="miradio" width="100" height="100"/>      
+            <div>
+              <img src={aimage} alt="Paris" className="miradio" width="100" height="100"/>      
+            <center>
+            <p>ejemplo</p>
+            
+            </center>
+          
+            </div>
         )
     }
 }
