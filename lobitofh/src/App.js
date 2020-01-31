@@ -7,7 +7,6 @@ import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import PruebaCom from './components/Header/pruebacom/Pruebacom';
 import Landing from './components/Landing/Landing';
 import Landrefix from './components/Landing/Landrefix';
-import lmrema from './components/Landing/lmremaking';
 import Registro from './components/Landing/Registro';
 import Solicitudes from './components/Reactivescom/SolicitudesHistorial'
 import Login from './components/Landing/Logins';
@@ -21,7 +20,6 @@ class App extends Component{
       <Route path='/' exact component={Landing}/>
       <Route path='/Details' exact component={PruebaCom}/>
       <Route path='/ldrefix' exact component={Landrefix}/>
-      <Route path='/lmrema' exact component={lmrema}/>
       <Route path='/Registro' exact component={Registro}/>
       <Route path='/Solicitudes' exact component={Solicitudes}/>
       <Route path='/Login' exact component={Login}/>

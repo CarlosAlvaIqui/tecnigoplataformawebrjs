@@ -7,8 +7,11 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
-
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
 
 var solicitud = [
   {t_problema: 'pc lenta', precio: 20, estado:' pagado'},
@@ -53,10 +56,21 @@ class SolicitudesHistorial extends Component {
         )
     }else{
     return(
+      <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="xl">
+        <Typography component="div" style={{ backgroundColor: '#cfe8fc'}} >
+
       <div>
+              <Grid container spacing={3}>
+
       {
         items.map((items,i) => {
 return(
+
+  <Grid item xs={6} sm={3}>
+  <Paper className={this.props.classes.paper}>
+
   <Card className={this.props.classes.card}>
       <CardActionArea>
         <CardMedia
@@ -82,10 +96,17 @@ return(
         </Button>
       </CardActions>
     </Card>
+    </Paper>
+    </Grid>
 )
         })
       }
+       </Grid>
+
     </div>
+    </Typography>
+    </Container>
+    </React.Fragment>
 
     )
   
@@ -95,11 +116,19 @@ return(
 }
 
 
-export default withStyles({
+export default withStyles(theme => ({
   card: {
     maxWidth: 345,
   },
   media: {
     height: 140,
   },
-})(SolicitudesHistorial)
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+}))(SolicitudesHistorial)

@@ -60,7 +60,7 @@ class Serviceslanding extends Component {
                   this.state.servicios.map((servicios, i) => {
 
                     return (
-                      <Grid item xs={5} sm={2} key={i} className="modalappe">
+                      <Grid    key={i} className="nika">
                           <div className={this.props.classes.paper}>
                           <Link className="nav-bar-brand" to={{ pathname: '/Details', aboutprops: { preguntas: servicios.preg } }}>
 
@@ -99,6 +99,7 @@ export default withStyles(theme => ({
   root: {
     flexGrow: 1,
     background:red,
+    justifyContent: 'center',
 
   },
   paper: {
@@ -117,8 +118,7 @@ export default withStyles(theme => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
-  nika:{
-    width: 200
-  }
+
+  
 
 }))(Serviceslanding)

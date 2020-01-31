@@ -228,9 +228,9 @@ color:white;
 }
 
 .frmregistro{
-  padding-top: 60px;
   padding-bottom: 40px;
   padding-right:60px ;
+  margin-left: 40px;
 }
 
 .containergrid{
@@ -291,4 +291,35 @@ animation-fill-mode: forwards;
       margin-left: 35%;
 
   }
+}
+
+.nika{
+  width: 180px;
+}
+@media screen and (max-width: 360px) {
+  .nika{
+    width: 150px
+
+  }
+}
+
+.gridCon{
+  background: linear-gradient(-20deg, #150958,#00A775,#005B94);
+  height: 75vh;
+}
+
+.frmre{
+  width: 450px;
+  float: right;
+  margin-top: 10px;
+}
+
+.contfrm{
+  margin-bottom: 200px;
+}
+
+.tituloregistro{
+  color:white;
+  font-size: 90px;
+  margin-left: 4  0px;
 }
