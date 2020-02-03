@@ -58,7 +58,7 @@ class SolicitudesHistorial extends Component {
     return(
       <React.Fragment>
       <CssBaseline />
-      <Container maxWidth="xl">
+      <Container maxWidth="md">
         <Typography component="div" style={{ backgroundColor: '#cfe8fc'}} >
 
       <div>
@@ -68,7 +68,7 @@ class SolicitudesHistorial extends Component {
         items.map((items,i) => {
 return(
 
-  <Grid item xs={6} sm={3}>
+  <Grid item xs={12} sm={6} key={i}>
   <Paper className={this.props.classes.paper}>
 
   <Card className={this.props.classes.card}>

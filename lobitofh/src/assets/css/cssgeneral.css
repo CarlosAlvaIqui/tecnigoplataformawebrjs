@@ -181,23 +181,8 @@ padding-right:80px;
     }
   }
 
-  .modalappe{
-    animation-duration: 2s;
-    animation-name: maapp;
-    animation-fill-mode: forwards;
-  }
-  
-  @keyframes maapp {
-    from {
-      opacity: 0;
 
-    }
   
-    to {
-        opacity: 100;
-
-    }
-  }
 
   .imgdeli{   
     margin-top: -90px;
@@ -303,23 +288,45 @@ animation-fill-mode: forwards;
   }
 }
 
-.gridCon{
-  background: linear-gradient(-20deg, #150958,#00A775,#005B94);
-  height: 75vh;
-}
 
 .frmre{
-  width: 450px;
   float: right;
   margin-top: 10px;
+  margin-right: 20px;
 }
 
 .contfrm{
   margin-bottom: 200px;
+  background: linear-gradient(-20deg, #150958,#00A775,#005B94);
+  height: 65vh;
 }
 
 .tituloregistro{
   color:white;
   font-size: 90px;
-  margin-left: 4  0px;
+  margin-left: 40px;
+  padding-top: 40px;
 }
+
+.spa{
+  margin-top: 15px;
+  float: left;
+}
+
+.yareyare{
+  margin-top: -125px;
+}
+
+.plataformagrid{
+  width: 600px;
+  margin-bottom: 80px;
+}
+
+
+.simplepmp{
+  margin-top: 25px;
+}
+/*
+recordar
+puse un margin left al formulario de registro arreglar a una determinada posicion
+*/

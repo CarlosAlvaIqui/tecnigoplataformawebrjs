@@ -53,7 +53,6 @@ class Serviceslanding extends Component {
               <Grid container spacing={3}>
                 {
                   console.log(this.state.servicios)
-
                 }
                 {
 
@@ -61,6 +60,7 @@ class Serviceslanding extends Component {
 
                     return (
                       <Grid    key={i} className="nika">
+                        
                           <div className={this.props.classes.paper}>
                           <Link className="nav-bar-brand" to={{ pathname: '/Details', aboutprops: { preguntas: servicios.preg } }}>
 
