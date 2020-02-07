@@ -283,7 +283,7 @@ animation-fill-mode: forwards;
 }
 @media screen and (max-width: 360px) {
   .nika{
-    width: 150px
+    width: 156px
 
   }
 }
@@ -296,15 +296,14 @@ animation-fill-mode: forwards;
 }
 
 .contfrm{
-  margin-bottom: 200px;
   background: linear-gradient(-20deg, #150958,#00A775,#005B94);
   height: 65vh;
 }
 
 .tituloregistro{
   color:white;
-  font-size: 90px;
-  margin-left: 40px;
+  font-size: 80px;
+  margin-left: 0px;
   padding-top: 40px;
 }
 
@@ -325,6 +324,36 @@ animation-fill-mode: forwards;
 
 .simplepmp{
   margin-top: 25px;
+}
+
+.pservi{
+
+}
+
+.contsomething{
+  margin-bottom: 120px;
+  }
+.midiv{
+  float: left;
+  width: 300px;
+  padding-left: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+
+.tecgofon{
+  background: linear-gradient(-175deg, #150958,#00A775);
+  height: 400px;
+  margin-bottom: 190px;
+}
+
+.tittletec{
+  text-align: center;
+  color:white;
+  margin-top: 150px;
+  font-size: 45px;
 }
 /*
 recordar

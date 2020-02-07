@@ -109,30 +109,58 @@ Registro
 
           </Paper>
         </Grid>
-       
+        
       </Grid>
 
 
-      <p className="yareyare">
-        sadsa
-        
-      </p>
+     <div className="contsomething">
+       <div>
+       <Grid item xs={12} sm={6} className="midiv">
+          <Paper className={this.props.classes.paper}>xs=6 sm=3</Paper>
+        </Grid>
+        <Grid item xs={12} sm={6} className="midiv">
+          <Paper className={this.props.classes.paper}>xs=6 sm=3</Paper>
+        </Grid>
+        <Grid item xs={12} sm={6} className="midiv">
+          <Paper className={this.props.classes.paper}>xs=6 sm=3</Paper>
+        </Grid>
+        {
+          /*
+          <div className="midiv">
+         paddingLeft
+       </div>
+       <div className="midiv">
+         paddingLeft
+       </div>
+       <div className="midiv">
+         paddingLeft
+       </div>
+       <div className="midiv">
+         paddingLeft
+       </div> */
+        }
+       </div>
+       
+     </div>
 
       <CssBaseline />
-      <Container maxWidth="lg">
-        <Typography component="div" style={{  }}>
+      <Container maxWidth="lg" >
+        <Typography component="div" style={{ backgroundColor: 'white' }}>
         <Grid container spacing={3}>
         <Grid item xs={12}>
                    <p className={this.props.classes.titlelist}>
-                   Nuestra Plataforma
+                  <strong>
+                  Nuestra Plataforma
+                  </strong>
                     </p>
         </Grid>
                 <Grid item xs={12} sm={6} className="plataformagrid">
                   <Paper  className={this.props.classes.paper2}>
                     <div>
                       <p className="simplepmp">
-                      La Mejor Plataforma para Gestionar el Servicio
-
+                          <strong>
+                          La Mejor Plataforma para Gestionar el Servicio
+                          </strong>
                       </p>
                     </div>
                       <div>
@@ -158,12 +186,15 @@ Registro
 
       <CssBaseline />
       <Container maxWidth="lg" className="plataformagrid">
-        <Typography component="div" style={{  }}>
+        <Typography component="div" style={{ backgroundColor: 'white' }}>
 
         <Grid container spacing={5} >
         <Grid item xs={12}>
         <p className={this.props.classes.titlelist}>
-        Nuestro Servicios
+          <strong>
+          Nuestro Servicios
+
+          </strong>
        </p>
         </Grid >
           {
@@ -171,12 +202,18 @@ Registro
                 return(
                 <Grid key={itemsl} item xs={12} sm={4} >
                   <Paper  className={this.props.classes.paper3}>
-                      <div>
-                      {Services.nombre}
+                      <div >
+                            <div>
+                            <p className="pservi">
+                              <strong>
+                              {Services.nombre}
+                              </strong>
+                            </p>
+                            </div>
+                            <div>
+                              {Services.descripcion}
+                            </div>
                       </div>
-                        <div>
-                          {Services.descripcion}
-                        </div>
                   </Paper>
                 </Grid>
                 )
@@ -218,12 +255,12 @@ export default withStyles(theme => ({
     color: theme.palette.text.secondary,
   },
   paper2: {
-
+    
     padding: theme.spacing(2),
     color: theme.palette.text.secondary,
   },
   paper3: {
-    paddingLeft:40,
+    paddingLeft:50,
     padding: theme.spacing(2),
     color: theme.palette.text.secondary,
   },

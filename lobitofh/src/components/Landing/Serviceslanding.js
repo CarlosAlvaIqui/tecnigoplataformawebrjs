@@ -13,9 +13,9 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import { red } from '@material-ui/core/colors';
-
-
-
+import Mou from '../Reactivescom/Mou'
+import Mou2 from '../Reactivescom/Mou2'
+import Carrouselcard from '../Reactivescom/Carrouselcard'
 class Serviceslanding extends Component {
   state = {
     servicios: [
@@ -37,7 +37,7 @@ class Serviceslanding extends Component {
   }
 
   render() {
-
+ 
     return (
 
       <React.Fragment>
@@ -65,9 +65,17 @@ class Serviceslanding extends Component {
                           <Link className="nav-bar-brand" to={{ pathname: '/Details', aboutprops: { preguntas: servicios.preg } }}>
 
                             <img src={servicios.image} className="miradio" width="80" />
-
-                           <p className="spancss">{servicios.nombre}</p>
                             </Link>
+                           <p className="spancss">{servicios.nombre}</p>
+                            <Mou 
+                            ninoni={servicios.nombre}
+                            algo={servicios.preg}
+                            />
+                            <Mou2 
+                            ninoni={servicios.nombre}
+                            algo={servicios.preg}
+                            />
+                         
 
                           </div>
 
@@ -78,15 +86,14 @@ class Serviceslanding extends Component {
                   })
 
                 }
-
+              
               </Grid>
             </div>
           </Typography>
         </Container>
         </div>
-
         </Box>
-
+        <Carrouselcard />
       </React.Fragment>
 
 
