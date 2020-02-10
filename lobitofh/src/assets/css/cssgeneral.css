@@ -1,5 +1,6 @@
 .miradio{
     border-radius: 50%;
+    align-items: center;
 }
 .hoversito{
     cursor: pointer;
@@ -354,6 +355,71 @@ animation-fill-mode: forwards;
   color:white;
   margin-top: 150px;
   font-size: 45px;
+}
+.titlebig{
+font-size: 40px;
+}
+.titlespace{
+  font-size: 17px;
+
+}
+.mispa{
+  font-size: 10px;
+}
+.divradi{
+  border: 2px solid grey;
+  border-radius: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 52px;
+}
+.tothel{
+  float: left;
+  width: 180px;
+}
+.tothell{
+  float: left;
+  width: 180px;
+
+}
+
+.tother{
+  float: left;
+  width: 180px;
+
+}
+.halfdiv{
+  float: left;
+  width: 270px;
+
+}
+.halfdivc{
+  float: left;
+  width: 270px;
+
+}
+.cartatecnico{
+  border: 2px solid grey;
+  border-radius: 7px;
+}
+.headercard{
+  background-color: #3B3092;
+  color: white;
+  padding-left: 20px;
+  height: 40px;
+}
+.centerthis{
+text-align: center;
+}
+.tecper{
+  margin-top: 20px;
+  margin-left: 70px;
+  border-radius: 10px;
+}
+.infotec{
+  margin-left: 70px;
+}
+.divdatatec{
 }
 /*
 recordar

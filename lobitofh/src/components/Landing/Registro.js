@@ -5,7 +5,6 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import anyimage from '../../assets/img/lets.png';
-import cssgeneral from '../../assets/css/cssgeneral.css'
 import { Typography } from '@material-ui/core';
 
 import CssBaseline from '@material-ui/core/CssBaseline';

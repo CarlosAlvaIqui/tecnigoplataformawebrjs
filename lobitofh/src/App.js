@@ -19,11 +19,11 @@ class App extends Component{
 <BrowserRouter>
     <Layout>
       <Switch>
-      <Route path='/' exact component={Serviceslanding}/>
+      <Route path='/' exact component={Registro}/>
       <Route path='/Tablahistorial' exact component={Tablahistorial}/>
       <Route path='/Details' exact component={PruebaCom}/>
       <Route path='/ldrefix' exact component={Landrefix}/>
-      <Route path='/Registro' exact component={Registro}/>
+      <Route path='/Serviceslanding' exact component={Serviceslanding}/>
       <Route path='/Solicitudes' exact component={Solicitudes}/>
       <Route path='/Login' exact component={Login}/>
       <Route path='/Mou' exact component={Mou}/>
