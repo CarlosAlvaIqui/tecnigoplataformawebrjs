@@ -372,6 +372,8 @@ font-size: 40px;
   padding-left: 10px;
   padding-right: 10px;
   height: 52px;
+  overflow: hidden;
+
 }
 .tothel{
   float: left;
@@ -379,28 +381,24 @@ font-size: 40px;
 }
 .tothell{
   float: left;
-  width: 180px;
-
+  width: 160px;
 }
 
 .tother{
   float: left;
-  width: 180px;
-
+  width: 120px;
 }
 .halfdiv{
   float: left;
-  width: 270px;
-
 }
 .halfdivc{
   float: left;
-  width: 270px;
 
 }
 .cartatecnico{
   border: 2px solid grey;
   border-radius: 7px;
+  overflow: hidden;
 }
 .headercard{
   background-color: #3B3092;
@@ -408,19 +406,42 @@ font-size: 40px;
   padding-left: 20px;
   height: 40px;
 }
+.tecnicodata{
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-bottom: 40px;
+}
 .centerthis{
 text-align: center;
+width: 350px;
+margin:auto;
+margin-top: 210px;
 }
 .tecper{
-  margin-top: 20px;
-  margin-left: 70px;
-  border-radius: 10px;
+  
 }
+
 .infotec{
-  margin-left: 70px;
+
+}
+.divimgtec{
+  width:200px;
+float: left;
 }
 .divdatatec{
+  float: left;
+width: 220px;
 }
+.imgtecnico{
+width:200px
+}
+.datat{
+  font-size: 12px;
+}
+.mite{
+  margin-bottom: 2px;
+}
+
 /*
 recordar
 puse un margin left al formulario de registro arreglar a una determinada posicion
