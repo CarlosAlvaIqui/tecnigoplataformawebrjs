@@ -9,7 +9,7 @@ import Slider from "react-slick";
 function App(){
 
   const [suggestions,setSuggestion]=useState([])
-
+  const [psprop,Setpropst]=useState("")
  useEffect(() =>{
    fetch('https://jsonplaceholder.typicode.com/users').then(res=>res.json()).then(data=>{
       setSuggestion(data);
@@ -39,6 +39,12 @@ function App(){
     },
   ]}
  
+  function miconsole (current)  {
+console.log("bota el real gaa : " + current.username)
+var xd =current.username
+Setpropst(xd)
+console.log(psprop)
+};
 
     return (
 
@@ -61,7 +67,7 @@ function App(){
                                  <h5 className="card-title">{current.username}</h5>
                                  <small className="card-text text-sm-center text-muted">Inicio</small>
                                  <br/>
-                                 <button className="btn btn-sm follow btn-primary" >followme</button>
+                                 <button className="btn btn-sm follow btn-primary" onClick={() => miconsole(current)}>followme</button>
                             </div>
                           </div>
                       </div>
@@ -69,9 +75,9 @@ function App(){
               </Slider>
             )}
       </div>
-            <Tryhis 
-            
-            />
+      <Tryhis 
+      senthis={psprop}
+      />
       </React.Fragment>
     );
   

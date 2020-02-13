@@ -216,7 +216,7 @@ color:white;
 .frmregistro{
   padding-bottom: 40px;
   padding-right:60px ;
-  margin-left: 40px;
+  margin-left: 60px;
 }
 
 .containergrid{
@@ -293,7 +293,7 @@ animation-fill-mode: forwards;
 .frmre{
   float: right;
   margin-top: 10px;
-  margin-right: 20px;
+  margin-right: 50px;
 }
 
 .contfrm{
@@ -347,7 +347,7 @@ animation-fill-mode: forwards;
 .tecgofon{
   background: linear-gradient(-175deg, #150958,#00A775);
   height: 400px;
-  margin-bottom: 190px;
+  margin-bottom: 120px;
 }
 
 .tittletec{
@@ -371,7 +371,6 @@ font-size: 40px;
   border-radius: 7px;
   padding-left: 10px;
   padding-right: 10px;
-  height: 52px;
   overflow: hidden;
 
 }
@@ -387,11 +386,17 @@ font-size: 40px;
 .tother{
   float: left;
   width: 120px;
+  text-align: right;
+
 }
 .halfdiv{
   float: left;
+  width: 240px;
 }
 .halfdivc{
+  width: 240px;
+  text-align: right;
+
   float: left;
 
 }
@@ -442,6 +447,18 @@ width:200px
   margin-bottom: 2px;
 }
 
+.btnpaylpal{
+float: left;
+}
+
+.btnqulqui{
+  float: left;
+  margin-left: 50px;
+}
+
+.movet{
+  color: #005B94;
+}
 /*
 recordar
 puse un margin left al formulario de registro arreglar a una determinada posicion

@@ -7,8 +7,6 @@ import slide3 from '../../assets/img/slide3.jpg';
 import slide4 from '../../assets/img/slide4.jpg';
 
 
-
-
 const CarouselComponent = props => {
     return(
         <Carousel>

@@ -4,11 +4,18 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import anyimage from '../../assets/img/lets.png';
 import { Typography } from '@material-ui/core';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
+
+
+import greatservice from '../../assets/img/greatservice.png';
+import Sistemimg from '../../assets/img/sistem.png';
+import tecnicoico from '../../assets/img/tecnicoico.png';
+
+
+
 
    var des="Descripcion detallas de las posibles soluciones para este tipo de problemas haciendo enfasis en las posibles para cada uno,claro y directo"
 
@@ -115,13 +122,23 @@ Registro
      <div className="contsomething">
        <div>
        <Grid item xs={12} sm={6} className="midiv">
-          <Paper className={this.props.classes.paper}>xs=6 sm=3</Paper>
+          <Paper className={this.props.classes.paper}>
+                <img src={greatservice} style={{width: 100}} alt="excelente servicio"/>
+                <p><strong>Contrato Flexible</strong></p>
+          </Paper>
         </Grid>
         <Grid item xs={12} sm={6} className="midiv">
-          <Paper className={this.props.classes.paper}>xs=6 sm=3</Paper>
+          <Paper className={this.props.classes.paper}>
+          <img src={Sistemimg} style={{width: 100}} alt="sistema apropiado"/>
+          <p><strong>Plataforma de Control</strong></p>
+
+          </Paper>
         </Grid>
         <Grid item xs={12} sm={6} className="midiv">
-          <Paper className={this.props.classes.paper}>xs=6 sm=3</Paper>
+          <Paper className={this.props.classes.paper}>
+          <img src={tecnicoico} style={{width: 100}} alt="tecnico disponible"/>
+            <p><strong>Tecnico a tu disposicion</strong></p>
+          </Paper>
         </Grid>
         {
           /*

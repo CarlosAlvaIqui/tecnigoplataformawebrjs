@@ -1,12 +1,11 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import perfilphoto from '../../assets/img/hppisfree.jpg';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 import Rating from '@material-ui/lab/Rating';
@@ -25,7 +24,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Detailswork = (props) => {
-  const classes = useStyles();
 
   return (
     <React.Fragment>
@@ -64,22 +62,23 @@ const Detailswork = (props) => {
             </span>
                   </p>
                   <div className="divradi">
-                    <div className="tothel">
-                      <span>calle</span>
-                      <br />
-                      <span>Av. Ejercito</span>
-                    </div>
-                    <div className="tothell">
-                      <span>Datos(piso puerta)</span>
-                      <br />
-                      <span>Sin datos</span>
-                    </div>
-                    <div className="tother">
-                      <span></span>
-                      <br />
-                      <span className="movet">Editar</span>
-                    </div>
-
+                  
+                              <div className="tothel">
+                                    <span>calle</span>
+                                    <br />
+                                    <span>Av. Ejercito</span>
+                                  </div>
+                                  <div className="tothell">
+                                    <span>Datos(piso puerta)</span>
+                                    <br />
+                                    <span>Sin datos</span>
+                                  </div>
+                                  <div className="tother">
+                                    <span></span>
+                                    <br />
+                                    <span className="movet">Editar</span>
+                                  </div>
+                      
                   </div>
                 </div>
 
@@ -131,54 +130,54 @@ const Detailswork = (props) => {
                         </span>
                   </p>
                   <div className="cartatecnico">
-                    <div className="headercard">
-                      <p>TecniGO</p>
-                    </div>
-                    <div className="tecnicodata">
-                      <div className="divimgtec">
-                        <img src={perfilphoto} style={{ width: 150 }} className="tecper" />
+                              <div className="headercard">
+                                <p>TecniGO</p>
+                              </div>
+                              <div className="tecnicodata">
+                                    <div className="divimgtec">
+                                      <img src={perfilphoto} style={{ width: 150 }} className="tecper" />
 
-                      </div>
+                                    </div>
 
-                      <div className="divdatatec">
-                        <strong>
-                          <span className="infotec">TEC. Diana Tumba Torres </span>
-                        </strong>
-                        <div className="datat">
-                          <p className="mite">Tecnico en Computacion</p>
-                          <p className="mite">28 Años</p>
-                          <p className="mite">Dtuma.torres@gmail.com</p>
-                          <p className="mite">963258753 - 963254178</p>
-                          <div>
-                            <Box component="fieldset" mb={3} borderColor="transparent">
-                              <Rating
-                                name="customized-empty"
-                                defaultValue={2}
-                                precision={0.5}
-                                emptyIcon={<StarBorderIcon fontSize="inherit" />}
-                              />
-                              <Button variant="contained" color="secondary">
-                                Calificar
-                                          </Button>
+                                    <div className="divdatatec">
+                                      <strong>
+                                        <span className="infotec">TEC. Diana Tumba Torres </span>
+                                      </strong>
+                                          <div className="datat">
+                                            <p className="mite">Tecnico en Computacion</p>
+                                            <p className="mite">28 Años</p>
+                                            <p className="mite">Dtuma.torres@gmail.com</p>
+                                            <p className="mite">963258753 - 963254178</p>
+                                                  <div>
+                                                    <Box component="fieldset" mb={3} borderColor="transparent">
+                                                      <Rating
+                                                        name="customized-empty"
+                                                        defaultValue={2}
+                                                        precision={0.5}
+                                                        emptyIcon={<StarBorderIcon fontSize="inherit" />}
+                                                      />
+                                                      <Button variant="contained" color="secondary">
+                                                        Calificar
+                                                      </Button>
 
-                            </Box>
+                                                    </Box>
 
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="centerthis">
-                      <hr />
-                      <p >El hombre se esta poniendo la soga al cuello</p>
-                      <hr />
-                    </div>
+                                                  </div>
+                                          </div>
+                                    </div>
+                              </div>
+                              <div className="centerthis">
+                                <hr />
+                                <p >El hombre se esta poniendo la soga al cuello</p>
+                                <hr />
+                              </div>
 
 
-                    {
-                      /**
-                       *  
-                       */
-                    }
+                              {
+                                /**
+                                *  
+                                */
+                              }
 
                   </div>
                 </div>
@@ -196,12 +195,26 @@ const Detailswork = (props) => {
 
                     <span className="mispa">
                       Realizar el pago
-              </span>
+                   </span>
                   </p>
+
+                <div>
+                
+                <div  className="btnpaylpal">
+                  <Button variant="contained" color="secondary">
+              Paypal
+            </Button>
+           </div>
+                <div className="btnqulqui">
+                <Button variant="contained" color="secondary" >
+              Culqui
+            </Button>
+                </div>
+                </div>
                 </div>
 
                 <br />
-                <br />
+                <br /><br />
 
                 <div>
                   <p>

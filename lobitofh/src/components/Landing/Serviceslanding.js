@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import imgb from '../../assets/img/aimage.png';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 import cssgeneral from '../../assets/css/cssgeneral.css'
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
+
 import { red } from '@material-ui/core/colors';
 import Mou from '../Reactivescom/Mou'
 import Mou2 from '../Reactivescom/Mou2'
@@ -64,7 +61,7 @@ class Serviceslanding extends Component {
                           <div className={this.props.classes.paper}>
                           <Link className="nav-bar-brand" to={{ pathname: '/Details', aboutprops: { preguntas: servicios.preg } }}>
 
-                            <img src={servicios.image} className="miradio" width="80" />
+                            <img src={servicios.image} className="miradio" width="80" alt="servicios tecnigo"/>
                             </Link>
                            <p className="spancss">{servicios.nombre}</p>
                             <Mou 
