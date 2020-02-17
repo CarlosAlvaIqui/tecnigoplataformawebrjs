@@ -13,6 +13,9 @@ import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 
+
+/*
+
 var solicitud = [
   {t_problema: 'pc lenta', precio: 20, estado:' pagado'},
   {t_problema: 'Virus', precio: 10, estado:' no pagado'},
@@ -20,8 +23,6 @@ var solicitud = [
   {t_problema: 'Licencia', precio: 30, estado:' pagado'},
   {t_problema: 'impresora', precio: 50, estado:' pagado'},
 ]
-
-/*
 */
 
 

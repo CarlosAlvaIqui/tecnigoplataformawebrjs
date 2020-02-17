@@ -134,16 +134,6 @@ export default function CustomPaginationActionsTable() {
   return (
     <React.Fragment>
 
-<div className="tecgofon">
-      <Grid container spacing={3} >
-        <Grid item xs={12} >
-              <p className="tittletec">
-                TecniGO
-              </p>
-        </Grid>
-       
-      </Grid>
-    </div>
 
 
 

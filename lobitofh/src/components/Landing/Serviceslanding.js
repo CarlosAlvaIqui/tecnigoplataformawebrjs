@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import imgb from '../../assets/img/aimage.png';
 import { Link } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
-import cssgeneral from '../../assets/css/cssgeneral.css'
+import '../../assets/css/cssgeneral.css';
 
 import { red } from '@material-ui/core/colors';
 import Mou from '../Reactivescom/Mou'
@@ -68,10 +68,16 @@ class Serviceslanding extends Component {
                             ninoni={servicios.nombre}
                             algo={servicios.preg}
                             />
-                            <Mou2 
+
+                            {
+                              /**
+                               *   <Mou2 
                             ninoni={servicios.nombre}
                             algo={servicios.preg}
                             />
+                               */
+                            }
+                          
                          
 
                           </div>

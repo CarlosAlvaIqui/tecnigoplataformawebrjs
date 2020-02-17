@@ -1,5 +1,4 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
@@ -12,30 +11,87 @@ import Rating from '@material-ui/lab/Rating';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
 
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-  },
-}));
+
 
 const Detailswork = (props) => {
 
   return (
     <React.Fragment>
       <div className="tecgofon">
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
+          <div className="miscontaine">
+          <Grid container spacing={3}  >
+          {/*<Grid item xs={12}>
             <p className="tittletec">
               TecniGO
               </p>
-          </Grid>
+  </Grid>*/}
 
-        </Grid>
+       
+                  <Grid item xs={6} sm={7}>
+                  <p className="tittletecs">
+                        TecniGO
+                        </p>        
+                  </Grid>
+                  <Grid item xs={6} sm={3} >
+                  <Paper className="recivocss">
+                 <p>
+                      <strong>
+                        Tu pedido
+                      </strong>
+                    </p>
+                   
+                   <div className="contthisitem">
+                            <div className="detaserv">
+                                <p>
+                                  <strong>
+                                    Maquina Lenta
+                                  </strong>
+                                </p>
+                                <span>
+                                  Al abrir los programas
+                                </span>
+                            </div>
+                            <div className="monefrservi">
+                                <p>
+                                  $60.00
+                                </p>
+                            </div>
+
+
+                   </div>
+                   <div className="contthisitem">
+                            <div className="detaserv">
+                                <p>
+                                  <strong>
+                                    Formateo de PC
+                                  </strong>
+                                </p>
+                                <span>
+                                 Instalar programas
+                                </span>
+                            </div>
+                            <div className="monefrservi">
+                                <p>
+                                  $60.00
+                                </p>
+                            </div>
+
+
+                   </div> 
+                   <div>
+                      <br/>
+                    <p>TOTAL _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  _ $120.00</p>
+
+                    </div>
+
+                  </Paper>
+
+                  </Grid>
+      </Grid>
+          </div>
       </div>
       <div>
         <CssBaseline />
@@ -135,7 +191,7 @@ const Detailswork = (props) => {
                               </div>
                               <div className="tecnicodata">
                                     <div className="divimgtec">
-                                      <img src={perfilphoto} style={{ width: 150 }} className="tecper" />
+                                      <img src={perfilphoto} style={{ width: 150 }} className="tecper" alt="tecnico"/>
 
                                     </div>
 

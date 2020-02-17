@@ -1,9 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 import deliver from '../../assets/img/delyber.jpg'
 import tecnico from '../../assets/img/tecnico.jpg';
 import maqui from '../../assets/img/maqui.jpg';
-import {Divider,Grid,Paper,Typography  } from '@material-ui/core';
-import GridContainer from '../Grid/GridContainer';
+import {Paper} from '@material-ui/core';
 import movilout from '../../assets/img/lets.png';
 import { makeStyles } from '@material-ui/core/styles';
 import ggleandapple from '../../assets/img/googleandapple.png';
@@ -51,7 +50,7 @@ const useStyles = makeStyles(theme => ({
                         
                           <div style={{ gridColumnEnd: 'span 5' }}>
                             <Paper className={classes.paper}>
-                            <img src={deliver} className="imgdeli" width="600" height="450"/> 
+                            <img src={deliver} className="imgdeli" width="600" height="450" alt="imgdelivery"/> 
 
 
                             </Paper>
@@ -94,7 +93,7 @@ const useStyles = makeStyles(theme => ({
                           </div>
                           <div style={{ gridColumnEnd: 'span 5' }}>
                             <Paper className={classes.paper}>
-                              <img src={tecnico} className="imgdeli" width="600" height="450"/> 
+                              <img src={tecnico} className="imgdeli" width="600" height="450" alt="imgtecnico"/> 
 
                               <center>
                                 
@@ -113,7 +112,7 @@ const useStyles = makeStyles(theme => ({
                         
                           <div style={{ gridColumnEnd: 'span 5' }}>
                             <Paper className={classes.paper}>
-                            <img src={maqui} className="imgdeli" width="600" height="450"/> 
+                            <img src={maqui} className="imgdeli" width="600" height="450" alt="imgmaquina"/> 
 
 
                             </Paper>
@@ -145,10 +144,10 @@ const useStyles = makeStyles(theme => ({
                         </Paper>
                         <span className="spst">Soluciona tus problemas mas rapido y sin obstaculos utilizando nuestra app </span>
                         <br/>
-                        <img src={ggleandapple} className="tiendasappggl" width="400" height="120"/>
+                        <img src={ggleandapple} className="tiendasappggl" width="400" height="120" alt="imgstores"/>
                         </div>
                       <div style={{ gridColumnEnd: 'span 4' }}>
-                        <img src={movilout} className="imgdeli" width="420" height="700"/> 
+                        <img src={movilout} className="imgdeli" width="420" height="700" alt="imgmovil"/> 
 
                       </div>
                       </div>

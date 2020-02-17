@@ -1,14 +1,9 @@
 import React from 'react';
-import Carrouselts from '../../Reactivescom/Carrouselts';
 
 import { green } from '@material-ui/core/colors';
-import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
-import Favorite from '@material-ui/icons/Favorite';
-import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+
 
 import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
@@ -62,47 +57,48 @@ console.log("el pregrarra dice gaaa")
 }else {
     var id_preg = pregarra['preguntas']
     console.log(pregarra['preguntas'])
+    var preguntassd = []
 
 
     
     switch (id_preg) {
         case 1:
-            var preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
+             preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
             break;
         case 2:
-            var preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
+             preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
 
             break;
         case 3:
-            var preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
+             preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
 
             break;
         case 4:
-            var preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
+             preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
 
             break;
         case 5:
-            var preguntassd =[{question:'Salen anuncion sin parar'},{question:'Desaparecen archivos'},{question:'Deje a mi mamá con la pc'}]
+             preguntassd =[{question:'Salen anuncion sin parar'},{question:'Desaparecen archivos'},{question:'Deje a mi mamá con la pc'}]
 
             break;
         case 6:
-            var preguntassd =[{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
+             preguntassd =[{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
 
             break;
         case 7:
-            var preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
+             preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
 
             break;
         case 8:
-            var preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
+             preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
 
             break;
         case 9:
-            var preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
+             preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
 
             break;
         case 10:
-            var preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
+             preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
 
          break;
         default:
@@ -127,7 +123,8 @@ console.log("el pregrarra dice gaaa")
     {
         preguntassd.map((preguntitas, i) =>{
                 return(
-                    <FormControlLabel
+                      <FormControlLabel
+                    
                     control={
                       <GreenCheckbox
                         checked={state.checkedG}

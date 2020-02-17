@@ -322,9 +322,16 @@ animation-fill-mode: forwards;
   margin-bottom: 80px;
 }
 
+.listasimple{
+  list-style-type: Solid circle;
+  font-size: 36px;
+  color: orange;
+}
 
 .simplepmp{
   margin-top: 25px;
+  font-size: 18px;
+  color:black;
 }
 
 .pservi{
@@ -346,7 +353,7 @@ animation-fill-mode: forwards;
 
 .tecgofon{
   background: linear-gradient(-175deg, #150958,#00A775);
-  height: 400px;
+  height: 360px;
   margin-bottom: 120px;
 }
 
@@ -355,6 +362,13 @@ animation-fill-mode: forwards;
   color:white;
   margin-top: 150px;
   font-size: 45px;
+}
+
+.tittletecs{
+  text-align: center;
+  color:white;
+  font-size: 45px;
+  margin-top: 200px;
 }
 .titlebig{
 font-size: 40px;
@@ -459,7 +473,49 @@ float: left;
 .movet{
   color: #005B94;
 }
-/*
+.iconcheck{
+  margin-right: 15px;
+}
+.fonditox{
+  background-color: white;
+}
+.recivocss{
+  height: 39vh;
+  background-color: lightcoral;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 138px;
+  padding-top: 20px;
+}
+
+.miscontaine{
+  margin-top: 10px;
+}
+
+.detaserv{
+  float: left;
+  width: 200px;
+}
+.monefrservi{
+  float: left;
+  width: 120px;
+  text-align: right;
+}
+.contthisitem{
+  overflow: hidden;
+  height: 90px;
+}
+.conthisto{
+  padding-top: 15px;
+}
+
+.hrstyle{
+  border-top: 3px solid ;
+
+}
+
+/*  
+
 recordar
 puse un margin left al formulario de registro arreglar a una determinada posicion
 */

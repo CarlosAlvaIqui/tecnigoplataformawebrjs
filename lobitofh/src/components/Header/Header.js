@@ -1,16 +1,14 @@
 import React from 'react';
-import { fade, makeStyles,useTheme } from '@material-ui/core/styles';
-import {AppBar,Toolbar,IconButton,InputBase,Badge,MenuItem,Menu,Paper,Grid} from '@material-ui/core';
+import { makeStyles,useTheme } from '@material-ui/core/styles';
+import {AppBar,Toolbar,IconButton,Badge,MenuItem,Menu,} from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import { Link, NavLink} from 'react-router-dom';
-import indigo from '@material-ui/core/colors/indigo';
-import {MuiThemeProvider,createMuiTheme} from '@material-ui/core/styles';
+import { Link} from 'react-router-dom';
+import {MuiThemeProvider} from '@material-ui/core/styles';
 
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import clsx from 'clsx';
@@ -25,13 +23,13 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 const drawerWidth = 240;
-
+/*
 const theme = createMuiTheme({
   palette:{
     primary:{ main: '#005B94' },
    }
 })
-
+*/
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1,
@@ -83,9 +81,7 @@ const useStyles = makeStyles(theme => ({
       display: 'none',
     },
   },
-   menuButton: {
-    marginRight: theme.spacing(2),
-  },
+
   hide: {
     display: 'none',
   },

@@ -13,7 +13,7 @@ import Container from '@material-ui/core/Container';
 import greatservice from '../../assets/img/greatservice.png';
 import Sistemimg from '../../assets/img/sistem.png';
 import tecnicoico from '../../assets/img/tecnicoico.png';
-
+import checkgnp from '../../assets/img/checkpng.png'
 
 
 
@@ -140,25 +140,12 @@ Registro
             <p><strong>Tecnico a tu disposicion</strong></p>
           </Paper>
         </Grid>
-        {
-          /*
-          <div className="midiv">
-         paddingLeft
-       </div>
-       <div className="midiv">
-         paddingLeft
-       </div>
-       <div className="midiv">
-         paddingLeft
-       </div>
-       <div className="midiv">
-         paddingLeft
-       </div> */
-        }
+     
        </div>
        
      </div>
 
+      <div className="fonditox">
       <CssBaseline />
       <Container maxWidth="lg" >
         <Typography component="div" style={{ backgroundColor: 'white' }}>
@@ -181,11 +168,11 @@ Registro
                     </div>
                       <div>
                       <ul>
-                        <li><p className="simplepmp">Concentrando todas las solicitudes en un solo Lugar</p></li>
-                        <li><p className="simplepmp">Respuesta record en menos de 5 minutos</p></li>
-                        <li><p className="simplepmp">Soluciones Remotas</p></li>
-                        <li><p className="simplepmp">Seguimiento y agenda de todos los trabajos pedidos</p></li>
-                        <li><p className="simplepmp">Reporte con informacion Completa</p></li>
+                        <li className="listasimple"><span className="simplepmp">Concentrando todas las solicitudes en un solo Lugar</span></li>
+                        <li className="listasimple"><span className="simplepmp">Respuesta record en menos de 5 minutos</span></li>
+                        <li className="listasimple"><span className="simplepmp">Soluciones Remotas</span></li>
+                        <li className="listasimple"><span className="simplepmp">Seguimiento y agenda de todos los trabajos pedidos</span></li>
+                        <li className="listasimple"><span className="simplepmp">Reporte con informacion Completa</span></li>
                       </ul>
                         </div>
 
@@ -221,6 +208,8 @@ Registro
                       <div >
                             <div>
                             <p className="pservi">
+                            <img src={checkgnp} style={{width: 15}} className="iconcheck" alt="checkicon"/>
+
                               <strong>
                               {Services.nombre}
                               </strong>
@@ -244,6 +233,7 @@ Registro
              
          </Typography>
        </Container>  
+      </div>
 
 
     
