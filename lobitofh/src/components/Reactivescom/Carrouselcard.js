@@ -110,7 +110,7 @@ console.log(psvid)
          
               <Slider {...settings}>
                   {
-                    videosyt.videos.map(vin=>(
+                    videosyt.videos.map(vin =>(
                    
                       <div className="out" key={vin.id}> 
                            <div className="card">

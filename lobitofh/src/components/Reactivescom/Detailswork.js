@@ -12,6 +12,8 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
+import Contai from 'react-bootstrap/Container';
+import {Row,Col} from 'react-bootstrap';
 
 
 
@@ -36,14 +38,15 @@ const Detailswork = (props) => {
                         </p>        
                   </Grid>
                   <Grid item xs={6} sm={3} >
+                    
                   <Paper className="recivocss">
                  <p>
                       <strong>
                         Tu pedido
                       </strong>
                     </p>
-                   
-                   <div className="contthisitem">
+               
+                 {/*  <div className="contthisitem">
                             <div className="detaserv">
                                 <p>
                                   <strong>
@@ -53,6 +56,8 @@ const Detailswork = (props) => {
                                 <span>
                                   Al abrir los programas
                                 </span>
+                                  
+                              
                             </div>
                             <div className="monefrservi">
                                 <p>
@@ -61,30 +66,26 @@ const Detailswork = (props) => {
                             </div>
 
 
-                   </div>
-                   <div className="contthisitem">
-                            <div className="detaserv">
-                                <p>
-                                  <strong>
-                                    Formateo de PC
-                                  </strong>
-                                </p>
-                                <span>
-                                 Instalar programas
-                                </span>
-                            </div>
-                            <div className="monefrservi">
-                                <p>
-                                  $60.00
-                                </p>
-                            </div>
+              </div>*/}
+                   <Row>
+                      <Col sm={8}><p><strong>Maquina Lenta</strong></p><p>Al abrir los programas</p></Col>
+                      <Col sm={4}>$60.00</Col>
+                  </Row>
+                  <hr className="hrstyle"/>
 
+                  <Row>
+                      <Col sm={8}><p><strong>Formateo de PC</strong></p><p>Instalar todos los programas necesarios</p></Col>
+                      <Col sm={4}>$60.00</Col>
+                  </Row>
+                  <hr className="hrstyle"/>
 
-                   </div> 
+                
                    <div>
                       <br/>
-                    <p>TOTAL _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  _ $120.00</p>
-
+                      <Row>
+                      <Col sm={8}><p><strong>Total =></strong></p></Col>
+                      <Col sm={4}>$120.00</Col>
+                  </Row>
                     </div>
 
                   </Paper>
@@ -93,6 +94,7 @@ const Detailswork = (props) => {
       </Grid>
           </div>
       </div>
+ 
       <div>
         <CssBaseline />
         <Container maxWidth="md">
@@ -189,13 +191,39 @@ const Detailswork = (props) => {
                               <div className="headercard">
                                 <p>TecniGO</p>
                               </div>
-                              <div className="tecnicodata">
+                              <Row className="contte">
+                      <Col sm={6} className="tecper"><img src={perfilphoto} style={{ width: 150 }} alt="tecnico"/></Col>
+                      <Col sm={6}>
+                      <div className="datat">
+                                            <p className="mite">Tecnico en Computacion</p>
+                                            <p className="mite">28 Años</p>
+                                            <p className="mite">Dtuma.torres@gmail.com</p>
+                                            <p className="mite">963258753 - 963254178</p>
+                                                    <Box component="fieldset" mb={3} borderColor="transparent">
+                                                      <Rating
+                                                        name="customized-empty"
+                                                        defaultValue={2}
+                                                        precision={0.5}
+                                                        emptyIcon={<StarBorderIcon fontSize="inherit" />}
+                                                      />
+                                                      <br/>
+                                                      <Button variant="contained" color="secondary">
+                                                        Calificar
+                                                      </Button>
+
+                                                    </Box>
+
+                                                  </div>
+                      </Col>
+                  </Row>
+                             
+                             {/**  <div className="tecnicodata">
                                     <div className="divimgtec">
                                       <img src={perfilphoto} style={{ width: 150 }} className="tecper" alt="tecnico"/>
 
                                     </div>
-
-                                    <div className="divdatatec">
+                       
+                                     * <div className="divdatatec">
                                       <strong>
                                         <span className="infotec">TEC. Diana Tumba Torres </span>
                                       </strong>
@@ -221,7 +249,8 @@ const Detailswork = (props) => {
                                                   </div>
                                           </div>
                                     </div>
-                              </div>
+                                     
+                              </div>*/}
                               <div className="centerthis">
                                 <hr />
                                 <p >El hombre se esta poniendo la soga al cuello</p>

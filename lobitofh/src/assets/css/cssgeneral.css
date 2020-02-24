@@ -215,8 +215,8 @@ color:white;
 
 .frmregistro{
   padding-bottom: 40px;
-  padding-right:60px ;
-  margin-left: 60px;
+  padding-right:25px ;
+  margin-left: 25px;
 }
 
 .containergrid{
@@ -309,7 +309,7 @@ animation-fill-mode: forwards;
 }
 
 .spa{
-  margin-top: 15px;
+  margin-top: 8px;
   float: left;
 }
 
@@ -319,7 +319,7 @@ animation-fill-mode: forwards;
 
 .plataformagrid{
   width: 600px;
-  margin-bottom: 80px;
+  padding-bottom: 120px;
 }
 
 .listasimple{
@@ -343,8 +343,7 @@ animation-fill-mode: forwards;
   }
 .midiv{
   float: left;
-  width: 300px;
-  padding-left: 40px;
+  width: 280px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -434,10 +433,10 @@ font-size: 40px;
 text-align: center;
 width: 350px;
 margin:auto;
-margin-top: 210px;
 }
 .tecper{
-  
+  align-items: center;
+  text-align: center;
 }
 
 .infotec{
@@ -456,6 +455,11 @@ width:200px
 }
 .datat{
   font-size: 12px;
+  align-items: center;
+  {/*
+      text-align: center;
+alinearlo en cierta posicion 
+    */}
 }
 .mite{
   margin-bottom: 2px;
@@ -480,16 +484,17 @@ float: left;
   background-color: white;
 }
 .recivocss{
-  height: 39vh;
   background-color: lightcoral;
   padding-left: 20px;
   padding-right: 20px;
   margin-top: 138px;
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .miscontaine{
   margin-top: 10px;
+  overflow: hidden;
 }
 
 .detaserv{
@@ -510,10 +515,91 @@ float: left;
 }
 
 .hrstyle{
-  border-top: 3px solid ;
+  border-top: 2px solid ;
+}
+
+.Titlepopup{
+  align-items: center;
+}
+
+.divinputh{
+  margin-top: 40px;
+}
+.divinpuths{
+  margin-top: 20px;
+
+}
+.contpopup{
+  padding-left: 13px;
+  padding-right: 13px;
+}
+.itemsclass{
+  align-items: center;
+}
+
+.contdireccions{
+  align-items: center;
+  text-align: center;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+.midireccioncss{
+  border: 2px solid green;
+  border-radius: 7px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.newdireccionss{
+  align-items: center;
+  text-align: center;
+  margin-top: 35px;
+}
+.icocss{
+  margin-right: 5px;
+}
+
+.footerstyle{
+  background-color: black;
+  padding-bottom: 10px;
+}
+.Footertiitle{
+  color: white;
+  padding-left: 80px;
+  padding-top: 25px;
+  font-size: 30px;
+}
+
+.iconfoo{
+  margin-left: 18px;
+  padding-top: 25px;
 
 }
 
+.descripcionfoo{
+  color: white;
+  padding-left: 5px;
+  
+}
+.descripcionfoo.bh{
+  font-size: 15px;
+}
+
+.nomeclatura{
+  padding-left: 80px;
+  padding-top:70px;
+}
+.secondfo{
+  padding-top: 20px;
+}
+
+.texttitec{
+  font-size: 35px;
+  text-align: center;
+}
+
+.contte{
+  margin-top: 30px;
+}
 /*  
 
 recordar

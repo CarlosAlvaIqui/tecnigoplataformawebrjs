@@ -6,6 +6,7 @@ import {Modal, Button,} from 'react-bootstrap'
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
+import TextField from '@material-ui/core/TextField';
 
 
 const Mou = (props) => {
@@ -114,21 +115,23 @@ const Mou = (props) => {
                       {
                         preguntassd.map((pregunta,index) => {
                           return(
-                                <React.Fragment>
-                                    <FormControlLabel
-                                  key={index}
+                           <React.Fragment key={index}>
+                            <FormControlLabel
                               control={
+                                
                                 <Checkbox
                                  /* checked={state.checkedA}*/
                                   onChange={handleChange("checkedA")}
                                   value="checkedA"
                                   color="primary"
                                 />
+                                
                               }
                               label={pregunta.question}
                               
                             />
-                                </React.Fragment>
+
+                         </React.Fragment>
                             
                           )
                          
@@ -136,6 +139,8 @@ const Mou = (props) => {
                       }
                       
              </FormGroup>
+             <TextField id="standard-basic" label="Otro" />
+
           </Modal.Body>
         </Modal>
       </>

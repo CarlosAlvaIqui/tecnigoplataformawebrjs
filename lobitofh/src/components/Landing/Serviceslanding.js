@@ -10,10 +10,19 @@ import Box from '@material-ui/core/Box';
 import '../../assets/css/cssgeneral.css';
 
 import { red } from '@material-ui/core/colors';
-import Mou from '../Reactivescom/Mou'
-import Mou2 from '../Reactivescom/Mou2'
-import Carrouselcard from '../Reactivescom/Carrouselcard'
+import Mou from '../Reactivescom/Mou';
+import Mou2 from '../Reactivescom/Mou2';
+import Carrouselcard from '../Reactivescom/Carrouselcard';
+import Mapaeje from '../Reactivescom/Mapaeje';
+import Popupnewdireccion from '../Reactivescom/Popupnewdireccion';
+
+import credentials from '../Reactivescom/credentials';
+import Modalmap from '../Reactivescom/Modalmap';
+
 class Serviceslanding extends Component {
+
+
+
   state = {
     servicios: [
       //      { nombre: 'Pc lenta', image: imgb, preg: [{pregunta1: 'aea'},{pregunta2: 'gaa'}, {pregunta3: 'mongol'} ] },
@@ -32,6 +41,8 @@ class Serviceslanding extends Component {
 
     ]
   }
+
+
 
   render() {
  
@@ -56,7 +67,7 @@ class Serviceslanding extends Component {
                   this.state.servicios.map((servicios, i) => {
 
                     return (
-                      <Grid    key={i} className="nika">
+                      <Grid    key={i} className="nika" >
                         
                           <div className={this.props.classes.paper}>
                           <Link className="nav-bar-brand" to={{ pathname: '/Details', aboutprops: { preguntas: servicios.preg } }}>
@@ -97,6 +108,25 @@ class Serviceslanding extends Component {
         </div>
         </Box>
         <Carrouselcard />
+        {/*
+             <Popupmap
+     googleMapURL="https://maps.googleapis.com/maps/api/js?key="
+     containerElement= {<div style={{height: '400px'}}></div>}
+     mapElement={<div style={{height:'100%'}} />}
+     loadingElement={<p>Cargando.....</p>}
+
+        */}
+        
+      <Modalmap />
+      <br />
+      <br />
+      <br />
+
+      <Popupnewdireccion />
+      <br />
+      <br />
+      <br />
+
       </React.Fragment>
 
 

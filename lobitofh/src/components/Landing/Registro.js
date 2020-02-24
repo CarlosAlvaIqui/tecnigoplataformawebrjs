@@ -50,6 +50,7 @@ Registro
   <div>
     <p className="spa">Email</p>
     <TextField
+    className="inpre"
       id="outlined-full-width"
       style={{
         margin: 0,
@@ -119,8 +120,15 @@ Registro
       </Grid>
 
 
+      <div className="fonditox">
+      <CssBaseline />
+      <Container maxWidth="lg" >
+        <Typography component="div" style={{ backgroundColor: 'white' }}>
+          
      <div className="contsomething">
        <div>
+       <p className="texttitec">¿Por que contratar <strong>TecniGo?</strong></p>
+
        <Grid item xs={12} sm={6} className="midiv">
           <Paper className={this.props.classes.paper}>
                 <img src={greatservice} style={{width: 100}} alt="excelente servicio"/>
@@ -145,10 +153,6 @@ Registro
        
      </div>
 
-      <div className="fonditox">
-      <CssBaseline />
-      <Container maxWidth="lg" >
-        <Typography component="div" style={{ backgroundColor: 'white' }}>
         <Grid container spacing={3}>
         <Grid item xs={12}>
                    <p className={this.props.classes.titlelist}>
@@ -226,7 +230,6 @@ Registro
 
           }
                 
-                
             
 
           </Grid>
@@ -254,6 +257,7 @@ export default withStyles(theme => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     marginTop:40,
+    fontSize:30
   },
   paper: {
     padding: theme.spacing(2),
