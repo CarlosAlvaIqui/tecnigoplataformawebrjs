@@ -39,7 +39,7 @@ function App(){
    infinite:false,
    speed:1000,
    arrows:true,
-   slidesToShow:5,
+   slidesToShow:4,
    slidesToScroll:4,
    responsive:[
     {
@@ -66,10 +66,9 @@ console.log(psprop)
 };
 function mivideo (vin)  {
   console.log("Video gaa : " + vin.nombre)
-  var vilo =vin.srcvi
+  var vilo = vin.srcvi
 Setpsvid(vilo)
 console.log(psvid)
-
   };
     return (
 
@@ -114,12 +113,19 @@ console.log(psvid)
                    
                       <div className="out" key={vin.id}> 
                            <div className="card">
-                             <img className="rouded-circle" alt={"users here"} src={`https://source.unsplash.com/random/${vin.id}`}  height={56} width={100}/>
+                             <img className="rouded-circle" alt={"users here"} src={`https://source.unsplash.com/random/${vin.id}`}  height={90} width={180}/>
                              <div className="card-body">
-                                  <h5 className="card-title">{vin.nombre}</h5>
-                                  <small className="card-text text-sm-center text-muted">Inicio</small>
-                                  <br/>
-                                  <button className="btn btn-sm follow btn-primary" onClick={() => mivideo(vin)}>followme</button>
+                                  <h5 className="card-title" onClick={() => mivideo(vin)}>
+                                  <button className="zahando">{vin.nombre}</button>
+
+                                  </h5>
+                                  <small className="card-text text-sm-center text-muted"><span >TecniGo</span><br/><span>20 marzo del 2020</span></small>
+                                  {
+                                    /**
+                                     *<button className="btn btn-sm follow btn-primary" onClick={() => mivideo(vin)}>followme</button>
+
+                                     */
+                                  }
                              </div>
                            </div>
                        </div>
@@ -128,10 +134,10 @@ console.log(psvid)
               </Slider>
             }
       </div>
-      <Tryhis 
-      senthis={psprop}
-      vidsend={psvid}
-      />
+        <Tryhis 
+        senthis={psprop}
+        vidsend={psvid}
+        />
       </React.Fragment>
     );
   

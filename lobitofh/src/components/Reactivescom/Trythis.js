@@ -2,7 +2,7 @@ import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-
+import Youtubes from 'react-youtube';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -42,7 +42,7 @@ const Trythis = (props) => {
 { /**
            <p>gaaa{props.senthis}</p>
  */}
-<         iframe width="1260" height="615" src={"https://www.youtube.com/embed/uYlIEIR4A3k"} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="Mivideos"></iframe>
+<         iframe className="ifravideo" src={"https://www.youtube.com/embed/uYlIEIR4A3k"} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="Mivideos"></iframe>
            </div>
             </Grid>
     
@@ -56,7 +56,8 @@ const Trythis = (props) => {
       <Grid item xs={12} sm={12}>
            <div className={classes.paper}>
            <p>gaaa{props.senthis}</p>
-           <iframe width="1260" height="615" src={props.vidsend} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="Mivideos"></iframe>
+         
+           <iframe className="ifravideo" src={props.vidsend} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="Mivideos"></iframe>
            </div>
 
       </Grid>

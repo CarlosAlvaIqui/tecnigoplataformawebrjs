@@ -33,7 +33,7 @@ const Popupnewdireccion = (props) => {
                             <span>Av Socabaya numero 420</span>
                             </div>
                         </Grid>
-                        <Grid item xs={6} sm={12} >
+                        <Grid item xs={12} sm={12} >
                             <div className="midireccioncss">
                             <FlagOutlinedico
                             className="icocss"

@@ -21,6 +21,8 @@ import Drawer from '@material-ui/core/Drawer';
 
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import { red } from '@material-ui/core/colors';
+import deepPurple from '@material-ui/core/colors/deepPurple';
 
 const drawerWidth = 240;
 /*
@@ -34,7 +36,13 @@ const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1,
   },
-  
+  palette: {
+    primary: {
+      backgroundColor: red,
+      secondary: deepPurple,
+
+    }
+  },
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,

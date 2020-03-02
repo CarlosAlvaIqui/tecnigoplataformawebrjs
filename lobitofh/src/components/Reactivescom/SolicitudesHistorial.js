@@ -39,16 +39,16 @@ class SolicitudesHistorial extends Component {
     
         fetch('https://jsonplaceholder.typicode.com/users')
           .then(res => res.json())
-          .then(json => {
+          .then(data => {
                 this.setState({
                   isLoaded: true,
-                  items: json,
+                  soldado: data,
                 })
           })
     
     }
   render(){
-    var {isLoaded, items} = this.state;
+    var {isLoaded, soldado} = this.state;
     if(!isLoaded){
         return(
           <div>
@@ -66,7 +66,7 @@ class SolicitudesHistorial extends Component {
               <Grid container spacing={3}>
 
       {
-        items.map((items,i) => {
+        soldado.map((items,i) => {
 return(
 
   <Grid item xs={12} sm={6} key={i}>

@@ -56,7 +56,7 @@ class Serviceslanding extends Component {
         
         <CssBaseline />
         <Container maxWidth="md">
-          <Typography component="div"  >
+          <Typography component="div"  style={{ backgroundColor:'#cfe8fc' }}>
             <div className={this.props.classes.root}>
               <Grid container spacing={3}>
                 {
@@ -138,9 +138,7 @@ class Serviceslanding extends Component {
 export default withStyles(theme => ({
   root: {
     flexGrow: 1,
-    background:red,
     justifyContent: 'center',
-
   },
   paper: {
     padding: theme.spacing(2),

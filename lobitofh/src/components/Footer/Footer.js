@@ -86,11 +86,13 @@ export default function AutoGrid() {
             </div>
         </Grid>
         <Grid item xs={12} sm={4} >
+         {/*
           <div className="secondfo">
           <img src={googleandapple} alt="plat_googleapple" style={{ width:420}}/>
 
           </div>
             
+         */}
         </Grid>
       </Grid>
  

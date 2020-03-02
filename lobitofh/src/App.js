@@ -9,8 +9,9 @@ import Solicitudes from './components/Reactivescom/SolicitudesHistorial'
 import Login from './components/Landing/Logins';
 import Serviceslanding from './components/Landing/Serviceslanding';
 import Tablahistorial from './components/Reactivescom/Tablahistorial';
-import Detailswork from './components/Reactivescom/Detailswork'
-import Newtablehistorial from './components/Reactivescom/Newtablehistorial'
+import Detailswork from './components/Reactivescom/Detailswork';
+import Newtablehistorial from './components/Reactivescom/Newtablehistorial';
+import Tecnicoform from './components/Landing/Tecnicoform';
 class App extends Component{
  render() {
    return(
@@ -26,7 +27,7 @@ class App extends Component{
       <Route path='/Login' exact component={Login}/>
       <Route path='/Detailswork' exact component={Detailswork}/>
       <Route path='/Newtablehistorial' exact component={Newtablehistorial}/>
-
+      <Route path="/Tecnicoform" exact component={Tecnicoform}/>
       </Switch>
     </Layout>
 </BrowserRouter>

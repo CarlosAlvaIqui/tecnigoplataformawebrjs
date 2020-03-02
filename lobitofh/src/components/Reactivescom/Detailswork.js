@@ -32,12 +32,12 @@ const Detailswork = (props) => {
   </Grid>*/}
 
        
-                  <Grid item xs={6} sm={7}>
+                  <Grid item xs={12} sm={7}>
                   <p className="tittletecs">
                         TecniGO
                         </p>        
                   </Grid>
-                  <Grid item xs={6} sm={3} >
+                  <Grid item xs={12} sm={3} >
                     
                   <Paper className="recivocss">
                  <p>
@@ -68,29 +68,31 @@ const Detailswork = (props) => {
 
               </div>*/}
                    <Row>
-                      <Col sm={8}><p><strong>Maquina Lenta</strong></p><p>Al abrir los programas</p></Col>
-                      <Col sm={4}>$60.00</Col>
+                      <Col  sm={7}><p><strong>Maquina Lenta</strong></p><p className="cssdescrip">Al abrir los programas</p></Col>
+                      <Col  sm={5}><p className="preciossc">$60.00</p></Col>
                   </Row>
-                  <hr className="hrstyle"/>
+                  <hr className="hrstyledeta"/>
 
                   <Row>
-                      <Col sm={8}><p><strong>Formateo de PC</strong></p><p>Instalar todos los programas necesarios</p></Col>
-                      <Col sm={4}>$60.00</Col>
+                      <Col sm={7}><p><strong>Formateo de PC</strong></p><p className="cssdescrip">Instalar todos los programas necesarios</p></Col>
+                      <Col sm={5}><p className="preciossc">$60.00</p></Col>
                   </Row>
-                  <hr className="hrstyle"/>
+                  <hr className="hrstyledeta"/>
 
                 
                    <div>
                       <br/>
                       <Row>
-                      <Col sm={8}><p><strong>Total =></strong></p></Col>
-                      <Col sm={4}>$120.00</Col>
+                      <Col sm={7}><p><strong>Total =></strong></p></Col>
+                      <Col sm={5}>$120.00</Col>
                   </Row>
                     </div>
 
                   </Paper>
 
                   </Grid>
+                  
+
       </Grid>
           </div>
       </div>
@@ -120,6 +122,17 @@ const Detailswork = (props) => {
             </span>
                   </p>
                   <div className="divradi">
+                  <Row>
+                      <Col sm={4}><span><strong>Calle</strong></span><br/>
+                      <span>Av Ejercito...</span>
+                      </Col>
+                      <Col sm={6}><span><strong>Datos(piso, puerta...)</strong></span><br/>
+                      <span>Sin Datos</span></Col>
+                      <Col sm={2}><span></span><br/><span>Editar</span></Col>
+                  </Row>
+                  </div>
+                  {/**
+                   * 
                   
                               <div className="tothel">
                                     <span>calle</span>
@@ -138,6 +151,8 @@ const Detailswork = (props) => {
                                   </div>
                       
                   </div>
+
+                   */}
                 </div>
 
                 <br />
@@ -156,8 +171,16 @@ const Detailswork = (props) => {
             </span>
                   </p>
                   <div className="divradi">
+                  <Row>
+                      <Col sm={10}><span><strong>Fecha y Hora</strong></span><br/>
+                      <span>Viernes 31 de enerero del 2020</span>
+                      </Col>
 
-                    <div className="halfdiv">
+                      <Col sm={2}><span></span><br/><span>15:00</span></Col>
+                  </Row>
+
+                    {/**
+                     * <div className="halfdiv">
                       <span>Fecha y hora</span>
                       <br />
                       <span>Vierner 31 de Enero del 2020</span>
@@ -167,6 +190,7 @@ const Detailswork = (props) => {
                       <br />
                       <span className="movet">15:00</span>
                     </div>
+                     */}
 
                   </div>
                 </div>
@@ -215,8 +239,13 @@ const Detailswork = (props) => {
 
                                                   </div>
                       </Col>
+                      <div className="centerthis">
+                                <hr />
+                                <p >El hombre se esta poniendo la soga al cuello</p>
+                                <hr />
+                              </div>
+
                   </Row>
-                             
                              {/**  <div className="tecnicodata">
                                     <div className="divimgtec">
                                       <img src={perfilphoto} style={{ width: 150 }} className="tecper" alt="tecnico"/>
@@ -251,12 +280,7 @@ const Detailswork = (props) => {
                                     </div>
                                      
                               </div>*/}
-                              <div className="centerthis">
-                                <hr />
-                                <p >El hombre se esta poniendo la soga al cuello</p>
-                                <hr />
-                              </div>
-
+                             
 
                               {
                                 /**

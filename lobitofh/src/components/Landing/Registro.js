@@ -15,6 +15,7 @@ import Sistemimg from '../../assets/img/sistem.png';
 import tecnicoico from '../../assets/img/tecnicoico.png';
 import checkgnp from '../../assets/img/checkpng.png'
 
+import logotre from '../../assets/img/icons/logotre.png'
 
 
    var des="Descripcion detallas de las posibles soluciones para este tipo de problemas haciendo enfasis en las posibles para cada uno,claro y directo"
@@ -42,77 +43,61 @@ class Registro extends Component {
             <div className={this.props.classes.root}>
 
 
-<div className="frmregistro">
-<p>
-Registro
+    <div className="frmregistro">
+      <img src={logotre} alt="icolgo" style={{width:50}}/>
+    <span>
+    ¿En que Podemos ayudarte?
 
-</p>
-  <div>
-    <p className="spa">Email</p>
-    <TextField
-    className="inpre"
-      id="outlined-full-width"
-      style={{
-        margin: 0,
-      }}
-      placeholder="Correo Electronico"
-      fullWidth 
-      margin="normal"
-      InputLabelProps={{
-        shrink: true,
-      }}
-      variant="outlined"
-    />
-  </div>
+    </span>
+    
+    <div className="contformulariotecnico2">
 
-  <div>
-    <p className="spa">Nombre</p>
-    <TextField
-      id="outlined-full-width"
-      style={{ margin: 0 }}
-      placeholder="Nombre"
-      fullWidth
-      margin="normal"
-      InputLabelProps={{
-        shrink: true,
-      }}
-      variant="outlined"
-    />
-  </div>
-  <div>
-    <p className="spa">Contraseña</p>
-    <TextField
-      id="outlined-full-width"
-      style={{ margin: 0 }}
-      placeholder="Contraseña"
-      fullWidth
-      margin="normal"
-      InputLabelProps={{
-        shrink: true,
-      }}
-      variant="outlined"
-    />
-  </div>
-  <div>
-    <p className="spa">Telefono</p>
-    <TextField
-      id="outlined-full-width"
-      style={{ margin: 0 }}
-      placeholder="Telefono"
-      fullWidth
-      margin="normal"
-      InputLabelProps={{
-        shrink: true,
-      }}
-      variant="outlined"
-    />
-  </div>
- 
+                <div>
+                <br/>
+
+                <TextField id="input-with-icon-grid" label="Nombre " fullWidth/>
+
+                </div>
+
+                <div>
+                <br/>
+                <TextField id="input-with-icon-grid" label="Celular" fullWidth/>
+
+                </div>
+
+                <div>
+                <br/>
+                <TextField id="input-with-icon-grid" label="Correo" fullWidth/>
+
+                </div>
+
+                <div>
+                <br/>
+                <TextField id="input-with-icon-grid" label="Contraseña" fullWidth/>
+
+                </div>
+                <br/>
+
+                <div>
+                
+                <TextField id="input-with-icon-grid" label="Maquina Lenta" fullWidth/>
+
+                </div>
+                <br/>
+
+                <div>
+                <TextField id="input-with-icon-grid" label="Mensaje" fullWidth/>
+
+                </div>
+                <br/>
+
+
+                <Button variant="contained" color="secondary">
+                    Enviar
+                </Button>
+                </div>
 </div>
 </div>
-<Button variant="contained" color="secondary">
-              Registrese
-            </Button>
 
           </Paper>
         </Grid>
@@ -178,7 +163,7 @@ Registro
                         <li className="listasimple"><span className="simplepmp">Seguimiento y agenda de todos los trabajos pedidos</span></li>
                         <li className="listasimple"><span className="simplepmp">Reporte con informacion Completa</span></li>
                       </ul>
-                        </div>
+                      </div>
 
                   </Paper>
                 </Grid>
@@ -272,7 +257,8 @@ export default withStyles(theme => ({
   paper3: {
     paddingLeft:50,
     padding: theme.spacing(2),
-    color: theme.palette.text.secondary,
+    paddingBottom: 40,
+    paddingRight:30
   },
   textField: {
 
