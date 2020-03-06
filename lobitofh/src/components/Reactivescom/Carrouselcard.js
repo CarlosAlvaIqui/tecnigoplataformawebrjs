@@ -57,8 +57,11 @@ function App(){
           }
     },
   ]}
+
+
  
   function miconsole (current)  {
+  
 console.log("bota el real gaa : " + current.username)
 var xd =current.username
 Setpropst(xd)
@@ -70,6 +73,7 @@ function mivideo (vin)  {
 Setpsvid(vilo)
 console.log(psvid)
   };
+
     return (
 
         

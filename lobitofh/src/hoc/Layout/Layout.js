@@ -5,7 +5,7 @@ import Footer from '../../components/Footer/Footer'
 
 
 const Layout = props => {
-
+    console.log("letsee what prints"+props.children)
     return (
         <Fragment>
             <Header />

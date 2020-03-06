@@ -197,14 +197,14 @@ class Registro extends Component {
                       <div >
                             <div>
                             <p className="pservi">
-                            <img src={checkgnp} style={{width: 15}} className="iconcheck" alt="checkicon"/>
+                            <img src={checkgnp} style={{width: 18}} className="iconcheck" alt="checkicon"/>
 
-                              <strong>
+                              <strong style={{fontSize:18}}>
                               {Services.nombre}
                               </strong>
                             </p>
                             </div>
-                            <div>
+                            <div style={{fontSize:18}}>
                               {Services.descripcion}
                             </div>
                       </div>
@@ -255,10 +255,12 @@ export default withStyles(theme => ({
     color: theme.palette.text.secondary,
   },
   paper3: {
-    paddingLeft:50,
+    paddingLeft:20,
     padding: theme.spacing(2),
     paddingBottom: 40,
-    paddingRight:30
+    paddingRight:20,
+    marginRight:17,
+    
   },
   textField: {
 
