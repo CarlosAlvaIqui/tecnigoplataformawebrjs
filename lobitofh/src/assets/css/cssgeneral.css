@@ -1,6 +1,7 @@
 .miradio{
     border-radius: 50%;
     align-items: center;
+    margin-bottom: 18px;
 }
 .hoversito{
     cursor: pointer;
@@ -214,8 +215,8 @@ color:white;
 }
 
 .frmregistro{
-  padding-bottom: 0px;
-  padding-right:0px ;
+  padding-bottom: 20px;
+  padding-right:20px ;
   margin-left: 20px;
 }
 
@@ -283,7 +284,7 @@ animation-fill-mode: forwards;
 
 .nika{
   width: 180px;
-
+  margin-top: 40px;
 }
 @media screen and (max-width: 360px) {
   .nika{
@@ -299,15 +300,18 @@ animation-fill-mode: forwards;
 }
 
 .contfrm{
-  background: linear-gradient(-20deg, #150958,#00A775,#005B94);
-  height: 65vh;
+  background: linear-gradient(180deg, #343D8E,#187581,#00A775);
+  height: 50vh;
+  padding-right: 60px;
+  padding-left: 60px;
+  padding-top: 70px;
 }
 
 .tituloregistro{
   color:white;
   font-size: 80px;
-  margin-left: 0px;
-  padding-top: 40px;
+text-align: center;
+padding-top: 60px;
 }
 
 .spa{
@@ -321,7 +325,8 @@ animation-fill-mode: forwards;
 
 .plataformagrid{
   width: 600px;
-  padding-bottom: 120px;
+  margin-top: 100px;
+  padding-bottom: 140px;
 }
 
 .listasimple{
@@ -354,15 +359,15 @@ animation-fill-mode: forwards;
 
 
 .tecgofon{
-  background: linear-gradient(-175deg, #150958,#00A775);
-  height: 360px;
+  background: linear-gradient(180deg, #343D8E,#187581,#00A775);
+    height: 400px;
   margin-bottom: 120px;
 }
 
 .tittletec{
   text-align: center;
   color:white;
-  margin-top: 150px;
+  margin-top: 190px;
   font-size: 45px;
 }
 
@@ -495,7 +500,9 @@ float: left;
 .miscontaine{
   overflow: hidden;
 }
-
+.contfots{
+  padding-top: 40px;
+}
 .detaserv{
   float: left;
   width: 200px;
@@ -566,9 +573,9 @@ float: left;
 }
 .Footertiitle{
   color: white;
-  padding-left: 80px;
   padding-top: 25px;
   font-size: 30px;
+  padding-left: 80px;
 }
 
 .iconfoo{
@@ -576,7 +583,14 @@ float: left;
   padding-top: 25px;
 
 }
+.fri{
+padding-top: 25px;
 
+}
+.descripcionf{
+  color: white;
+
+}
 .descripcionfoo{
   color: white;
   padding-left: 5px;
@@ -588,10 +602,10 @@ float: left;
 
 .nomeclatura{
   padding-left: 80px;
-  padding-top:70px;
+  padding-top:16px;
 }
 .secondfo{
-  padding-top: 20px;
+  padding-top:70px;
 }
 
 .texttitec{
@@ -621,6 +635,15 @@ margin-top: 0px;
   }
 }
 
+
+
+@media screen and (max-width: 660px) {
+  .tittletec{
+    margin-top: 20px;
+  }
+}
+
+
 @media screen and (max-width: 580px) {
   .datat{
     text-align: center  ;
@@ -635,13 +658,18 @@ margin-top: 0px;
   margin-bottom: 40px;
 }
 .contformulariotecnico2{
-  padding-left: 10px;
-  padding-right: 30px;
+  padding-left: 0px;
+  margin-bottom: 20px;
+padding-right:  0px;
+}
+/**
+.contformulariotecnico2{
+  padding-left: 40px;
   margin-bottom: 20px;
   width: 400px;
 
 }
-
+*/
 @media screen and (max-width: 460px) {
   .contfrm{
 height: auto;
@@ -656,9 +684,11 @@ float:left ;
     padding-right:0px ;
     margin-left: 0px;
   }
+  /*
   .contformulariotecnico2{
     width: 300px;
-  }
+  }*/
+  
 }
 
 .ifravideo{
@@ -674,6 +704,15 @@ float:left ;
   .iconfoo{
     margin-left: 10px;
   }
+  .fri{
+    margin-left: 30px;
+  }
+  .Footertiitle{
+   padding-left: 40px;
+  }
+  .nomeclatura{
+    padding-left: 40px;
+  }
 }
 @media screen and (max-width: 960px) {
   .ifravideo{
@@ -687,6 +726,7 @@ float:left ;
     text-align: center  ;
     width:250px;
   }
+  
 }
 
 /*  

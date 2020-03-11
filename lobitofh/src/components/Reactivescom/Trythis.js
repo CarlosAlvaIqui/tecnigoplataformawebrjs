@@ -30,7 +30,13 @@ const Trythis = (props) => {
 
     console.log(props.vidsend + "este prop tiene algo raro we")
     const classes = useStyles();
-
+    const opts = {
+      height: '390',
+      width: '640',
+      playerVars: { // https://developers.google.com/youtube/player_parameters
+        autoplay: 1
+      }
+    };
     return(
      <div>
          {props.vidsend === "" ?(
@@ -42,7 +48,14 @@ const Trythis = (props) => {
 { /**
            <p>gaaa{props.senthis}</p>
  */}
-<         iframe className="ifravideo" src={"https://www.youtube.com/embed/uYlIEIR4A3k"} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="Mivideos"></iframe>
+<         iframe className="ifravideo" src={"https://www.youtube.com/embed/gn_SVvY68lE"} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="Mivideos"></iframe>
+  {/**
+   *     <Youtubes
+        videoId="_nBlN9yp9R8"
+        opts={opts}
+
+      />
+   */}
            </div>
             </Grid>
     
@@ -58,6 +71,7 @@ const Trythis = (props) => {
            <p>gaaa{props.senthis}</p>
          
            <iframe className="ifravideo" src={props.vidsend} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="Mivideos"></iframe>
+    
            </div>
 
       </Grid>

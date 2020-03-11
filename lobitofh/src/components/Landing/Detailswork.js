@@ -14,7 +14,7 @@ import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Contai from 'react-bootstrap/Container';
 import {Row,Col} from 'react-bootstrap';
-
+import tecnigoblanco from '../../assets/img/icons/logotecnigoblanco2.png'
 
 
 
@@ -33,9 +33,8 @@ const Detailswork = (props) => {
 
        
                   <Grid item xs={12} sm={7}>
-                  <p className="tittletecs">
-                        TecniGO
-                        </p>        
+                  < p className="tittletec"><img src={tecnigoblanco} style={{width:70}} alt="logotecnigo"/>TecniGo</p>
+
                   </Grid>
                   <Grid item xs={12} sm={3} >
                     

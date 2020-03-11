@@ -15,6 +15,7 @@ import FormControl from '@material-ui/core/FormControl';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
+import tecnigoblanco from '../../assets/img/icons/logotecnigoblanco2.png'
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -60,6 +61,7 @@ const Newtablehistorial = () => {
       <Grid container spacing={3} >
         <Grid item xs={12} >
               <p className="tittletec">
+              <img src={tecnigoblanco} style={{width:70}} alt="logotecnigo"/>
                 TecniGO
               </p>
         </Grid>

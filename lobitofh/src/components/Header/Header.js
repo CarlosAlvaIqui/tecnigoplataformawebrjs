@@ -23,6 +23,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { red } from '@material-ui/core/colors';
 import deepPurple from '@material-ui/core/colors/deepPurple';
+import { createMuiTheme } from '@material-ui/core/styles';
 
 const drawerWidth = 240;
 /*
@@ -32,7 +33,9 @@ const theme = createMuiTheme({
    }
 })
 */
+
 const useStyles = makeStyles(theme => ({
+  
   grow: {
     flexGrow: 1,
   },
@@ -238,7 +241,7 @@ export default function PrimarySearchAppBar() {
   return (
     <div className={classes.grow}>
       <MuiThemeProvider theme={theme}>
-      <AppBar position="static" className="henav">
+      <AppBar position="static" className="henav" style={{ backgroundColor: '#343D8E' }}>
         <Toolbar>
           <IconButton
            color="inherit"

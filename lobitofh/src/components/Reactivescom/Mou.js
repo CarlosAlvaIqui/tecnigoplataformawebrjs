@@ -10,9 +10,9 @@ import TextField from '@material-ui/core/TextField';
 
 
 const Mou = (props) => {
-    console.log(props.algo)
+    console.log(props.id_pregunta)
 
-    var idpreg = props.algo
+    var idpreg = props.id_pregunta
     
     const [state, setState] = React.useState({
       checkedA: true,
@@ -34,42 +34,40 @@ const Mou = (props) => {
 
           switch (idpreg) {
               case 1:
-                   preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
+                   preguntassd = [{question:'Programas operan con lentitud'},{question:'Tarda en encender el equipo'},{question:'Programas no habren rapidamente'}]
                   break;
               case 2:
-                   preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
-      
+                   preguntassd = [{question:'No encuentro mi informacion en mis archivos'},{question:'Se daño mi Disco duro'},{question:'Encriptaron/robaron mi informacion'}]
                   break;
               case 3:
-                   preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
+                   preguntassd = [{question:'No encuentro Licencia original'},{question:'Renovar Licencia Original'},{question:'Adquirir Licencia Original'}]
       
                   break;
               case 4:
-                   preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
+                   preguntassd = [{question:'No enciende la impresora'},{question:'No imprime los colores deseados'},{question:'Imprime borroso o con manchas'}]
       
                   break;
               case 5:
-                   preguntassd =[{question:'Salen anuncion sin parar'},{question:'Desaparecen archivos'},{question:'Deje a mi mamá con la pc'}]
+                   preguntassd =[{question:'Salen anuncion sin parar en mi ordenador'},{question:'Aparecen archivos desconocidos en mis carpetas'},{question:'Desaparecen Archivos en mi ordenador'}]
       
                   break;
               case 6:
-                   preguntassd =[{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
+                   preguntassd =[{question:'Demora en abrir una pagina web'},{question:'se corta la conexion a internet'},{question:'La conexion baja su rendimiento a cierta hora'}]
       
                   break;
               case 7:
-                   preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
-      
+                   preguntassd = [{question:'Demora demasiado tiempo en enceder la computadora'},{question:'La pantalla de la pc no enciende'},{question:'No enciende el ordenador'}]
                   break;
               case 8:
-                   preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
+                   preguntassd = [{question:'Necesito software original'},{question:'Quiero actualizar mi software a una nueva version'},{question:'Quiero informacion acerca de este software'}]
       
                   break;
               case 9:
-                   preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
+                   preguntassd = [{question:'Quiero dar una limpieza a mi PC '},{question:'Quiero formatear mi pc '},{question:'Quiero formateo y limpieza de pc'}]
       
                   break;
               case 10:
-                   preguntassd = [{question:'Aqui hay lag'},{question:'otro lag'},{question:'lag x 2'}]
+                   preguntassd = [{question:'No me llega correos nuevos'},{question:'Necesito ampliar el almacenamiento de mi cuenta de gmail'},{question:'Necesito gestionar mi correo'}]
       
                break;
               default:
@@ -93,7 +91,7 @@ const Mou = (props) => {
     return (
       <>
         <Button variant="primary" onClick={() => setShow(true)}>
-        {props.ninoni}
+        {props.nombre_problema}
         </Button>
   
         <Modal
@@ -104,18 +102,19 @@ const Mou = (props) => {
         >
           <Modal.Header closeButton>
             <Modal.Title id="example-custom-modal-styling-title">
-              Custom Modal Styling
+            {props.nombre_problema}
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <p>
-              {props.algo}
+              {props.id_pregunta}
+              Marque que problemas presenta
             </p>
             <FormGroup row>
                       {
                         preguntassd.map((pregunta,index) => {
                           return(
-                           <React.Fragment key={index}>
+                           <div key={index} style={{paddingLeft:60,paddingRight:60}}>
                             <FormControlLabel
                               control={
                                 
@@ -131,7 +130,7 @@ const Mou = (props) => {
                               
                             />
 
-                         </React.Fragment>
+                         </div>
                             
                           )
                          
@@ -139,8 +138,11 @@ const Mou = (props) => {
                       }
                       
              </FormGroup>
-             <TextField id="standard-basic" label="Otro" />
-
+            <div>
+            <TextField id="standard-basic" label="Otro" style={{marginLeft:60}}/>
+            <br/>
+<button>Enviar</button>
+            </div>
           </Modal.Body>
         </Modal>
       </>

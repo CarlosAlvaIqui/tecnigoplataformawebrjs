@@ -27,16 +27,16 @@ class Serviceslanding extends Component {
     servicios: [
       //      { nombre: 'Pc lenta', image: imgb, preg: [{pregunta1: 'aea'},{pregunta2: 'gaa'}, {pregunta3: 'mongol'} ] },
 
-      { nombre: 'Pc lenta', image: imgb, preg: 1 },
+      { nombre: 'Maquina lenta', image: imgb, preg: 1 },
       { nombre: 'Recuperar I.', image: imgb, preg: 2 },
-      { nombre: 'Licencia', image: imgb, preg: 3 },
-      { nombre: 'Impresora', image: imgb, preg: 4 },
-      { nombre: 'Virus', image: imgb, preg: 5 },
-      { nombre: 'Internet', image: imgb, preg: 6 },
-      { nombre: 'No Responde ', image: imgb, preg: 7 },
-      { nombre: 'Instalacion ', image: imgb, preg: 8 },
-      { nombre: 'Limpieza', image: imgb, preg: 9 },
-      { nombre: 'Saturacion', image: imgb, preg: 10 },
+      { nombre: 'A. Licencia', image: imgb, preg: 3 },
+      { nombre: 'P. Impresora', image: imgb, preg: 4 },
+      { nombre: 'P. Virus', image: imgb, preg: 5 },
+      { nombre: 'Internet Lento', image: imgb, preg: 6 },
+      { nombre: 'Pc no Enciende', image: imgb, preg: 7 },
+      { nombre: 'Ins. Programas', image: imgb, preg: 8 },
+      { nombre: 'Mantenimiento', image: imgb, preg: 9 },
+      { nombre: 'Correo LLeno', image: imgb, preg: 10 },
 
 
     ]
@@ -56,7 +56,7 @@ class Serviceslanding extends Component {
         
         <CssBaseline />
         <Container maxWidth="md">
-          <Typography component="div"  style={{ backgroundColor:'#cfe8fc' }}>
+          <Typography component="div"  style={{  }}>
             <div className={this.props.classes.root}>
               <Grid container spacing={3}>
                 {
@@ -72,12 +72,16 @@ class Serviceslanding extends Component {
                           <div className={this.props.classes.paper}>
                           <Link className="nav-bar-brand" to={{ pathname: '/Details', aboutprops: { preguntas: servicios.preg } }}>
 
-                            <img src={servicios.image} className="miradio" width="80" alt="servicios tecnigo"/>
+                            <img src={servicios.image} className="miradio" width="90" alt="servicios tecnigo"/>
                             </Link>
-                           <p className="spancss">{servicios.nombre}</p>
+                          {
+                            /**
+                             * <p className="spancss">{servicios.nombre}</p>
+                             */
+                          } 
                             <Mou 
-                            ninoni={servicios.nombre}
-                            algo={servicios.preg}
+                            nombre_problema={servicios.nombre}
+                            id_pregunta={servicios.preg}
                             />
 
                             {

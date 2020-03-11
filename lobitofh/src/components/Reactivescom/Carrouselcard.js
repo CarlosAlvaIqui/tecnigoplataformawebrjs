@@ -13,16 +13,16 @@ function App(){
   const [videosyt,Setvidyt]=useState({
 
     videos: [
-      { nombre: 'Pc lenta', srcvi: 'https://www.youtube.com/embed/dBlBpXWLKcA' ,id: 1 },
-      { nombre: 'Recuperar I.', srcvi: 'https://www.youtube.com/embed/6t7HZLP3qKI', id:2  },
-      { nombre: 'Licencia', srcvi: 'https://www.youtube.com/embed/tgkxSkF7QOU' ,id:3},
-      { nombre: 'Impresora', srcvi:'https://www.youtube.com/embed/x4-0aU4us_w' ,id:4},
-      { nombre: 'Virus', srcvi: 'https://www.youtube.com/embed/fxZFP4e8VaA', id:5},
-      { nombre: 'Internet', srcvi:'https://www.youtube.com/embed/bgo9dJB_icw', id:6},
-      { nombre: 'No Responde ', srcvi:'https://www.youtube.com/embed/diuexInkshA', id:7 },
-      { nombre: 'Instalacion ', srcvi:'https://www.youtube.com/embed/TyltLy8lDPs', id:8},
-      { nombre: 'Limpieza', srcvi: 'https://www.youtube.com/embed/TgbqBx4NthI', id:9},
-      { nombre: 'Saturacion', srcvi: 'https://www.youtube.com/embed/EmuBOfurv3o ', id:10},
+      { nombre: 'Maquina lenta', srcvi: 'https://www.youtube.com/embed/rwRfKTF4e-I' ,id: 1 },
+      { nombre: 'Recuperar Info', srcvi: 'https://www.youtube.com/embed/9fp23G5l2AA', id:2  },
+      { nombre: 'Activar Licencia', srcvi: 'https://www.youtube.com/embed/O3DSUEZKG-Q' ,id:3},
+      { nombre: 'P. de Impresora', srcvi:'https://www.youtube.com/embed/XZoLtxsLUa0' ,id:4},
+      { nombre: 'Probable virus', srcvi: 'https://www.youtube.com/embed/xiNbaZSazP4', id:5},
+      { nombre: 'Internet Lento', srcvi:'https://www.youtube.com/embed/oFiGmX9-96E', id:6},
+      { nombre: 'Pc No Enciende', srcvi:'https://www.youtube.com/embed/gQKDrlLuroQ', id:7 },
+      { nombre: 'Instalar Programas ', srcvi:'https://www.youtube.com/embed/ig_AEAnJcgc', id:8},
+      { nombre: 'Mantemiento', srcvi: 'https://www.youtube.com/embed/VF1rikmfaUc', id:9},
+      { nombre: 'Correo LLeno', srcvi: 'https://www.youtube.com/embed/9i2IyxbMNtk', id:10},
     ]
   })
 
@@ -108,7 +108,7 @@ console.log(psvid)
 */
                   }
       <div className="container">
-          <h6 className="text-muted">Friend Sugestions</h6>
+          <h6 className="text-muted">Videos Sugeridos</h6>
           {
          
               <Slider {...settings}>
