@@ -36,14 +36,14 @@ export default function AutoGrid() {
     <div className={classes.root}>
       <Grid container spacing={3} className="footerstyle">
        
-        <Grid item xs={12} sm={9}>
+        <Grid item xs={12} sm={8}>
             <div>
             <p className="Footertiitle">TecniGo</p>
 
             </div>
         </Grid>
-        <Grid item xs={12} sm={3}>
-          <div>
+        <Grid item xs={12} sm={4}>
+          <div className="redconts">
 
                 <img src={fbicon} style={{ width: 30}} alt="socialredicon" className="fri"/>
                 <img src={instaicon} style={{ width: 30}} alt="socialredicon" className="iconfoo"/>
@@ -70,16 +70,10 @@ export default function AutoGrid() {
             </div>
         </Grid>
         <Grid item xs={12} sm={4} className="secondfo">
-         {/*
-          <div className="secondfo">
-          <img src={googleandapple} alt="plat_googleapple" style={{ width:420}}/>
-
-          </div>
-            
-         */}
-
-         <img src={googleplayico} width="140" alt="iconodegooglplay"/>
-        <img src={applestroic} width="140" alt="iconoapple"/>
+            <div className="imgconts">
+                  <img src={googleplayico} width="140" alt="iconodegooglplay"/>
+                  <img src={applestroic} width="140" alt="iconoapple"/>
+            </div>
         </Grid>
       </Grid>
  

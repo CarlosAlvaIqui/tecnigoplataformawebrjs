@@ -203,7 +203,7 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem >
-        <IconButton             color="inherit"
+        <IconButton  color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
@@ -283,6 +283,7 @@ export default function PrimarySearchAppBar() {
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
+            
             <IconButton
               aria-label="show more"
               aria-controls={mobileMenuId}

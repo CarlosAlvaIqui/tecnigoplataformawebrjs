@@ -215,9 +215,8 @@ color:white;
 }
 
 .frmregistro{
-  padding-bottom: 20px;
-  padding-right:20px ;
-  margin-left: 20px;
+  padding-right:10px ;
+  margin-left: 10px;
 }
 
 .containergrid{
@@ -302,9 +301,7 @@ animation-fill-mode: forwards;
 .contfrm{
   background: linear-gradient(180deg, #343D8E,#187581,#00A775);
   height: 50vh;
-  padding-right: 60px;
-  padding-left: 60px;
-  padding-top: 70px;
+  padding-top: 120px;
 }
 
 .tituloregistro{
@@ -420,6 +417,10 @@ font-size: 40px;
 
   float: left;
 
+}
+
+.redconts{
+  padding-left: 40px;
 }
 .cartatecnico{
   border: 2px solid grey;
@@ -603,11 +604,15 @@ padding-top: 25px;
 .nomeclatura{
   padding-left: 80px;
   padding-top:16px;
+  padding-right: 10px;
 }
 .secondfo{
   padding-top:70px;
 }
+.imgconts{
+  padding-left: 30px;
 
+}
 .texttitec{
   font-size: 35px;
   text-align: center;
@@ -713,7 +718,17 @@ float:left ;
   .nomeclatura{
     padding-left: 40px;
   }
+
 }
+@media screen and (max-width: 905px) {
+
+.redconts{
+    padding-left: 0px
+}
+
+}
+
+
 @media screen and (max-width: 960px) {
   .ifravideo{
     text-align: center;

@@ -3,9 +3,8 @@ import './App.css';
 import Layout from './hoc/Layout/Layout';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import PruebaCom from './components/Header/pruebacom/Pruebacom';
-import Registro from './components/Landing/Registro';
+import Inicio from './components/Landing/Inicio/Inicio';
 import Solicitudes from './components/Reactivescom/SolicitudesHistorial'
-import Login from './components/Landing/Logins';
 import Serviceslanding from './components/Landing/Serviceslanding';
 import Tablahistorial from './components/Reactivescom/Tablahistorial';
 import Detailswork from './components/Landing/Detailswork';
@@ -18,12 +17,11 @@ class App extends Component{
 <BrowserRouter>
     <Layout>
       <Switch>
-      <Route path='/' exact component={Registro}/>
+      <Route path='/' exact component={Inicio}/>
       <Route path='/Tablahistorial' exact component={Tablahistorial}/>
       <Route path='/Details' exact component={PruebaCom}/>
       <Route path='/Serviceslanding' exact component={Serviceslanding}/>
       <Route path='/Solicitudes' exact component={Solicitudes}/>
-      <Route path='/Login' exact component={Login}/>
       <Route path='/Detailswork' exact component={Detailswork}/>
       <Route path='/Newtablehistorial' exact component={Newtablehistorial}/>
       <Route path="/Tecnicoform" exact component={Tecnicoform}/>

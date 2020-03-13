@@ -74,18 +74,16 @@ const Newtablehistorial = () => {
       <Container maxWidth="lg">
         <Typography component="div"  >
 
-       <Paper > 
-         <Grid container spacing={2} alignItems="flex-end" style={{ backgroundColor: '#f4f4f4 ' }}>
+         <Grid container spacing={2} alignItems="flex-end" >
               
-              <Grid item >
-                <SearchIcon />
-              </Grid>   
+             
               <Grid item xs={12} sm={5} >
                 <TextField id="input-with-icon-grid" label="Buscar Solicitud" fullWidth/>
               </Grid>
-
+              <Grid item >
+                <SearchIcon />
+              </Grid>   
             </Grid>
-        </Paper>
         <br/>
                 <p><strong>Solicitudes</strong></p>
                 {
