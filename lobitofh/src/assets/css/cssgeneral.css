@@ -754,6 +754,22 @@ float:left ;
   
 }
 
+.txttittle{
+  padding-top: 70px;
+  font-size: 60px;
+}
+.miicoblac{
+  width: 70px;
+}
+@media screen and (max-width: 600px) {
+  .txttittle{
+    padding-top: 0px;
+    font-size: 35px;
+  }
+  .miicoblac{
+    width:30px
+  }
+}
 /*  
 
 recordar

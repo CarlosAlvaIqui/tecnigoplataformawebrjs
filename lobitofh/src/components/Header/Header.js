@@ -12,8 +12,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import { Link} from 'react-router-dom';
-
+import { Link,NavLink} from 'react-router-dom';
+import tecnigoblancico from '../../assets/img/icons/logotecnigoblanco2.png';
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1,
@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
       display: 'block',
     },
     paddingLeft:10,
-    paddingRight:10
+    paddingRight:10,
 
   },
 
@@ -99,14 +99,12 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
      <Typography className={classes.title} variant="h6" noWrap>
-     <Link className="nav-bar-brand" to="/">
-     Inicio
-    </Link>
-          </Typography>
+          <Link className="nav-bar-brand" to="/" >
+          Inicio
+          </Link>
+   </Typography>
 
-          <Typography className={classes.title} variant="h6" noWrap>
-            Profesionales
-          </Typography>
+         
 
           <Typography className={classes.title} variant="h6" noWrap>
             Ingresar
@@ -129,26 +127,30 @@ export default function PrimarySearchAppBar() {
   return (
     <div className={classes.grow}>
       <AppBar position="static"  style={{ backgroundColor: '#343D8E' }}>
-        <Toolbar>
+        <Toolbar >
       
-          <Typography className={classes.title} variant="h6" noWrap>
-            TecniGO
+          <Typography className={classes.title} variant="h6" noWrap style={{paddingTop:10}}>
+          <NavLink className="nav-bar-brand" to="/" activeStyle={{ color: 'white' }}>
+          <img src={tecnigoblancico}  alt="tecnigoicon" style={{width:30}}/>
+            <span >TecniGo</span>
+          </NavLink>
+            
           </Typography>
 
           <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-          <Typography className={classes.title} variant="h6" noWrap>
-          <Link className="nav-bar-brand" to="/">
+          <div className={classes.sectionDesktop} style={{paddingTop:10}}>
+          <Typography className={classes.title} variant="h6" noWrap >
+          <NavLink className="nav-bar-brand" to="/" activeStyle={{ color: 'white' }}> 
           Inicio
-          </Link>
+          </NavLink>
           </Typography>
 
-          <Typography className={classes.title} variant="h6" noWrap>
-            Profesionales
-          </Typography>
-
-          <Typography className={classes.title} variant="h6" noWrap>
-            Ingresar
+   
+          <Typography className={classes.title} variant="h6" noWrap >
+          <NavLink className="nav-bar-brand" to="/Loginpage" activeStyle={{ color: 'white' }}>
+          Ingresar
+          </NavLink>
+            
           </Typography>
 
           {/**

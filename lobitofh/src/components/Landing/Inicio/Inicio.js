@@ -17,7 +17,10 @@ import Sistemimg from '../../../assets/img/sistem.png';
 import tecnicoico from '../../../assets/img/tecnicoico.png';
 import checkgnp from '../../../assets/img/checkpng.png'
 import tecnigoicoblanco from '../../../assets/img/icons/logotecnigoblanco2.png'
-import logotre from '../../../assets/img/icons/logotre.png'
+import logotre from '../../../assets/img/icons/logotre.png';
+import agreement from '../../../assets/img/icons/agreement.png';
+import mechanic from '../../../assets/img/icons/mechanic.png';
+import support from '../../../assets/img/icons/support.png';
 import { Row, Col } from 'react-bootstrap';
 
 
@@ -57,6 +60,7 @@ class Registro extends Component {
     correo:'',
     contrasena:'',
     mostrar:true,
+    showpagedi: false
   }
   usuariohandler = (e) => this.setState({
 
@@ -129,9 +133,11 @@ class Registro extends Component {
       <React.Fragment>
         <Grid container className="contfrm">
           <Grid item xs={12} sm={8} style={{ marginRight: 20 }}>
+          <p className="txttittle" style={{color:"white",textAlign:"center"}}>
+          <img className="miicoblac" src={tecnigoicoblanco} alt="tecnigoico"/>
 
-
-
+                TecniGo
+              </p>
           </Grid>
           <Grid item xs={12} sm={3}>
             <Paper className={this.props.classes.paper}>
@@ -142,16 +148,24 @@ class Registro extends Component {
                        <strong>¿En que Podemos ayudarte?</strong>
                 </span>
                 </div>
+    
+              {this.props.logincardtr === undefined ?(
+                         this.state.mostrar === true ?
+                         /* <Logincard />*/
+                         <Registrocard
+                           mifuncion = {this.changecard}
+                         />
+                         :
+                         <Codeverificationcard />
 
-               {this.state.mostrar === true?
-               /* <Logincard />*/
-                <Registrocard
-                  mifuncion = {this.changecard}
-                />
-               :
-                <Codeverificationcard />
+                
+              ):
+              <Logincard />
 
-               }
+              }
+              {
+                console.log(this.props.logincardtr + "MRSAD")
+              }
               </div>
 
             </Paper>
@@ -175,19 +189,19 @@ class Registro extends Component {
                       <Row>
                         <Col sm={4}>
                           <Paper className={this.props.classes.paper}>
-                            <img src={greatservice} style={{ width: 100 }} alt="excelente servicio" />
+                            <img src={agreement} style={{ width: 100 }} alt="excelente servicio" />
                             <p><strong>Contrato Flexible</strong></p>
                           </Paper>
                         </Col>
                         <Col sm={4}>
                           <Paper className={this.props.classes.paper}>
-                            <img src={Sistemimg} style={{ width: 100 }} alt="sistema apropiado" />
+                            <img src={support} style={{ width: 100 }} alt="sistema apropiado" />
                             <p><strong>Plataforma de Control</strong></p>
                           </Paper>
                         </Col>
                         <Col sm={4}>
                           <Paper className={this.props.classes.paper}>
-                            <img src={tecnicoico} style={{ width: 100 }} alt="tecnico disponible" />
+                            <img src={mechanic} style={{ width: 100 }} alt="tecnico disponible" />
                             <p><strong>Tecnico a tu disposicion</strong></p>
                           </Paper>
                         </Col>

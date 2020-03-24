@@ -10,7 +10,8 @@ import Tablahistorial from './components/Reactivescom/Tablahistorial';
 import Detailswork from './components/Landing/Detailswork';
 import Newtablehistorial from './components/Landing/Newtablehistorial';
 import Tecnicoform from './components/Landing/Tecnicoform';
-import Blog from './components/Landing/Blog'
+import Blog from './components/Landing/Blog';
+import Loginpage from './components/Landing/Inicio/Loginpage';
 class App extends Component{
  render() {
    return(
@@ -26,7 +27,9 @@ class App extends Component{
       <Route path='/Newtablehistorial' exact component={Newtablehistorial}/>
       <Route path="/Tecnicoform" exact component={Tecnicoform}/>
       <Route path="/Blog" exact component={Blog}/>
+      <Route path="/Loginpage" exact component={Loginpage}/>
 
+      
       </Switch>
     </Layout>
 </BrowserRouter>
