@@ -38,8 +38,8 @@ const Newtablehistorial = () => {
 
 
 
-      const [statetable, setStatetable] = React.useState({
-        historial: [
+      const [statetable, setStatetable] = React.useState(
+        [
             { nombre: 'Pc lenta', tecnico: 'Pedro Suares' , fecha : '28 Marzo 13:00' ,atendido : true,id: 1},
             { nombre: 'Recuperar I.',tecnico: 'Joseph Monteero', fecha : '21 Marzo 10:00', atendido : false,id:2},
             { nombre: 'Licencia', tecnico: 'Pine Lower' ,fecha : '14 Marzo 15:00', atendido : true,id: 3},
@@ -50,8 +50,23 @@ const Newtablehistorial = () => {
             { nombre: 'Instalacion ',tecnico: 'David Jhonson', fecha : '12 Febreo 21:00',atendido : false,id: 8},
             { nombre: 'Limpieza',tecnico: 'Jose Karm', fecha : '06 Febrero 18:00',atendido : false,id: 9},
             { nombre: 'Saturacion', tecnico: 'Luis Mink' , fecha : '02 Febrero 10:00', atendido : true,id: 10},
-          ]
-      });
+            { nombre: 'Licencia', tecnico: 'Mark TIen' ,fecha : '15 Marzo 18:00', atendido :false,id: 11},
+
+          ],
+      );
+          const {nombre, tecnico,fecha,atendido,id} = statetable;
+      const [busqueda, Statebusqueda] = React.useState("")
+      const  seacrhhandle = (e) => {
+        Statebusqueda(e.target.value)
+      }
+      const  busquefunc = (e) => {
+        const listaserv = statetable.filter(statetable => statetable.nombre === busqueda)[0]
+        console.log(listaserv)
+        console.log(busqueda)
+      }
+
+
+
 
 
     return(
@@ -78,16 +93,16 @@ const Newtablehistorial = () => {
               
              
               <Grid item xs={12} sm={5} >
-                <TextField id="input-with-icon-grid" label="Buscar Solicitud" fullWidth/>
+                <TextField id="input-with-icon-grid" label="Buscar Solicitud" fullWidth value={busqueda} onChange={seacrhhandle} />
               </Grid>
               <Grid item >
-                <SearchIcon />
+                <SearchIcon onClick={() => busquefunc()}/>
               </Grid>   
             </Grid>
         <br/>
                 <p><strong>Solicitudes</strong></p>
                 {
-                    statetable.historial.map(histo => (
+                    statetable.map(histo => (
                 <div className={classes.root} style={{ backgroundColor: '#f4f4f4 ' }} key={histo.id}>
                     <Grid container spacing={2} className="conthisto">
 

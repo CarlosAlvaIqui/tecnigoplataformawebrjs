@@ -227,7 +227,7 @@ background-color: green;
   width: 100%;
 }
 .zawardo{
-  background: linear-gradient(-20deg, #150958,#00A775,#005B94);
+  background: linear-gradient(180deg, #343D8E,#187581,#00A775);
   width: 100%;
   padding-top: 80px;
   padding-bottom: 100px;
@@ -695,6 +695,16 @@ float:left ;
   }*/
   
 }
+
+@media screen and (max-width: 600px) {
+  .contfrm{
+      padding-top: 0px;
+  }
+
+}
+
+
+
 
 .ifravideo{
   width: 1260px;

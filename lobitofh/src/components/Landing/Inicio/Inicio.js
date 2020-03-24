@@ -139,8 +139,7 @@ class Registro extends Component {
                 <div style={{paddingRight:40}}>
                 <img src={logotre} alt="icolgo" style={{ width: 50 }} />
                 <span>
-                  <strong>¿En que Podemos ayudarte?</strong>
-
+                       <strong>¿En que Podemos ayudarte?</strong>
                 </span>
                 </div>
 

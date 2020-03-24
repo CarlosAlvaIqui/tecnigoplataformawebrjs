@@ -13,27 +13,24 @@ function App(){
   const [videosyt,Setvidyt]=useState({
 
     videos: [
-      { nombre: 'Maquina lenta', srcvi: 'https://www.youtube.com/embed/rwRfKTF4e-I' ,id: 1 },
-      { nombre: 'Recuperar Info', srcvi: 'https://www.youtube.com/embed/9fp23G5l2AA', id:2  },
-      { nombre: 'Activar Licencia', srcvi: 'https://www.youtube.com/embed/O3DSUEZKG-Q' ,id:3},
-      { nombre: 'P. de Impresora', srcvi:'https://www.youtube.com/embed/XZoLtxsLUa0' ,id:4},
-      { nombre: 'Probable virus', srcvi: 'https://www.youtube.com/embed/xiNbaZSazP4', id:5},
-      { nombre: 'Internet Lento', srcvi:'https://www.youtube.com/embed/oFiGmX9-96E', id:6},
-      { nombre: 'Pc No Enciende', srcvi:'https://www.youtube.com/embed/gQKDrlLuroQ', id:7 },
-      { nombre: 'Instalar Programas ', srcvi:'https://www.youtube.com/embed/ig_AEAnJcgc', id:8},
-      { nombre: 'Mantemiento', srcvi: 'https://www.youtube.com/embed/VF1rikmfaUc', id:9},
-      { nombre: 'Correo LLeno', srcvi: 'https://www.youtube.com/embed/9i2IyxbMNtk', id:10},
+      { nombre: 'Maquina lenta', srcvi: 'https://www.youtube.com/embed/rwRfKTF4e-I' ,id: 1,video_id:'rwRfKTF4e-I' },
+      { nombre: 'Recuperar Info', srcvi: 'https://www.youtube.com/embed/9fp23G5l2AA', id:2,video_id: '9fp23G5l2AA' },
+      { nombre: 'Activar Licencia', srcvi: 'https://www.youtube.com/embed/O3DSUEZKG-Q' ,id:3,video_id:'O3DSUEZKG-Q'},
+      { nombre: 'P. de Impresora', srcvi:'https://www.youtube.com/embed/XZoLtxsLUa0' ,id:4,video_id:'XZoLtxsLUa0'},
+      { nombre: 'Probable virus', srcvi: 'https://www.youtube.com/embed/xiNbaZSazP4', id:5,video_id:'xiNbaZSazP4'},
+      { nombre: 'Internet Lento', srcvi:'https://www.youtube.com/embed/oFiGmX9-96E', id:6,video_id:'oFiGmX9-96E'},
+      { nombre: 'Pc No Enciende', srcvi:'https://www.youtube.com/embed/gQKDrlLuroQ', id:7,video_id:'gQKDrlLuroQ'},
+      { nombre: 'Instalar Programas ', srcvi:'https://www.youtube.com/embed/ig_AEAnJcgc', id:8,video_id:'ig_AEAnJcgc'},
+      { nombre: 'Mantemiento', srcvi: 'https://www.youtube.com/embed/VF1rikmfaUc', id:9,video_id:'VF1rikmfaUc'},
+      { nombre: 'Correo LLeno', srcvi: 'https://www.youtube.com/embed/9i2IyxbMNtk', id:10,video_id:'9i2IyxbMNtk'},
     ]
   })
 
   const [psvid,Setpsvid]=useState("");
+  const [idvid,Setidvid]=useState("");
 
 
- useEffect(() =>{
-   fetch('https://jsonplaceholder.typicode.com/users').then(res=>res.json()).then(data=>{
-      setSuggestion(data);
-    })  
- });
+
 
  let settings ={
    infinite:false,
@@ -60,18 +57,21 @@ function App(){
 
 
  
-  function miconsole (current)  {
+function miconsole (current)  {
   
-console.log("bota el real gaa : " + current.username)
-var xd =current.username
-Setpropst(xd)
-console.log(psprop)
+      console.log("bota el real gaa : " + current.username)
+      var xd =current.username
+      Setpropst(xd)
+      console.log(psprop)
 };
+
+
 function mivideo (vin)  {
-  console.log("Video gaa : " + vin.nombre)
-  var vilo = vin.srcvi
-Setpsvid(vilo)
-console.log(psvid)
+            console.log("Video gaa : " + vin.nombre)
+            var vilo = vin.srcvi
+          Setpsvid(vilo)
+          Setidvid(vin.video_id)
+          console.log(psvid)
   };
 
     return (
@@ -141,6 +141,7 @@ console.log(psvid)
         <Tryhis 
         senthis={psprop}
         vidsend={psvid}
+        idvideo={idvid}
         />
       </React.Fragment>
     );
