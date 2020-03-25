@@ -40,6 +40,7 @@ class Codeverificationcard extends Component {
           data:logindata
         }).then(response =>{
             console.log("la respuesta es ", response)
+            //almacenar token en localstorage
         }).catch(error => {
             console.log("hay error yano quiero vivirs ", error)
         })

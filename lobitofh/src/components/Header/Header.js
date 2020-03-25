@@ -98,29 +98,24 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-     <Typography className={classes.title} variant="h6" noWrap>
-          <Link className="nav-bar-brand" to="/" >
-          Inicio
-          </Link>
-   </Typography>
 
          
 
-          <Typography className={classes.title} variant="h6" noWrap>
-            Ingresar
-          </Typography>
-    
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
+          
+      
+      <MenuItem >
+      <NavLink className="nav-bar-brand" to="/" > 
+      <p>Profile</p>
+      </NavLink>
+
       </MenuItem>
+
+      <MenuItem >
+
+      <NavLink className="nav-bar-brand" to="/Loginpage" >
+          Ingresar
+          </NavLink>
+   </MenuItem>
     </Menu>
   );
 
