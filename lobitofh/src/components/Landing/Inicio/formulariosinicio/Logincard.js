@@ -3,11 +3,19 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import axios from '../../../../utils/axios';
 import { withStyles } from '@material-ui/core/styles';
+import MuiAlert from "@material-ui/lab/Alert";
+import { useHistory } from 'react-router-dom';
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 class Codeverificationcard extends Component {
     state = {
         corre_celular : "",
-        passwords:""
+        passwords:"",
+        dataincorrecta: false
+
     }
     corre_celularhandler = (e) => this.setState({
 
@@ -43,6 +51,9 @@ class Codeverificationcard extends Component {
             //almacenar token en localstorage
         }).catch(error => {
             console.log("hay error yano quiero vivirs ", error)
+            this.setState({
+                dataincorrecta : true
+              })
         })
     }
     render() {
@@ -50,30 +61,70 @@ class Codeverificationcard extends Component {
 
         return (
             <Fragment>
+
+                
                 <div className="contformulariotecnico2">
                 <br/>
                 <br/>
+                {
+                    this.state.dataincorrecta === false ?
 
-                <div>
-                <TextField id="input-with-icon-grid" label=" Correo / N umero celular" fullWidth value={this.state.corre_celular} onChange={this.corre_celularhandler} />
+                    <form onSubmit={this.checkLogin}>  
 
-                </div>
-                <br/>
-                <br/>
-                <br/>
+                                        <div>
+                                        <TextField id="input-with-icon-grid" required label=" Correo / Numero celular" fullWidth value={this.state.corre_celular} onChange={this.corre_celularhandler} />
 
-                <div>
+                                        </div>
+                                        <br/>
+                                        <br/>
+                                        <br/>
 
-                <TextField id="input-with-icon-grid" label="Contraseña" type="password" fullWidth value={this.state.passwords} onChange={this.passwordhandler} />
+                                            <div>
 
-                </div>
-                <br/>
-                <br/>
-                <br/>
+                                            <TextField id="input-with-icon-grid" required label="Contraseña" type="password" fullWidth value={this.state.passwords} onChange={this.passwordhandler} />
 
-                    <Button variant="contained" color="secondary" onClick={this.checkLogin} fullWidth>
-                        Ingresar
-                    </Button>
+                                            </div>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+
+                                        <Button variant="contained" color="secondary" type="submit" fullWidth>
+                                            Ingresar
+                                        </Button>
+                    </form> 
+                    :
+                    <form onSubmit={this.checkLogin}>  
+
+                                                <div>
+                                                <TextField id="input-with-icon-grid" required label=" Correo / Numero celular" fullWidth value={this.state.corre_celular} onChange={this.corre_celularhandler} />
+
+                                                </div>
+                                                <br/>
+                                                <br/>
+                                                <br/>
+
+                                                    <div>
+
+                                                    <TextField id="input-with-icon-grid" required label="Contraseña" type="password" fullWidth value={this.state.passwords} onChange={this.passwordhandler} />
+
+                                                    </div>
+                                                    <br/>
+                                                    <br/>
+                                                    <br/>
+
+                                                <Button variant="contained" color="secondary" type="submit" fullWidth>
+                                                    Ingresar
+                                                </Button>
+                                                <br />
+                                                <br/>
+
+                                                <Alert severity="warning">Algunas credenciales son incorrectas intente nuevamente </Alert>
+
+                    </form> 
+
+
+                }
+
                 </div>
             </Fragment>
 
