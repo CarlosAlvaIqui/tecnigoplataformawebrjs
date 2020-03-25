@@ -29,6 +29,7 @@ class Codeverificationcard extends Component {
           url:`activar?key=${codex}`,
         }).then(response =>{
             console.log("la respuesta es ", response)
+            window.location.href='/Loginpage'
 
         }).catch(error => {
             console.log("hay error yano quiero vivirs ", error)
