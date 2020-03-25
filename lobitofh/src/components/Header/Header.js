@@ -105,7 +105,7 @@ export default function PrimarySearchAppBar() {
       
       <MenuItem >
       <NavLink className="nav-bar-brand" to="/" > 
-      <p>Profile</p>
+      <p>Inicio</p>
       </NavLink>
 
       </MenuItem>

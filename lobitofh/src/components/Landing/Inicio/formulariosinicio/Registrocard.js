@@ -51,20 +51,23 @@ class Registrocard extends Component {
     }*/
  
 }
-
+//validacion de campos
+//campo vacio
+//hacer cuando envie respuesta si es ok q no hayga error
 
 sendval= (e) => {
 
   const mostrar = this.state.mostrar
   var datos = {
     nombre: this.state.usuario_Nombre,
-    celular: "+51932091972",
+    celular: `+51${this.state.celular}`,
     correo: this.state.correo,
     contrasenia:  this.state.contrasena}
 
   console.log(datos)
-  this.props.mifuncion(mostrar)
-/*
+
+
+
   e.preventDefault();
   axios({
     method:'post',
@@ -72,11 +75,12 @@ sendval= (e) => {
     data:datos
   }).then(response =>{
       console.log("la respuesta es ", response)
-      
+      this.props.mifuncion(mostrar)
+
   }).catch(error => {
       console.log("hay error yano quiero vivirs ", error)
   })
-*/
+
 }
 
   
@@ -86,39 +90,55 @@ sendval= (e) => {
      
         return ( 
             <div className="contformulariotecnico2">
-
+               <form onSubmit={this.sendval}>  
             <div>
 
-              <TextField id="input-with-icon-grid" label="Nombre " fullWidth value={this.state.usuario_Nombre} onChange={this.usuariohandler}/>
+              <TextField id="input-with-icon-grid" label="Nombre" required fullWidth value={this.state.usuario_Nombre} onChange={this.usuariohandler}/>
 
             </div>
 
             <div>
               <br />
-              <TextField id="input-with-icon-grid" label="Celular" fullWidth value={this.state.celuar} onChange={this.celularhandler}/>
+              <TextField id="input-with-icon-grid" label="Celular"  type="number" fullWidth value={this.state.celuar} onChange={this.celularhandler}/>
 
             </div>
 
             <div>
               <br />
-              <TextField id="input-with-icon-grid" label="Correo" fullWidth value={this.state.correo} onChange={this.correohandler}/>
+              <TextField id="input-with-icon-grid" label="Correo" required type="email" fullWidth value={this.state.correo} onChange={this.correohandler}/>
 
             </div>
 
             <div>
               <br />
-              <TextField id="input-with-icon-grid" label="Contraseña" fullWidth value={this.state.contrasena} onChange={this.contrasenahandler}/>
+              <TextField id="input-with-icon-grid" label="Contraseña" type="password" required fullWidth value={this.state.contrasena} onChange={this.contrasenahandler}/>
 
             </div>
             <br />
 
     
 
+           {/**
+            *  <input type="submit" value="Registrar"/>
+            */}
 
-            <Button variant="contained" color="secondary" onClick={this.sendval} fullWidth>
+            <Button variant="contained" color="secondary" type="submit"  fullWidth>
               Registrar
            </Button>
+            </form>
+
+        {/*asda
+        
+             <form onSubmit={this.sendval}>  
+           <TextField id="input-with-icon-grid" label="Nombre" name="aea" required fullWidth />
+           
+           <input type="email" required></input>
+          <input type="submit" />
+           </form>
+        */}
+      
           </div>
+        
          );
     }
 }
