@@ -113,9 +113,9 @@ sendtootro = (e) => {
   const mostrar = this.state.mostrar
 
   console.log("se dio click")
- //this.props.mifuncion(mostrar)
+ this.props.mifuncion(mostrar)
 
-  window.location.href='/Loginpage'
+ // window.location.href='/Loginpage'
 
 }
 

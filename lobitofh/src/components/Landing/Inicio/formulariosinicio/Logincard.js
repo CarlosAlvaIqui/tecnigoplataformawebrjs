@@ -49,6 +49,11 @@ class Codeverificationcard extends Component {
         }).then(response =>{
             console.log("la respuesta es ", response)
             //almacenar token en localstorage
+          localStorage.setItem("tokenuser",response)
+        var xusertonken = localStorage.getItem("tokenuser")
+            console.log("usuario token >>>>>>>"+ xusertonken)
+            window.location.href='/Serviceslanding'
+
         }).catch(error => {
             console.log("hay error yano quiero vivirs ", error)
             this.setState({
