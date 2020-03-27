@@ -21,6 +21,7 @@ import logotre from '../../../assets/img/icons/logotre.png';
 import agreement from '../../../assets/img/icons/agreement.png';
 import mechanic from '../../../assets/img/icons/mechanic.png';
 import support from '../../../assets/img/icons/support.png';
+
 import { Row, Col } from 'react-bootstrap';
 
 
@@ -43,7 +44,7 @@ var des = "Descripcion detallas de las posibles soluciones para este tipo de pro
 
 
 class Registro extends Component {
-
+  
   state = {
     servicios: [
       { nombre: "Maquina Lenta", descripcion: des, id: 1 },
@@ -125,7 +126,6 @@ class Registro extends Component {
   console.log("supdate" + this.state.usuario_Nombre )
 
 }
-
   render() {
   
 

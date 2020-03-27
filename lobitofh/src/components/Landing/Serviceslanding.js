@@ -11,6 +11,7 @@ import '../../assets/css/cssgeneral.css';
 
 import { red } from '@material-ui/core/colors';
 import Mou from '../Reactivescom/Mou';
+import Moucopy from '../Reactivescom/Moucopy';
 import Mou2 from '../Reactivescom/Mou2';
 import Carrouselcard from '../Reactivescom/Carrouselcard';
 import Mapaeje from '../Reactivescom/Mapaeje';
@@ -19,9 +20,45 @@ import Popupnewdireccion from '../Reactivescom/Popupnewdireccion';
 import credentials from '../Reactivescom/credentials';
 import Modalmap from '../Reactivescom/Modalmap';
 
+import axios from '../../utils/axios';
+
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+
+
 class Serviceslanding extends Component {
 
+componentDidMount(){
 
+        axios({
+          method:'get',
+          url:`servicio/lista/`,
+          headers:{
+            Authorization: `Bearer `+localStorage.getItem('tokenuser')
+          }
+        }).then(response =>{
+          console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<")
+          console.log(response)
+          var almacendata = response.data
+          console.log(almacendata)
+
+                if(almacendata){
+                  this.setState({
+                    serviciosapi : almacendata
+                  })
+                }else{
+                    console.log("error api")
+                }
+
+          var xusertonken = localStorage.getItem("tokenuser")
+            console.log("usuario token >>>>>>>"+ xusertonken)
+          //window.location.href='/Serviceslanding'
+
+        }).catch(error => {
+            console.log("hay error yano quiero vivirs ", error)
+        
+        })
+}
 
   state = {
     servicios: [
@@ -39,13 +76,74 @@ class Serviceslanding extends Component {
       { nombre: 'Correo LLeno', image: imgb, preg: 10 },
 
 
-    ]
+    ],
+    serviciosapi: [
+
+    ],
+    seccion_preguntas : [
+
+    ],
+    showmodal: false
   }
+/**
+ * iconos
+ * click de la imagen
+ * listar api
+ */
+
+handlequestion  (serviciosa) {
+  console.log("ohh shit here we go again" + serviciosa.nombre)
+  var detaildata = {
+    cod: serviciosa.cod,
+    nombre: serviciosa.nombre,
+    imgNombre:serviciosa.imgNombre,
+    precio:serviciosa.precio
+  }
+  console.log(detaildata)
+  this.setState({
+    showmodal : true
+  })
+        axios({
+          method:'post',
+          url:`servicio/detalle/`,
+          headers:{
+            Authorization: `Bearer `+localStorage.getItem('tokenuser')
+          },
+          data: detaildata
+        }).then(response =>{
+          console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<")
+          console.log(response)
+          var alamacenpreguntas = response.data
+          console.log(alamacenpreguntas)
+        
+          if(alamacenpreguntas){
+            this.setState({
+              seccion_preguntas : alamacenpreguntas
+            })
+          }else{
+              console.log("error api")
+          }
 
 
-  
+        }).catch(error => {
+            console.log("hay error yano quiero vivirs ", error)
+        
+        })
+
+
+}
+
+passproptofalse = () => {
+this.setState({
+  showmodal : false
+
+})
+}
   render() {
- 
+ console.log("agas  "+ this.state.serviciosapi  )
+ console.log("agas  "+ this.state.servicios  )
+ console.log("agas  "+ this.state.seccion_preguntas  )
+
     return (
 
       <React.Fragment>
@@ -62,7 +160,10 @@ class Serviceslanding extends Component {
                 {
                   console.log(this.state.servicios)
                 }
-                {
+              
+              
+               {/**
+                *  {
 
                   this.state.servicios.map((servicios, i) => {
 
@@ -70,33 +171,20 @@ class Serviceslanding extends Component {
                       <Grid    key={i} className="nika" >
                         
                           <div className={this.props.classes.paper}>
-                          <Link className="nav-bar-brand" to={{ pathname: '/Details', aboutprops: { preguntas: servicios.preg } }}>
+                          <img src={servicios.image} className="miradio" width="90" alt="servicios tecnigo"/>
 
-                            <img src={servicios.image} className="miradio" width="90" alt="servicios tecnigo"/>
-                            </Link>
-                          {
-                            /**
-                             * <p className="spancss">{servicios.nombre}</p>
-                             */
-                          } 
+                      
+          
                             <Mou 
                             nombre_problema={servicios.nombre}
                             id_pregunta={servicios.preg}
                             />
 
-                            {
-                              /**
-                               *   <Mou2 
-                            ninoni={servicios.nombre}
-                            algo={servicios.preg}
-                            />
-                               */
-                            }
                           
                          
 
                           </div>
-
+                    
                       
                       </Grid>
                       
@@ -104,8 +192,47 @@ class Serviceslanding extends Component {
                   })
 
                 }
-              
-              </Grid>
+                */}
+
+{
+                                    (this.state.serviciosapi).length == 0  ?
+                                  
+                                 <div style={{textAlign:'center',alignContent:'center'}}>
+                                        <CircularProgress />
+                                 </div>
+
+                                        
+                                    :
+                                    this.state.serviciosapi.map((serviciosa, i) => {
+//para las imagenes hacer un array de imagenes por mientras y q las recorra
+//consejo a mejorar creo q solo devemos llamar solo un modal y de ai hacer consulta
+                                      return (
+
+                                        <Grid key={i} className="nika" >
+                        
+                                            <div className={this.props.classes.paper}>
+                                            <img src={imgb  } className="miradio" width="90" alt="servicios tecnigo"/>
+
+                                      <p onClick={() => this.handlequestion(serviciosa)} style={{color:'white'}}>{serviciosa.nombre}</p>
+                         
+                                            </div>
+                                        </Grid>
+
+                               
+                                        
+                                      )
+                                      })
+                
+                          }
+                            <Moucopy 
+                             changepl = {this.state.showmodal}
+                             valfalse = {this.passproptofalse}
+                              questions = {this.state.seccion_preguntas}
+
+                                          />
+                     
+    
+        </Grid>
             </div>
           </Typography>
         </Container>

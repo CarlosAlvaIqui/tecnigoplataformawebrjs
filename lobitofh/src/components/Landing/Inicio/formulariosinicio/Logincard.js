@@ -49,10 +49,10 @@ class Codeverificationcard extends Component {
         }).then(response =>{
             console.log("la respuesta es ", response)
             //almacenar token en localstorage
-          localStorage.setItem("tokenuser",response)
-        var xusertonken = localStorage.getItem("tokenuser")
-            console.log("usuario token >>>>>>>"+ xusertonken)
-            window.location.href='/Serviceslanding'
+          localStorage.setItem("tokenuser",response.data.id_token)
+//          var xusertonken = localStorage.getItem("tokenuser")
+//console.log("usuario token >>>>>>>"+ xusertonken)
+           //window.location.href='/Serviceslanding'
 
         }).catch(error => {
             console.log("hay error yano quiero vivirs ", error)
@@ -62,7 +62,6 @@ class Codeverificationcard extends Component {
         })
     }
     render() {
-        console.log("amigooooooooooooooooooooooooooooooooooo")
 
         return (
             <Fragment>

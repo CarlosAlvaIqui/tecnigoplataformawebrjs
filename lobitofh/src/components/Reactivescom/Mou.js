@@ -31,7 +31,7 @@ const Mou = (props) => {
       }else {      
           console.log("si esta bien noma")
           var preguntassd = []
-
+//enves de este switch hacer un component didmount
           switch (idpreg) {
               case 1:
                    preguntassd = [{question:'Programas operan con lentitud'},{question:'Tarda en encender el equipo'},{question:'Programas no habren rapidamente'}]

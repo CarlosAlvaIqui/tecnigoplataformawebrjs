@@ -244,17 +244,21 @@ background-color: green;
 .ttservice{
 color: white;
 font-size: 25px;
+text-align: center;
+/*
 animation-duration: 3s;
 animation-name: mee;
-animation-fill-mode: forwards;
+animation-fill-mode: forwards;*/
 }
 
 .spantextp{
   color: white;
   font-size: 18px;
-  animation-duration: 3s;
+  text-align: center;
+
+  /*animation-duration: 3s;
   animation-name: mee2;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards;*/
 }
 
 
