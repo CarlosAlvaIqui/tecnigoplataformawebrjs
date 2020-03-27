@@ -52,7 +52,7 @@ class Codeverificationcard extends Component {
           localStorage.setItem("tokenuser",response.data.id_token)
 //          var xusertonken = localStorage.getItem("tokenuser")
 //console.log("usuario token >>>>>>>"+ xusertonken)
-           //window.location.href='/Serviceslanding'
+           window.location.href='/Serviceslanding'
 
         }).catch(error => {
             console.log("hay error yano quiero vivirs ", error)
