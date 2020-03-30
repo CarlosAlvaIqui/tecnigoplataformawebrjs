@@ -17,6 +17,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FlagOutlinedico from '@material-ui/icons/FlagOutlined';
 import HomeOutlinedico from '@material-ui/icons/HomeOutlined';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import AddLocationIcon from '@material-ui/icons/AddLocation';
 import axios from '../../utils/axios';
 
 
@@ -142,9 +143,8 @@ const [adicionadi,Setadicional] = useState("")
   return (
     <React.Fragment>
 
-      <Button variant="primary" onClick={handleShow}>
-        Modal Mapp
-      </Button>
+   <p onClick={handleShow} style={{color:'white'}}> <AddLocationIcon />
+Añadir Direccion   </p>
 
       <Modal show={show} onHide={handleClose}
         size="md"
@@ -196,14 +196,7 @@ const [adicionadi,Setadicional] = useState("")
                 </FormControl>
               </div>
             </Grid>
-            <Grid item xs={6} sm={6}>
-              <Mapaeje
-                googleMapURL="https://maps.googleapis.com/maps/api/js?key="
-                containerElement={<div style={{ height: '200px' }}></div>}
-                mapElement={<div style={{ height: '100%' }} />}
-                loadingElement={<p>Cargando.....</p>}
-              />
-            </Grid>
+          
           </Grid>
 
         </Modal.Body>

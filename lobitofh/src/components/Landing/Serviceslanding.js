@@ -35,6 +35,9 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import {Row,Col} from 'react-bootstrap';
+
+
 
 class Serviceslanding extends Component {
 
@@ -121,13 +124,9 @@ componentDidMount(){
     ],
     
     showmodal: false,
-    age: ''
+    age: '',
+    descripcion : ''
   }
-/**
- * iconos
- * click de la imagen
- * listar api
- */
 
 handlequestion  (serviciosa) {
   console.log("ohh shit here we go again" + serviciosa.nombre)
@@ -205,11 +204,17 @@ console.log(this.state.age)
 
 onclickeventoleetsee = () => {
   console.log("bota tu gaaaaaaaaaaaaaaaaaaaa")
-
- 
-
-
 }
+
+getdesdireccion = (direcciones) =>{
+  console.log("Se dio click >>>>>>>>>>>>>>>>>>>>><<><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+  console.log(direcciones)
+  var referencia = direcciones.referencia
+  this.setState({
+    descripcion : referencia
+  })
+}
+
   render() {
  console.log("agas  "+ this.state.serviciosapi  )
  console.log("agas  "+ this.state.servicios  )
@@ -223,30 +228,42 @@ onclickeventoleetsee = () => {
 
 
           <div className="zawardo">
-            
-          <RoomIcon style={{ color: green[500] }}/>
+          <Row>
+           
+              <Col  sm={3}>
+                  <FormControl className={this.props.classes.formControl}>
+                    <InputLabel id="demo-simple-select-label" style={{color:'white'}}>Direcciones</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={this.state.age}
+                      onChange={this.handleChange}
+                      style={{color:'white'}}
+                      onClick={this.onclickeventoleetsee}
+                      
+                    >
+                      {
+                        this.state.direccion_usuario.map((direcciones, index)=> {
+                            return(
+                              <MenuItem key={index} value={direcciones.cod} >
+                                <span onClick={() => this.getdesdireccion(direcciones)}>{direcciones.nombre}</span>
+                                
+                              </MenuItem>
 
-          <FormControl >
-        <InputLabel id="demo-simple-select-label" style={{color:'white'}}>Direcciones</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={this.state.age}
-          onChange={this.handleChange}
-          style={{color:'white'}}
-          onClick={this.onclickeventoleetsee}
-        >
-          {
-            this.state.direccion_usuario.map((direcciones, index)=> {
-                return(
-                  <MenuItem key={index} value={direcciones.cod}>{direcciones.nombre}</MenuItem>
+                            )
+                        })
+                      }
+                    </Select>
+                  </FormControl>
+                    <p style={{color:'white'}}>{this.state.descripcion}</p>
 
-                )
-            })
-          }
-  
-        </Select>
-      </FormControl>
+              </Col>
+          </Row>
+          <Modalmap 
+              updatedirecciones = {this.updatedirecciones}
+
+      />
+        
 
           <p className="ttservice">TecniGO</p>
           <p className="spantextp">Resolvemos tus problemas tecnicos desde tu hogar</p>
@@ -259,39 +276,7 @@ onclickeventoleetsee = () => {
                 {
                   console.log(this.state.servicios)
                 }
-              
-              
-               {/**
-                *  {
 
-                  this.state.servicios.map((servicios, i) => {
-
-                    return (
-                      <Grid    key={i} className="nika" >
-                        
-                          <div className={this.props.classes.paper}>
-                          <img src={servicios.image} className="miradio" width="90" alt="servicios tecnigo"/>
-
-                      
-          
-                            <Mou 
-                            nombre_problema={servicios.nombre}
-                            id_pregunta={servicios.preg}
-                            />
-
-                          
-                         
-
-                          </div>
-                    
-                      
-                      </Grid>
-                      
-                    )
-                  })
-
-                }
-                */}
 
 {
                                     (this.state.serviciosapi).length == 0  ?
@@ -310,7 +295,7 @@ onclickeventoleetsee = () => {
                                         <Grid key={i} className="nika" >
                         
                                             <div className={this.props.classes.paper}>
-                                            <img src={imgb  } className="miradio" width="90" alt="servicios tecnigo"/>
+                                            <img src={imgb} className="miradio" width="90" alt="servicios tecnigo"/>
 
                                       <p onClick={() => this.handlequestion(serviciosa)} style={{color:'white'}}>{serviciosa.nombre}</p>
                          
@@ -346,10 +331,7 @@ onclickeventoleetsee = () => {
 
         */}
         
-      <Modalmap 
-              updatedirecciones = {this.updatedirecciones}
 
-      />
       <br />
       <br />
       <br />
@@ -392,6 +374,13 @@ export default withStyles(theme => ({
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+  },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
   },
 
   
