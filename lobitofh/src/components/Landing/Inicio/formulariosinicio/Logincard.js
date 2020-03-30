@@ -61,7 +61,7 @@ console.log(aea)
 
               
 
-        //   window.location.href='/Serviceslanding'
+ //window.location.href='/Serviceslanding'
 
 /////
                                                 axios({
@@ -74,7 +74,7 @@ console.log(aea)
                                                     console.log("la respuesta de la data del usuario es ",JSON.stringify(response) )
                                                     localStorage.setItem("data_user",JSON.stringify(response))
 
-
+                                                    window.location.href='/Serviceslanding'
                                                 }).catch(error => {
                                                     console.log("hay error yano quiero vivirs ", error)
                                                     this.setState({
