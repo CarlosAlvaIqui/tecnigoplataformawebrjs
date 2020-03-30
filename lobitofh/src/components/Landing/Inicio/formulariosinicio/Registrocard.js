@@ -39,7 +39,6 @@ class Registrocard extends Component {
         correo: e.target.value
       })
       contrasenahandler = (e) => this.setState({
-    
         contrasena: e.target.value
       })
         

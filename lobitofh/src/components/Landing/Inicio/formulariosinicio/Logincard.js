@@ -39,6 +39,10 @@ class Codeverificationcard extends Component {
     nombreUsuario: this.state.corre_celular,
     contrasenia: this.state.passwords,
   }
+  
+  var emaildata = {
+    nombre_del_correo_o_celular: this.state.corre_celular
+  }
   console.log(logindata)
 
         e.preventDefault();
@@ -50,9 +54,34 @@ class Codeverificationcard extends Component {
             console.log("la respuesta es ", response)
             //almacenar token en localstorage
           localStorage.setItem("tokenuser",response.data.id_token)
-//          var xusertonken = localStorage.getItem("tokenuser")
+          var aea = "aeaconsole.logsadasd"
+//var xusertonken = localStorage.getItem("tokenuser")
 //console.log("usuario token >>>>>>>"+ xusertonken)
-           window.location.href='/Serviceslanding'
+console.log(aea)
+
+              
+
+        //   window.location.href='/Serviceslanding'
+
+/////
+                                                axios({
+                                                  method:'get',
+                                                  url:`cuenta/${this.state.corre_celular}`,
+                                                  headers:{
+                                                    Authorization: `Bearer `+localStorage.getItem('tokenuser')
+                                                  }
+                                                }).then(response =>{
+                                                    console.log("la respuesta de la data del usuario es ",JSON.stringify(response) )
+                                                    localStorage.setItem("data_user",JSON.stringify(response))
+
+
+                                                }).catch(error => {
+                                                    console.log("hay error yano quiero vivirs ", error)
+                                                    this.setState({
+                                                        dataincorrecta : true
+                                                      })
+                                                })
+
 
         }).catch(error => {
             console.log("hay error yano quiero vivirs ", error)
@@ -61,6 +90,7 @@ class Codeverificationcard extends Component {
               })
         })
     }
+
     render() {
 
         return (

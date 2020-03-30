@@ -15,9 +15,9 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 
 import FlagOutlinedico from '@material-ui/icons/FlagOutlined';
-import HomeOutlinedico from '@material-ui/icons/HomeOutlined'
+import HomeOutlinedico from '@material-ui/icons/HomeOutlined';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-
+import axios from '../../utils/axios';
 
 
 const useStyles = makeStyles(theme => ({
@@ -35,8 +35,107 @@ const Modalmap = (props) => {
 
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    console.log("SE CERRO PUES ")
+
+    setShow(false);
+    var getdatauser = localStorage.getItem('data_user')
+    var actualuser = JSON.parse(getdatauser).data.cod
+  
+      axios({
+        method:'get',
+        url:`direcciones/${actualuser}`,
+        headers:{
+          Authorization: `Bearer `+localStorage.getItem('tokenuser')
+        }
+      }).then(response =>{
+        console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<RESPUESTA DIRECCIONES DEL USUARIO DESDE EL SERVICE LANDIN PORFABOR AHORA SI")
+        console.log(response.data)
+        var almacenadirecciones = response.data
+        var execute = true
+        props.updatedirecciones(almacenadirecciones,execute)
+
+          
+        }).catch(error => {
+            console.log("hay error yano quiero vivirs ", error)
+        
+        })
+  } 
   const handleShow = () => setShow(true);
+
+const [entrega,SetEntrega] = useState("")
+const [adicionadi,Setadicional] = useState("")
+
+
+
+  
+  const handleEntrega = (e) => {
+    SetEntrega(e.target.value)
+
+
+  }
+  const handleadddata = (e) => {
+    Setadicional(e.target.value)
+  }
+
+
+
+  const executeupdate = (e) => {
+
+     
+  }
+
+  var execute = false
+  const handlecreatedireccion = (e) => {
+    var getitemuser = localStorage.getItem('data_user')
+    var strindatauser = JSON.parse(getitemuser).data.cod
+    var lat = 0
+    var lon = 0
+    console.log(strindatauser)
+    console.log(entrega)
+    console.log(adicionadi)
+
+      var newdirecciondata = {
+        nombre: entrega,
+        referencia: adicionadi,
+        lat: lat,
+        lon: lon,
+        usuarioCod: strindatauser
+
+      }
+
+      e.preventDefault();
+      axios({
+        method:'post',
+        url:'direcciones',
+        headers:{
+          Authorization: `Bearer `+localStorage.getItem('tokenuser')
+        },        
+        data:newdirecciondata
+      }).then(response =>{
+          console.log("la respuesta es ", response)
+           execute = false
+
+
+        var ballidator = true
+      }).catch(error => {
+          console.log("hay error yano quiero vivirs ", error)
+
+      })
+
+
+
+
+
+
+}
+ 
+
+ 
+
+
+
+
 
   const classes = useStyles();
 
@@ -52,7 +151,7 @@ const Modalmap = (props) => {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title ><strog className="Titlepopup">Añada una direccion de atencion</strog></Modal.Title>
+          <Modal.Title ><strong className="Titlepopup">Añada una direccion de atencion</strong></Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Grid container spacing={3} className="contpopup">
@@ -69,8 +168,12 @@ const Modalmap = (props) => {
                       </InputAdornment>
 
                     }
+                    onChange = {handleEntrega}
+                    value={entrega}
                     placeholder="Av Ejercito 420"
                     fullWidth
+
+
                   />
                 </FormControl>
               </div>
@@ -85,6 +188,9 @@ const Modalmap = (props) => {
                         <HomeOutlinedico />
                       </InputAdornment>
                     }
+                    value={adicionadi}
+                    onChange = {handleadddata}
+
                          placeholder="2do piso 3ra casa ala derecha"
                   />
                 </FormControl>
@@ -105,7 +211,7 @@ const Modalmap = (props) => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={handlecreatedireccion}>
             Save Changes
           </Button>
         </Modal.Footer>

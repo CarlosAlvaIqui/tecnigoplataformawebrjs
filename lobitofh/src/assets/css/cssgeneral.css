@@ -229,7 +229,7 @@ background-color: green;
 .zawardo{
   background: linear-gradient(180deg, #343D8E,#187581,#00A775);
   width: 100%;
-  padding-top: 80px;
+  /*padding-top: 80px;*/
   padding-bottom: 100px;
 }
 

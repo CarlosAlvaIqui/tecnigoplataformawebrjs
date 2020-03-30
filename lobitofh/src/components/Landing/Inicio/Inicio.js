@@ -25,16 +25,15 @@ import support from '../../../assets/img/icons/support.png';
 import { Row, Col } from 'react-bootstrap';
 
 
-import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 import axios from '../../../utils/axios';
 import Registrocard from './formulariosinicio/Registrocard';
 import Codeverificationcard from './formulariosinicio/Codeverificationcard'
 import Logincard from './formulariosinicio/Logincard';
-
+import InputLabel from '@material-ui/core/InputLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 var des = "Descripcion detallas de las posibles soluciones para este tipo de problemas haciendo enfasis en las posibles para cada uno,claro y directo"
 
 
@@ -150,12 +149,15 @@ class Registro extends Component {
                 </div>
     
               {this.props.logincardtr === undefined ?(
-                         this.state.mostrar === true ?
+                         this.state.  mostrar === true ?
                          /* <Logincard />*/
+
                          <Registrocard
                            mifuncion = {this.changecard}
                          />
+
                          :
+
                          <Codeverificationcard />
 
                 

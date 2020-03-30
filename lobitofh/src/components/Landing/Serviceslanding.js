@@ -23,8 +23,18 @@ import Modalmap from '../Reactivescom/Modalmap';
 import axios from '../../utils/axios';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
+import RoomIcon from '@material-ui/icons/Room';
+import { green } from '@material-ui/core/colors';
 
 
+
+
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
 class Serviceslanding extends Component {
 
@@ -58,6 +68,29 @@ componentDidMount(){
             console.log("hay error yano quiero vivirs ", error)
         
         })
+
+//esta se ejecuta cuando el componente se muesta
+        var getactualuser = localStorage.getItem('data_user')
+        var actualuser = JSON.parse(getactualuser).data.cod
+        axios({
+          method:'get',
+          url:`direcciones/${actualuser}`,
+          headers:{
+            Authorization: `Bearer `+localStorage.getItem('tokenuser')
+          }
+        }).then(response =>{
+          console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<RESPUESTA DIRECCIONES DEL USUARIO")
+          console.log(response.data)
+          var almacenadirecciones = response.data
+          this.setState({
+            direccion_usuario : almacenadirecciones
+          })
+        }).catch(error => {
+            console.log("hay error yano quiero vivirs ", error)
+        
+        })
+
+
 }
 
   state = {
@@ -83,7 +116,12 @@ componentDidMount(){
     seccion_preguntas : [
 
     ],
-    showmodal: false
+    direccion_usuario : [
+
+    ],
+    
+    showmodal: false,
+    age: ''
   }
 /**
  * iconos
@@ -139,16 +177,77 @@ this.setState({
 
 })
 }
+
+updatedirecciones = (almacenadirecciones,execute) => {
+  console.log("la variable x es :", execute)
+  
+  
+  if(execute == true){
+    console.log("ENTRASTES POR FIN")
+    this.setState({
+      
+    direccion_usuario : almacenadirecciones
+      
+      
+      })
+  }
+
+}
+
+
+ handleChange = (e) => {
+this.setState({
+age : e.target.value
+})
+console.log(this.state.age)
+
+}
+
+onclickeventoleetsee = () => {
+  console.log("bota tu gaaaaaaaaaaaaaaaaaaaa")
+
+ 
+
+
+}
   render() {
  console.log("agas  "+ this.state.serviciosapi  )
  console.log("agas  "+ this.state.servicios  )
  console.log("agas  "+ this.state.seccion_preguntas  )
+ console.log("agas  "+ this.state.direccion_usuario  )
 
     return (
 
       <React.Fragment>
         <Box color="text.primary" className='bback'>
+
+
           <div className="zawardo">
+            
+          <RoomIcon style={{ color: green[500] }}/>
+
+          <FormControl >
+        <InputLabel id="demo-simple-select-label" style={{color:'white'}}>Direcciones</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={this.state.age}
+          onChange={this.handleChange}
+          style={{color:'white'}}
+          onClick={this.onclickeventoleetsee}
+        >
+          {
+            this.state.direccion_usuario.map((direcciones, index)=> {
+                return(
+                  <MenuItem key={index} value={direcciones.cod}>{direcciones.nombre}</MenuItem>
+
+                )
+            })
+          }
+  
+        </Select>
+      </FormControl>
+
           <p className="ttservice">TecniGO</p>
           <p className="spantextp">Resolvemos tus problemas tecnicos desde tu hogar</p>
         
@@ -227,9 +326,8 @@ this.setState({
                             <Moucopy 
                              changepl = {this.state.showmodal}
                              valfalse = {this.passproptofalse}
-                              questions = {this.state.seccion_preguntas}
-
-                                          />
+                            questions = {this.state.seccion_preguntas}
+                            />
                      
     
         </Grid>
@@ -248,12 +346,19 @@ this.setState({
 
         */}
         
-      <Modalmap />
+      <Modalmap 
+              updatedirecciones = {this.updatedirecciones}
+
+      />
       <br />
       <br />
       <br />
 
-      <Popupnewdireccion />
+      <Popupnewdireccion 
+        showmodal = {this.state.showmodal}
+        passproptofalse = {this.passproptofalse}
+        direccion_usuario = {this.state.direccion_usuario}
+      />
       <br />
       <br />
       <br />
