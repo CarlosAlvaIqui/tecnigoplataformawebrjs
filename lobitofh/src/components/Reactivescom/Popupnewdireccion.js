@@ -34,11 +34,6 @@ render(){
                 <Modal.Body>
                 <Grid container spacing={3} className="contdireccions">
 
-
-
-
-
-
                 </Grid>
                 <div className="newdireccionss">
                     <AddCircleOutlineico

@@ -60,9 +60,6 @@ const Mou = (props) => {
       setOpen(true);
     };
   
-    const handleClose = () => {
-      setOpen(false);
-    };
 
 
    const handlecrearsolicitud = (e) => {
@@ -92,8 +89,17 @@ if(props.cod_direccion == ''){
   }).then(response =>{
       console.log("la respuesta de la creaciion de solicitud  ", response )
       Setsolsuccesfull(true)
-      props.valfalse()
       props.showfivemesage(true)
+      setOpen(true);
+
+
+      setTimeout(() => {
+        setOpen(false);
+        props.valfalse()
+
+      }, 2500);
+
+    
   }).catch(error => {
       console.log("hay error yano quiero vivirs ", error)
  
@@ -135,10 +141,8 @@ if(props.cod_direccion == ''){
         >
           <Modal.Header closeButton>
             <Modal.Title id="example-custom-modal-styling-title">
-    <p>Cod_Usurio : {strindatauser}</p>  
-    <p>Precio : {props.servicio_escojido.precio}</p>
+
       <p>Nombre : {props.servicio_escojido.nombre}</p>
-    <p>Cod_Direccion : {props.cod_direccion}</p>
       
             </Modal.Title>
           </Modal.Header>
@@ -194,14 +198,19 @@ if(props.cod_direccion == ''){
                 <Alert severity="warning">Deve de crear o seleccionar una direccion</Alert>
 
               }
+
               {
+
+<Snackbar open={open} message="Solicitud exitosa" />
+
+              /*
                 solsuccesfull === true ?
                 <Alert severity="success">This is a success message!</Alert>
 
                 :
                   <div>
 
-                    </div>
+                    </div>*/
               }
             </div>  
           </Modal.Body>
