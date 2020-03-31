@@ -46,7 +46,7 @@ const Mou = (props) => {
     const [opcion, setopcion] = React.useState("");
     const [solsuccesfull,Setsolsuccesfull] = useState(false);
     const [questions,Setquestions] = useState([]) 
-
+    const [warningdireccion,Setwarningdireccion] = useState(false)
 
     const [show, setShow] = React.useState(props.changepl);
 
@@ -62,32 +62,42 @@ const Mou = (props) => {
 
 
    const handlecrearsolicitud = (e) => {
-var crearsilicitud = {
-  nombre: props.servicio_escojido.nombre,
-  detalle: opcion,
-  usuarioCod: strindatauser,
-  direccionCod: props.cod_direccion,
-  precio: props.servicio_escojido.precio
 
+if(props.cod_direccion == ''){
+  Setwarningdireccion(true)
+
+}else{
+  var crearsilicitud = {
+    nombre: props.servicio_escojido.nombre,
+    detalle: opcion,
+    usuarioCod: strindatauser,
+    direccionCod: props.cod_direccion,
+    precio: props.servicio_escojido.precio
+  
+  }
+
+  e.preventDefault()
+  axios({
+    method:'post',
+    url:`solicitudes`,
+    headers:{
+      Authorization: `Bearer `+localStorage.getItem('tokenuser')
+    },
+    data:crearsilicitud
+  }).then(response =>{
+      console.log("la respuesta de la creaciion de solicitud  ", response )
+      Setsolsuccesfull(true)
+      props.valfalse()
+      props.showfivemesage(true)
+  }).catch(error => {
+      console.log("hay error yano quiero vivirs ", error)
+ 
+  })
+  
 }
-e.preventDefault()
-    axios({
-      method:'post',
-      url:`solicitudes`,
-      headers:{
-        Authorization: `Bearer `+localStorage.getItem('tokenuser')
-      },
-      data:crearsilicitud
-    }).then(response =>{
-        console.log("la respuesta de la creaciion de solicitud  ", response )
-        Setsolsuccesfull(true)
-        props.valfalse()
-        props.showfivemesage(true)
-    }).catch(error => {
-        console.log("hay error yano quiero vivirs ", error)
-   
-    })
-    }
+
+   }
+
    const handleChange = (e) => {
     setopcion(e.target.value);
      aea = e.target.checked 
@@ -169,7 +179,14 @@ e.preventDefault()
              <Button variant="contained" color="secondary" fullWidth onClick={handlecrearsolicitud}>
                       Enviar
              </Button>
+              {
+                warningdireccion === false ?
+                  <div></div>
+                : 
 
+                <Alert severity="warning">Deve de crear o seleccionar una direccion</Alert>
+
+              }
               {
                 solsuccesfull === true ?
                 <Alert severity="success">This is a success message!</Alert>
