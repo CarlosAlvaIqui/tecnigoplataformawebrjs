@@ -33,7 +33,11 @@ const Mou = (props) => {
   var strindatauser = JSON.parse(getitemuser).data.cod
   
   useEffect(() => {
- 
+    if(props.cod_direccion != ''){
+      Setwarningdireccion(false)
+
+    }
+
   });
 
 
@@ -67,6 +71,7 @@ if(props.cod_direccion == ''){
   Setwarningdireccion(true)
 
 }else{
+
   var crearsilicitud = {
     nombre: props.servicio_escojido.nombre,
     detalle: opcion,
@@ -181,7 +186,9 @@ if(props.cod_direccion == ''){
              </Button>
               {
                 warningdireccion === false ?
-                  <div></div>
+                  <div>
+                   
+                  </div>
                 : 
 
                 <Alert severity="warning">Deve de crear o seleccionar una direccion</Alert>
