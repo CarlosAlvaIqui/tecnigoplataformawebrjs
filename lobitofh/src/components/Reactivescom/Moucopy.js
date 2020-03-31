@@ -9,45 +9,103 @@ import Checkbox from "@material-ui/core/Checkbox";
 import TextField from '@material-ui/core/TextField';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Snackbar from '@material-ui/core/Snackbar';
+import Slide from '@material-ui/core/Slide';
+import MuiAlert from '@material-ui/lab/Alert';
 
 
 import Button from '@material-ui/core/Button';
+import axios from '../../utils/axios'
+var i = 0;
+var aea = true
 
+
+
+function TransitionUp(props) {
+  return <Slide {...props} direction="up" />;
+}
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const Mou = (props) => {
-
+  var getitemuser = localStorage.getItem('data_user')
+  var strindatauser = JSON.parse(getitemuser).data.cod
   
   useEffect(() => {
  
   });
 
 
-    console.log(props.id_pregunta)
 
     var idpreg = props.id_pregunta
     
-    const [state, setState] = React.useState({
-      checkedA: true,
-      checkedB: true,
-      checkedF: true,
-      checkedG: true
-    });
+    const [open, setOpen] = React.useState(false);
+    const [transition, setTransition] = React.useState(undefined);
   
-    const handleChange = name => event => {
-      setState({ ...state, [name]: event.target.checked });
-    };
-
+    const [opcion, setopcion] = React.useState("");
+    const [solsuccesfull,Setsolsuccesfull] = useState(false);
     const [questions,Setquestions] = useState([]) 
 
-   
-  console.log("asdadsadsasadsadsadsadsasad"+props.changepl)
 
     const [show, setShow] = React.useState(props.changepl);
 
 
+    const handleClick = (Transition) => () => {
+      setTransition(() => Transition);
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
+
+
+   const handlecrearsolicitud = (e) => {
+var crearsilicitud = {
+  nombre: props.servicio_escojido.nombre,
+  detalle: opcion,
+  usuarioCod: strindatauser,
+  direccionCod: props.cod_direccion,
+  precio: props.servicio_escojido.precio
+
+}
+e.preventDefault()
+    axios({
+      method:'post',
+      url:`solicitudes`,
+      headers:{
+        Authorization: `Bearer `+localStorage.getItem('tokenuser')
+      },
+      data:crearsilicitud
+    }).then(response =>{
+        console.log("la respuesta de la creaciion de solicitud  ", response )
+        Setsolsuccesfull(true)
+        props.valfalse()
+        props.showfivemesage(true)
+    }).catch(error => {
+        console.log("hay error yano quiero vivirs ", error)
+   
+    })
+    }
+   const handleChange = (e) => {
+    setopcion(e.target.value);
+     aea = e.target.checked 
+   }
+
+    
+
 
     var questionmap = props.questions
+
     console.log(questionmap + "<<<<<<<<<<>>>>>>>>>>aea")
+    console.log(props.servicio_escojido.nombre)
+
+    console.log("asdadsadsasadsadsadsadsasad"+props.changepl)
+    console.log("asdadsadsasadsadsadsadsasad"+props.servicio_escojido.cod)
+  console.log(opcion)
+  console.log(aea)
+
     return (
       <>
 
@@ -62,7 +120,11 @@ const Mou = (props) => {
         >
           <Modal.Header closeButton>
             <Modal.Title id="example-custom-modal-styling-title">
-            {props.nombreservi}
+    <p>Cod_Usurio : {strindatauser}</p>  
+    <p>Precio : {props.servicio_escojido.precio}</p>
+      <p>Nombre : {props.servicio_escojido.nombre}</p>
+    <p>Cod_Direccion : {props.cod_direccion}</p>
+      
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -75,16 +137,16 @@ const Mou = (props) => {
         
 
               questionmap.map(quests => (
+
                 <div key={quests.cod} style={{paddingLeft:60,paddingRight:60}}>
                 <FormControlLabel
                   control={
                     
                     <Checkbox
-                     onChange={handleChange("checkedA")}
-                     value="checkedA"
-                     color="primary"
-                   />
-                   
+                    onChange={handleChange}
+                    value = {quests.nombre}
+                    inputProps={{ "aria-label": "primary checkbox" }}
+                  />
                  }
                  label={quests.nombre}
                  
@@ -96,34 +158,6 @@ const Mou = (props) => {
             }
           
 
-                 {
-                   /**
-                    *             {
-                        preguntassd.map((pregunta,index) => {
-                          return(
-                           <div key={index} style={{paddingLeft:60,paddingRight:60}}>
-                            <FormControlLabel
-                              control={
-                                
-                                <Checkbox
-                                 onChange={handleChange("checkedA")}
-                                 value="checkedA"
-                                 color="primary"
-                               />
-                               
-                             }
-                             label={pregunta.question}
-                             
-                           />
-
-                        </div>
-                           
-                         )
-                        
-                       })
-                     }
-                    */
-                 }
              </FormGroup>
             <div>
             <TextField id="standard-basic" label="Otro" style={{marginLeft:60}}/>
@@ -132,12 +166,23 @@ const Mou = (props) => {
 
             
 
-            <Button variant="contained" color="secondary" type="submit" fullWidth>
+             <Button variant="contained" color="secondary" fullWidth onClick={handlecrearsolicitud}>
                       Enviar
              </Button>
-            </div>
+
+              {
+                solsuccesfull === true ?
+                <Alert severity="success">This is a success message!</Alert>
+
+                :
+                  <div>
+
+                    </div>
+              }
+            </div>  
           </Modal.Body>
         </Modal>
+ 
       </>
     );
   }

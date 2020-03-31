@@ -37,7 +37,12 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import {Row,Col} from 'react-bootstrap';
 
-
+const dataservicio = {
+  cod: 0,
+   nombre: '',
+    imgnombre: '',
+     precio: 0,
+}
 
 class Serviceslanding extends Component {
 
@@ -72,7 +77,6 @@ componentDidMount(){
         
         })
 
-//esta se ejecuta cuando el componente se muesta
         var getactualuser = localStorage.getItem('data_user')
         var actualuser = JSON.parse(getactualuser).data.cod
         axios({
@@ -96,23 +100,8 @@ componentDidMount(){
 
 }
 
+
   state = {
-    servicios: [
-      //      { nombre: 'Pc lenta', image: imgb, preg: [{pregunta1: 'aea'},{pregunta2: 'gaa'}, {pregunta3: 'mongol'} ] },
-
-      { nombre: 'Maquina lenta', image: imgb, preg: 1 },
-      { nombre: 'Recuperar I.', image: imgb, preg: 2 },
-      { nombre: 'A. Licencia', image: imgb, preg: 3 },
-      { nombre: 'P. Impresora', image: imgb, preg: 4 },
-      { nombre: 'P. Virus', image: imgb, preg: 5 },
-      { nombre: 'Internet Lento', image: imgb, preg: 6 },
-      { nombre: 'Pc no Enciende', image: imgb, preg: 7 },
-      { nombre: 'Ins. Programas', image: imgb, preg: 8 },
-      { nombre: 'Mantenimiento', image: imgb, preg: 9 },
-      { nombre: 'Correo LLeno', image: imgb, preg: 10 },
-
-
-    ],
     serviciosapi: [
 
     ],
@@ -124,8 +113,11 @@ componentDidMount(){
     ],
     
     showmodal: false,
-    age: '',
-    descripcion : ''
+    descripcion : '',
+    servicio_escojido :  dataservicio,
+    nombrecodigo : '',
+    cod_direccion : '',
+    mesajeespera : false
   }
 
 handlequestion  (serviciosa) {
@@ -137,6 +129,12 @@ handlequestion  (serviciosa) {
     precio:serviciosa.precio
   }
   console.log(detaildata)
+
+  this.setState({
+    servicio_escojido: detaildata,
+    nombrecodigo: serviciosa.nombre
+})
+
   this.setState({
     showmodal : true
   })
@@ -176,7 +174,13 @@ this.setState({
 
 })
 }
-
+showfivemesage = (showmessage) => {
+ if(showmessage == true){
+  this.setState({
+    mesajeespera: showmessage
+  })  
+ }
+}
 updatedirecciones = (almacenadirecciones,execute) => {
   console.log("la variable x es :", execute)
   
@@ -196,22 +200,20 @@ updatedirecciones = (almacenadirecciones,execute) => {
 
  handleChange = (e) => {
 this.setState({
-age : e.target.value
+  cod_direccion : e.target.value
 })
-console.log(this.state.age)
 
 }
 
-onclickeventoleetsee = () => {
-  console.log("bota tu gaaaaaaaaaaaaaaaaaaaa")
-}
+
 
 getdesdireccion = (direcciones) =>{
   console.log("Se dio click >>>>>>>>>>>>>>>>>>>>><<><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
   console.log(direcciones)
   var referencia = direcciones.referencia
   this.setState({
-    descripcion : referencia
+    descripcion : referencia,
+
   })
 }
 
@@ -220,6 +222,14 @@ getdesdireccion = (direcciones) =>{
  console.log("agas  "+ this.state.servicios  )
  console.log("agas  "+ this.state.seccion_preguntas  )
  console.log("agas  "+ this.state.direccion_usuario  )
+
+
+
+ console.log(this.state.servicio_escojido)
+ console.log("<<<<<<<<<<<<<>>>>>>>>>>>")
+ console.log(this.state.nombrecodigo)
+ console.log("direciones codigo  ")
+ console.log(this.state.cod_direccion)
 
     return (
 
@@ -236,10 +246,9 @@ getdesdireccion = (direcciones) =>{
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
-                      value={this.state.age}
+                      value={this.state.cod_direccion}
                       onChange={this.handleChange}
                       style={{color:'white'}}
-                      onClick={this.onclickeventoleetsee}
                       
                     >
                       {
@@ -255,7 +264,7 @@ getdesdireccion = (direcciones) =>{
                       }
                     </Select>
                   </FormControl>
-                    <p style={{color:'white'}}>{this.state.descripcion}</p>
+                    <p style={{color:'white'}}> {this.state.descripcion}</p>
 
               </Col>
           </Row>
@@ -267,7 +276,15 @@ getdesdireccion = (direcciones) =>{
 
           <p className="ttservice">TecniGO</p>
           <p className="spantextp">Resolvemos tus problemas tecnicos desde tu hogar</p>
-        
+          {this.state.mesajeespera == false ?
+            <div>          
+
+            </div>
+          :
+
+          <p className="spantextp">Estaremos contactandole en menos de <span style={{fontSize: 30}}>5</span> minutos</p>
+
+          }
         <CssBaseline />
         <Container maxWidth="md">
           <Typography component="div"  style={{  }}>
@@ -312,6 +329,9 @@ getdesdireccion = (direcciones) =>{
                              changepl = {this.state.showmodal}
                              valfalse = {this.passproptofalse}
                             questions = {this.state.seccion_preguntas}
+                            servicio_escojido = {this.state.servicio_escojido}
+                            cod_direccion = {this.state.cod_direccion}
+                            showfivemesage = {this.showfivemesage}
                             />
                      
     
