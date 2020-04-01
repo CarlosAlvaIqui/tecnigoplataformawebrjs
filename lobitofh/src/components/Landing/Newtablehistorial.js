@@ -32,11 +32,12 @@ const useStyles = makeStyles(theme => ({
 
 
 
-var getitemuser = localStorage.getItem('data_user')
-var strindatauser = JSON.parse(getitemuser).data.cod
+
 class Newtablehistorial extends Component {
   
 componentDidMount(){
+  var getitemuser = localStorage.getItem('data_user')
+var strindatauser = JSON.parse(getitemuser).data.cod
   axios({
     method:'get',
     url:`solicitudes/usuario/${strindatauser}`,
