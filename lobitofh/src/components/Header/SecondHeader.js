@@ -158,17 +158,13 @@ export default function PrimarySearchAppBar() {
           </NavLink>
           </Typography>
 
-   {
-       /**
-        *  <Typography className={classes.title} variant="h6" noWrap >
-          <NavLink className="nav-bar-brand" to="/Logout" activeStyle={{ color: 'white' }}>
+  <Typography className={classes.title} variant="h6" noWrap onClick={() => window.location.reload()}>
+          <NavLink className="nav-bar-brand" to="/Logout" activeStyle={{ color: 'white' }} >
           Salir
           </NavLink>
             
           </Typography>
-        */
-   }
-         
+ 
 
           {/**
            *   <IconButton
