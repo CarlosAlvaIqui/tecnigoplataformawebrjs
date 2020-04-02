@@ -169,10 +169,12 @@ axios({
                   <div className="divradi">
                   <Row>
                       <Col sm={10}><span><strong>Fecha y Hora</strong></span><br/>
-                      <span>Viernes 31 de enerero del 2020</span>
+                     {/**                      <span>Viernes 31 de enerero del 2020</span>
+ */}
+                      <span></span>
                       </Col>
 
-                      <Col sm={2}><span></span><br/><span>15:00</span></Col>
+                      <Col sm={2}><span></span><br/><span></span>{/** <span>15:00</span>*/}</Col>
                   </Row>
 
                
@@ -194,31 +196,18 @@ axios({
                       Revisa los datos del tecnico
                         </span>
                   </p>
-                  <div className="cartatecnico">
-                              <div className="headercard">
-                                <p>TecniGO</p>
-                              </div>
-                              {
+                  {
                     this.state.data_servicio.asignado == false ?
-          <Row className="contte">
-                      <Col sm={6} className="tecper"><img src={perfilphoto} style={{ width: 150 }} alt="tecnico"/></Col>
-                      <Col sm={6}>
-                      <div className="datat">
-                      <p style={{fontSize:25}}>Sin datos</p>
-
-                        <p style={{fontSize:18}}>Tennico No Asignado</p>
-
-                       </div>
-                      </Col>
-                      <div className="centerthis">
-                                <hr />
-                                <p>Sin datos tecnigo no asignado</p>
-                                <hr />
-                              </div>
-
-                  </Row>
+                 
+                    <p></p>
                     :
-                  <Row className="contte">
+
+                    <div className="cartatecnico">
+                    <div className="headercard">
+                      <p>TecniGO</p>
+                    </div>
+               
+                    <Row className="contte">
                       <Col sm={6} className="tecper"><img src={perfilphoto} style={{ width: 150 }} alt="tecnico"/></Col>
                       <Col sm={6}>
                       <div className="datat">
@@ -249,13 +238,13 @@ axios({
                               </div>
 
                   </Row>
+        </div> 
 
-                  }
-                      
                              
-                  </div>
+                    }
                 </div>
-
+            
+                      
               
 
                 

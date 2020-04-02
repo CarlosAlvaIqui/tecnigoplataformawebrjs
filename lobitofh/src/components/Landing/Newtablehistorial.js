@@ -31,10 +31,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-
-
-
-
 class Newtablehistorial extends Component {
   
 componentDidMount(){
@@ -138,16 +134,19 @@ var strindatauser = JSON.parse(getitemuser).data.cod
                             </div>
                         </Grid>
                         <Grid item xs={12} sm={7}>
-                            <div>
+                            <div style={{paddingTop:10}}>
                     <span><strong> <NavLink className="nav-bar-brand" to={`/Detailswork/${histo.cod}`} > 
                     {histo.nombre}
           </NavLink></strong></span> - Al encender la computadora - {histo.direccion}
-                    <div className="micarhi"> <p className="chodis">San Pedrito{histo.nombreTecncio}</p> </div>
+                    <div className="micarhi"> <p className="chodis">{histo.nombreTecncio}</p> </div>
                             </div>
 
                         </Grid>
-                        <Grid item xs={12} sm={2}>
-                            {histo.fechaCreacion}
+                        <Grid item xs={12} sm={2} >
+                          <div style={{paddingTop:10}}>
+                          {histo.fechaCreacion}
+                          </div>
+                            
                         </Grid>
                     </Grid>
                     <hr className="hrstyle"/>
