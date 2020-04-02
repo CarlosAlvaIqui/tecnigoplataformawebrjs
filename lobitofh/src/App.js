@@ -18,6 +18,7 @@ import Loginpage from './components/Landing/Inicio/Loginpage';
 
 
 class App extends Component{
+//<Link className="nav-bar-brand" to={{ pathname: '/Details', aboutprops: { preguntas: servicios.preg } }}>
 
  render() {
    return(
@@ -30,7 +31,7 @@ class App extends Component{
           <Route path='/Details' exact component={PruebaCom}/>
           <Route path='/Serviceslanding' exact component={Serviceslanding}/>
           <Route path='/Solicitudes' exact component={Solicitudes}/>
-          <Route path='/Detailswork' exact component={Detailswork}/>
+          <Route path='/Detailswork/:id' exact component={Detailswork}/>
           <Route path='/Newtablehistorial' exact component={Newtablehistorial}/>
           <Route path="/Tecnicoform" exact component={Tecnicoform}/>
           <Route path="/Blog" exact component={Blog}/>

@@ -53,7 +53,6 @@ export default function PrimarySearchAppBar() {
     var getitemuser = localStorage.getItem('data_user')
     var strindatauser = JSON.parse(getitemuser).data.nombre
     Setusuarioname(strindatauser)
-    
   });
   const [usuarioname,Setusuarioname] = React.useState('');
 
@@ -153,7 +152,7 @@ export default function PrimarySearchAppBar() {
 </Typography>
           <Typography className={classes.title} variant="h6" noWrap >
          
-          <NavLink className="nav-bar-brand" to="/Newtablehistorial" activeStyle={{ color: 'white' }}> 
+          <NavLink className="nav-bar-brand" to={`/Newtablehistorial`} activeStyle={{ color: 'white' }}> 
           Solicitudes
           </NavLink>
           </Typography>

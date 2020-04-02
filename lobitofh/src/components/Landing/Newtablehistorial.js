@@ -15,8 +15,10 @@ import FormControl from '@material-ui/core/FormControl';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
-import tecnigoblanco from '../../assets/img/icons/logotecnigoblanco2.png'
-import axios from '../../utils/axios'
+import tecnigoblanco from '../../assets/img/icons/logotecnigoblanco2.png';
+import axios from '../../utils/axios';
+import { Link,NavLink} from 'react-router-dom';
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -118,7 +120,7 @@ var strindatauser = JSON.parse(getitemuser).data.cod
                 <p><strong>Solicitudes</strong></p>
                 {
                     this.state.statetable.map(histo => (
-                <div className={useStyles.root} style={{ backgroundColor: '#f4f4f4 ' }} key={histo.id}>
+                <div className={useStyles.root} style={{ backgroundColor: '#f4f4f4 ' }} key={histo.cod}>
                     <Grid container spacing={2} className="conthisto">
 
                         <Grid item xs={12} sm={3}>
@@ -137,7 +139,9 @@ var strindatauser = JSON.parse(getitemuser).data.cod
                         </Grid>
                         <Grid item xs={12} sm={7}>
                             <div>
-                    <span><strong>{histo.nombre}</strong></span> - Al encender la computadora - {histo.direccion}
+                    <span><strong> <NavLink className="nav-bar-brand" to={`/Detailswork/${histo.cod}`} > 
+                    {histo.nombre}
+          </NavLink></strong></span> - Al encender la computadora - {histo.direccion}
                     <div className="micarhi"> <p className="chodis">San Pedrito{histo.nombreTecncio}</p> </div>
                             </div>
 

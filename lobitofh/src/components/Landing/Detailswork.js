@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{Component,Fragment} from 'react'
 import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
@@ -14,23 +14,56 @@ import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Contai from 'react-bootstrap/Container';
 import {Row,Col} from 'react-bootstrap';
-import tecnigoblanco from '../../assets/img/icons/logotecnigoblanco2.png'
+import tecnigoblanco from '../../assets/img/icons/logotecnigoblanco2.png';
+import axios from '../../utils/axios';
 
 
+class Detailswork extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {  
+        id:this.props.match.params.id,
+        data_servicio: []
 
-const Detailswork = (props) => {
+    }
 
-  return (
-    <React.Fragment>
-      <div className="tecgofon">
+  }
+
+  componentDidMount(){
+console.log("estamos en detail work")
+console.log(this.state.id)
+
+
+axios({
+  method:'get',
+  url:`solicitudes/detalle/${this.state.id}`,
+  headers:{
+    Authorization: `Bearer `+localStorage.getItem('tokenuser')
+  }
+}).then(response =>{
+  console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<")
+  console.log(response)
+
+  var datadetallada = response.data
+  if(datadetallada){
+    this.setState({
+      data_servicio: datadetallada
+    })
+  }
+
+}).catch(error => {
+    console.log("hay error yano quiero vivirs ", error)
+
+})
+  }
+  render() { 
+    console.log(this.state.data_servicio)
+    return ( 
+      <Fragment>
+ <div className="tecgofon">
           <div className="miscontaine">
           <Grid container spacing={3}  >
-          {/*<Grid item xs={12}>
-            <p className="tittletec">
-              TecniGO
-              </p>
-  </Grid>*/}
-
+   
        
                   <Grid item xs={12} sm={7}>
                   < p className="tittletec"><img src={tecnigoblanco} style={{width:70}} alt="logotecnigo"/>TecniGo</p>
@@ -45,45 +78,27 @@ const Detailswork = (props) => {
                       </strong>
                     </p>
                
-                 {/*  <div className="contthisitem">
-                            <div className="detaserv">
-                                <p>
-                                  <strong>
-                                    Maquina Lenta
-                                  </strong>
-                                </p>
-                                <span>
-                                  Al abrir los programas
-                                </span>
-                                  
-                              
-                            </div>
-                            <div className="monefrservi">
-                                <p>
-                                  $60.00
-                                </p>
-                            </div>
-
-
-              </div>*/}
                    <Row>
-                      <Col  sm={7}><p><strong>Maquina Lenta</strong></p><p className="cssdescrip">Al abrir los programas</p></Col>
-                      <Col  sm={5}><p className="preciossc">$60.00</p></Col>
+                      <Col  sm={7}><p><strong>{this.state.data_servicio.nombre}</strong></p><p className="cssdescrip">Al abrir los programas</p></Col>
+    <Col  sm={5}><p className="preciossc">{`$${this.state.data_servicio.precio}`}</p></Col>
                   </Row>
                   <hr className="hrstyledeta"/>
+                          {/**
+                           * 
+                                            <Row>
+                                                <Col sm={7}><p><strong>Formateo de PC</strong></p><p className="cssdescrip">Instalar todos los programas necesarios</p></Col>
+                                                <Col sm={5}><p className="preciossc">$60.00</p></Col>
+                                            </Row>
+                                            <hr className="hrstyledeta"/>
 
-                  <Row>
-                      <Col sm={7}><p><strong>Formateo de PC</strong></p><p className="cssdescrip">Instalar todos los programas necesarios</p></Col>
-                      <Col sm={5}><p className="preciossc">$60.00</p></Col>
-                  </Row>
-                  <hr className="hrstyledeta"/>
-
-                
+                                          
+                          */}
                    <div>
                       <br/>
                       <Row>
                       <Col sm={7}><p><strong>Total =></strong></p></Col>
-                      <Col sm={5}>$120.00</Col>
+                     {/**<Col sm={5}>$120.00</Col> */}
+    <Col sm={5}>{`$${this.state.data_servicio.total}`}</Col>
                   </Row>
                     </div>
 
@@ -123,35 +138,17 @@ const Detailswork = (props) => {
                   <div className="divradi">
                   <Row>
                       <Col sm={4}><span><strong>Calle</strong></span><br/>
-                      <span>Av Ejercito...</span>
+                     {/** <span>Av Ejercito...</span>*/} 
+                      <span>{this.state.data_servicio.direccion}</span>
                       </Col>
                       <Col sm={6}><span><strong>Datos(piso, puerta...)</strong></span><br/>
-                      <span>Sin Datos</span></Col>
+                      {/** <span>Sin Datos</span> */}
+                      <span>{this.state.data_servicio.referencia}</span>
+                      </Col>
                       <Col sm={2}><span></span><br/><span>Editar</span></Col>
                   </Row>
                   </div>
-                  {/**
-                   * 
                   
-                              <div className="tothel">
-                                    <span>calle</span>
-                                    <br />
-                                    <span>Av. Ejercito</span>
-                                  </div>
-                                  <div className="tothell">
-                                    <span>Datos(piso puerta)</span>
-                                    <br />
-                                    <span>Sin datos</span>
-                                  </div>
-                                  <div className="tother">
-                                    <span></span>
-                                    <br />
-                                    <span className="movet">Editar</span>
-                                  </div>
-                      
-                  </div>
-
-                   */}
                 </div>
 
                 <br />
@@ -178,26 +175,13 @@ const Detailswork = (props) => {
                       <Col sm={2}><span></span><br/><span>15:00</span></Col>
                   </Row>
 
-                    {/**
-                     * <div className="halfdiv">
-                      <span>Fecha y hora</span>
-                      <br />
-                      <span>Vierner 31 de Enero del 2020</span>
-                    </div>
-                    <div className="halfdivc">
-                      <span></span>
-                      <br />
-                      <span className="movet">15:00</span>
-                    </div>
-                     */}
+               
 
                   </div>
                 </div>
 
                 <br />
                 <br />
-
-
 
                 <div>
                   <p>
@@ -214,7 +198,27 @@ const Detailswork = (props) => {
                               <div className="headercard">
                                 <p>TecniGO</p>
                               </div>
-                              <Row className="contte">
+                              {
+                    this.state.data_servicio.asignado == false ?
+          <Row className="contte">
+                      <Col sm={6} className="tecper"><img src={perfilphoto} style={{ width: 150 }} alt="tecnico"/></Col>
+                      <Col sm={6}>
+                      <div className="datat">
+                      <p style={{fontSize:25}}>Sin datos</p>
+
+                        <p style={{fontSize:18}}>Tennico No Asignado</p>
+
+                       </div>
+                      </Col>
+                      <div className="centerthis">
+                                <hr />
+                                <p>Sin datos tecnigo no asignado</p>
+                                <hr />
+                              </div>
+
+                  </Row>
+                    :
+                  <Row className="contte">
                       <Col sm={6} className="tecper"><img src={perfilphoto} style={{ width: 150 }} alt="tecnico"/></Col>
                       <Col sm={6}>
                       <div className="datat">
@@ -245,50 +249,16 @@ const Detailswork = (props) => {
                               </div>
 
                   </Row>
-                             {/**  <div className="tecnicodata">
-                                    <div className="divimgtec">
-                                      <img src={perfilphoto} style={{ width: 150 }} className="tecper" alt="tecnico"/>
 
-                                    </div>
-                       
-                                     * <div className="divdatatec">
-                                      <strong>
-                                        <span className="infotec">TEC. Diana Tumba Torres </span>
-                                      </strong>
-                                          <div className="datat">
-                                            <p className="mite">Tecnico en Computacion</p>
-                                            <p className="mite">28 Años</p>
-                                            <p className="mite">Dtuma.torres@gmail.com</p>
-                                            <p className="mite">963258753 - 963254178</p>
-                                                  <div>
-                                                    <Box component="fieldset" mb={3} borderColor="transparent">
-                                                      <Rating
-                                                        name="customized-empty"
-                                                        defaultValue={2}
-                                                        precision={0.5}
-                                                        emptyIcon={<StarBorderIcon fontSize="inherit" />}
-                                                      />
-                                                      <Button variant="contained" color="secondary">
-                                                        Calificar
-                                                      </Button>
-
-                                                    </Box>
-
-                                                  </div>
-                                          </div>
-                                    </div>
-                                     
-                              </div>*/}
+                  }
+                      
                              
-
-                              {
-                                /**
-                                *  
-                                */
-                              }
-
                   </div>
                 </div>
+
+              
+
+                
 
                 <br />
                 <br />
@@ -349,8 +319,9 @@ const Detailswork = (props) => {
           </Typography>
         </Container>
       </div>
-    </React.Fragment>
-  )
+      </Fragment>
+     );
+  }
 }
-
+ 
 export default Detailswork;
