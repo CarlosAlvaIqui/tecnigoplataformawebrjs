@@ -287,9 +287,7 @@ axios({
                 <div>
                 
                 <div  className="btnpaylpal">
-                  <Button variant="contained" color="secondary">
-              Paypal
-            </Button>
+                 
            </div>
 
 
@@ -323,14 +321,17 @@ axios({
             {({ openCulqi, setAmount, amount }) => {
               return (
                 <div>
-                  <button onClick={openCulqi}>Open Culqi Prompt</button>
-                  <button
+            <Button variant="contained" color="secondary"  onClick={openCulqi}>
+              Paypal
+            </Button>
+             {/**<button
                     onClick={() => {
                       setAmount(amount + 100);
                     }}
                   >
                     Increase amount by 100
-                  </button>
+                  </button> */}
+                  
                 </div>
               );
             }}

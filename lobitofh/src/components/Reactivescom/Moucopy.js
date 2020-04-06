@@ -179,7 +179,7 @@ if(props.cod_direccion == ''){
 
              </FormGroup>
             <div>
-            <TextField id="standard-basic" label="Otro" style={{marginLeft:60}}/>
+            <TextField id="standard-basic" label="Otro" style={{marginLeft:60}} />
             <br/>
             <br/>
 
