@@ -13,9 +13,11 @@ import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Contai from 'react-bootstrap/Container';
-import {Row,Col} from 'react-bootstrap';
+import {Row,Col, Alert} from 'react-bootstrap';
 import tecnigoblanco from '../../assets/img/icons/logotecnigoblanco2.png';
 import axios from '../../utils/axios';
+import { CulqiProvider, Culqi } from "react-culqi";
+
 
 
 class Detailswork extends Component {
@@ -23,15 +25,23 @@ class Detailswork extends Component {
     super(props);
     this.state = {  
         id:this.props.match.params.id,
-        data_servicio: []
+        data_servicio: [],
+        nombre: '',
+        detalle: '',
+        total: 1000.00
 
     }
 
   }
-
+componentWillMount(){
+  
+  console.log("shit")
+}
   componentDidMount(){
 console.log("estamos en detail work")
 console.log(this.state.id)
+
+
 
 
 axios({
@@ -47,7 +57,11 @@ axios({
   var datadetallada = response.data
   if(datadetallada){
     this.setState({
-      data_servicio: datadetallada
+      nombre: datadetallada.nombre,
+      detalle: datadetallada.detalle,
+      data_servicio: datadetallada,
+      total: datadetallada.total
+      
     })
   }
 
@@ -56,8 +70,13 @@ axios({
 
 })
   }
+
   render() { 
     console.log(this.state.data_servicio)
+    console.log(this.state.nombre)
+    console.log(this.state.total)
+    var precioloco = this.state.total
+    console.log(precioloco)
     return ( 
       <Fragment>
  <div className="tecgofon">
@@ -169,7 +188,7 @@ axios({
                   <div className="divradi">
                   <Row>
                       <Col sm={10}><span><strong>Fecha y Hora</strong></span><br/>
-                     {/**                      <span>Viernes 31 de enerero del 2020</span>
+                     {/**<span>Viernes 31 de enerero del 2020</span>
  */}
                       <span></span>
                       </Col>
@@ -272,11 +291,56 @@ axios({
               Paypal
             </Button>
            </div>
-                <div className="btnqulqui">
-                <Button variant="contained" color="secondary" >
-              Culqui
-            </Button>
+
+
+           <div className="App">
+      <CulqiProvider
+        publicKey="pk_test_RS3TjLLzskve6gut"
+        amount={`${precioloco}`}
+        title={`${this.state.data_servicio.nombre}`}
+        description={`${this.state.detalle}`}
+        onToken={token => {
+          console.log("token received", token);
+          console.log(this.state.nombre)
+        }}
+        //
+        onError={error => {
+          console.error("something bad happened", error);
+        }}
+        // Uncomment `options` to see customizations take place
+        options={{
+          style: {
+            maincolor: "red",
+            buttontext: "black",
+            maintext: "darkorange",
+            desctext: "pink",
+            logo: "//placekitten.com/400/400"
+          }
+        }}
+      >
+        <div>
+          <Culqi>
+            {({ openCulqi, setAmount, amount }) => {
+              return (
+                <div>
+                  <button onClick={openCulqi}>Open Culqi Prompt</button>
+                  <button
+                    onClick={() => {
+                      setAmount(amount + 100);
+                    }}
+                  >
+                    Increase amount by 100
+                  </button>
                 </div>
+              );
+            }}
+          </Culqi>
+        </div>
+      </CulqiProvider>
+    </div>
+
+
+               
                 </div>
                 </div>
 

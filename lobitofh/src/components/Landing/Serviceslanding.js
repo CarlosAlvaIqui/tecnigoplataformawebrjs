@@ -37,6 +37,18 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import {Row,Col} from 'react-bootstrap';
 
+import recuperarinfor from '../../assets/img/icons/servicios/floppydisk.png';
+import licencia from '../../assets/img/icons/servicios/licencia.png'
+import impresora from '../../assets/img/icons/servicios/impresora.png'
+import virus from '../../assets/img/icons/servicios/virucito2.png'
+import correo from '../../assets/img/icons/servicios/mail.png'
+import internet from '../../assets/img/icons/servicios/internet2.png'
+import pcnoenciende from '../../assets/img/icons/servicios/pcnoenciende2.jpg'
+import install from '../../assets/img/icons/servicios/driver2.png'
+import mantenimiento from '../../assets/img/icons/servicios/mante2.png'
+
+
+var arraimages = [imgb,recuperarinfor,licencia,impresora,virus,correo,internet,pcnoenciende,install,mantenimiento]
 const dataservicio = {
   cod: 0,
    nombre: '',
@@ -312,9 +324,9 @@ getdesdireccion = (direcciones) =>{
                                         <Grid key={i} className="nika" >
                         
                                             <div className={this.props.classes.paper}>
-                                            <img src={imgb} className="miradio" width="90" alt="servicios tecnigo"/>
+                                            <img src={arraimages[i]} className="miradio" width="90" alt="servicios tecnigo"/>
 
-                                      <p onClick={() => this.handlequestion(serviciosa)} style={{color:'white'}}>{serviciosa.nombre}</p>
+                                      <p onClick={() => this.handlequestion(serviciosa)} style={{color:'white', fontSize:13}}>{serviciosa.nombre}</p>
                          
                                             </div>
                                         </Grid>
@@ -355,8 +367,8 @@ getdesdireccion = (direcciones) =>{
       <br />
       <br />
       <br />
-
-      <Popupnewdireccion 
+{/**
+ *  <Popupnewdireccion 
         showmodal = {this.state.showmodal}
         passproptofalse = {this.passproptofalse}
         direccion_usuario = {this.state.direccion_usuario}
@@ -365,6 +377,8 @@ getdesdireccion = (direcciones) =>{
       <br />
       <br />
 
+ */}
+     
       </React.Fragment>
 
 
