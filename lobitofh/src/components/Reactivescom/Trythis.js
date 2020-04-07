@@ -28,7 +28,6 @@ const Trythis = (props) => {
 
     */
 
-    console.log(props.vidsend + "este prop tiene algo raro we")
     const classes = useStyles();
     const opts = {
       height: '390',

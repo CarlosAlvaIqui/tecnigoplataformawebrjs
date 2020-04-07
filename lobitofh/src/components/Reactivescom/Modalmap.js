@@ -19,6 +19,9 @@ import HomeOutlinedico from '@material-ui/icons/HomeOutlined';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import AddLocationIcon from '@material-ui/icons/AddLocation';
 import axios from '../../utils/axios';
+import Snackbar from '@material-ui/core/Snackbar';
+import Slide from '@material-ui/core/Slide';
+import MuiAlert from '@material-ui/lab/Alert';
 
 
 const useStyles = makeStyles(theme => ({
@@ -55,7 +58,7 @@ const Modalmap = (props) => {
         var almacenadirecciones = response.data
         var execute = true
         props.updatedirecciones(almacenadirecciones,execute)
-
+        setOpen(false)
           
         }).catch(error => {
             console.log("hay error yano quiero vivirs ", error)
@@ -68,6 +71,7 @@ const [entrega,SetEntrega] = useState("")
 const [adicionadi,Setadicional] = useState("")
 
 
+const [open, setOpen] = React.useState(false);
 
   
   const handleEntrega = (e) => {
@@ -119,6 +123,12 @@ const [adicionadi,Setadicional] = useState("")
 
 
         var ballidator = true
+
+        setTimeout(() => {
+          setOpen(true)
+          handleClose()
+  
+        }, 2500);
       }).catch(error => {
           console.log("hay error yano quiero vivirs ", error)
 
@@ -156,9 +166,8 @@ Añadir Direccion   </p>
         <Modal.Body>
           <Grid container spacing={3} className="contpopup">
 
-            <Grid item xs={6} sm={6}>
+            <Grid item xs={12} sm={12}>
               <div className="divinpuths">
-                <FormControl className={classes.margin}>
                   <InputLabel htmlFor="input-with-icon-adornment">Direccion de Entrega</InputLabel>
                   <Input
                     id="input-with-icon-adornment"
@@ -175,12 +184,9 @@ Añadir Direccion   </p>
 
 
                   />
-                </FormControl>
               </div>
-
               <div className="divinputh">
-                <FormControl className={classes.margin}>
-                  <InputLabel htmlFor="input-with-icon-adornment">Otros Datos</InputLabel>
+              <InputLabel htmlFor="input-with-icon-adornment">Otros Datos</InputLabel>
                   <Input
                     id="input-with-icon-adornment"
                     startAdornment={
@@ -190,10 +196,10 @@ Añadir Direccion   </p>
                     }
                     value={adicionadi}
                     onChange = {handleadddata}
-
-                         placeholder="2do piso 3ra casa ala derecha"
+                    fullWidth
+                    placeholder="2do piso 3ra casa ala derecha"
                   />
-                </FormControl>
+                
               </div>
             </Grid>
           
@@ -209,6 +215,7 @@ Añadir Direccion   </p>
           </Button>
         </Modal.Footer>
       </Modal>
+      <Snackbar open={open} message="Solicitud exitosa" />
 
     </React.Fragment>
 

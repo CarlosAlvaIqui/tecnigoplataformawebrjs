@@ -119,13 +119,6 @@ if(props.cod_direccion == ''){
 
     var questionmap = props.questions
 
-    console.log(questionmap + "<<<<<<<<<<>>>>>>>>>>aea")
-    console.log(props.servicio_escojido.nombre)
-
-    console.log("asdadsadsasadsadsadsadsasad"+props.changepl)
-    console.log("asdadsadsasadsadsadsadsasad"+props.servicio_escojido.cod)
-  console.log(opcion)
-  console.log(aea)
 
     return (
       <>
@@ -141,22 +134,19 @@ if(props.cod_direccion == ''){
         >
           <Modal.Header closeButton>
             <Modal.Title id="example-custom-modal-styling-title">
+            <strong className="Titlepopup">Marque que problemas presenta
+</strong>
 
-      <p>Nombre : {props.servicio_escojido.nombre}</p>
-      
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>
-              {props.id_pregunta}
-              Marque que problemas presenta
-            </p>
+          
             <FormGroup row>
             {
         
 
               questionmap.map(quests => (
-
+                  
                 <div key={quests.cod} style={{paddingLeft:60,paddingRight:60}}>
                 <FormControlLabel
                   control={
@@ -179,7 +169,10 @@ if(props.cod_direccion == ''){
 
              </FormGroup>
             <div>
-            <TextField id="standard-basic" label="Otro" style={{marginLeft:60}} />
+              <div style={{paddingRight:140}}>
+              <TextField id="standard-basic" label="Otro" style={{marginLeft:60}} fullWidth/>
+
+              </div>
             <br/>
             <br/>
 

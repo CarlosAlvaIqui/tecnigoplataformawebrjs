@@ -17,10 +17,7 @@ componentDidMount(){
   var getitemuser = localStorage.getItem('data_user')
 
 
-  console.log("HEADER>>>>")
-  console.log("HEADER>>>>"+gettokenuser)
 
-  console.log("HEADER>>>>"+getitemuser)
 if(getitemuser == undefined && gettokenuser == undefined){
   this.setState({
     headerconten:true
@@ -38,10 +35,6 @@ componentWillUnmount(){
   var getitemuser = localStorage.getItem('data_user')
 
 
-  console.log("HEADER>>>>")
-  console.log("HEADER>>>>"+gettokenuser)
-
-  console.log("HEADER>>>>"+getitemuser)
 if(getitemuser == undefined && gettokenuser == undefined){
   this.setState({
     headerconten:true

@@ -44,10 +44,11 @@ var strindatauser = JSON.parse(getitemuser).data.cod
       Authorization: `Bearer `+localStorage.getItem('tokenuser')
     }
   }).then(response =>{
-    console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<")
-    console.log(response)
+    //console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<")
+    //console.log(response)
+    //console.log(almacendata)
+
     var almacendata = response.data
-    console.log(almacendata)
 
           if(almacendata){
             this.setState({
@@ -58,7 +59,7 @@ var strindatauser = JSON.parse(getitemuser).data.cod
           }
 
     var xusertonken = localStorage.getItem("tokenuser")
-      console.log("usuario token >>>>>>>"+ xusertonken)
+     // console.log("usuario token >>>>>>>"+ xusertonken)
     //window.location.href='/Serviceslanding'
 
   }).catch(error => {
@@ -75,7 +76,7 @@ constructor(props){
 
 
     ],
-    checked: true
+    checked: false
 
   }
 
@@ -149,6 +150,7 @@ if(getitemuser == undefined && gettokenuser == undefined){
                                     checked={this.state.checked}
                                     onChange={this.handleChange}
                                     value="primary"
+                                    disabled
                                     inputProps={{ 'aria-label': 'primary checkbox' }}
                                 />
                             <img src={flechana} style={{ width: 30}} alt="iconflecha"/>

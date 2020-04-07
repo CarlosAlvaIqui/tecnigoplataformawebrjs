@@ -44,11 +44,11 @@ class Detailswork extends Component {
   }
 componentWillMount(){
   
-  console.log("shit")
+ // console.log("shit")
 }
   componentDidMount(){
-console.log("estamos en detail work")
-console.log(this.state.id)
+//console.log("estamos en detail work")
+//console.log(this.state.id)
 
 
 
@@ -60,8 +60,8 @@ axios({
     Authorization: `Bearer `+localStorage.getItem('tokenuser')
   }
 }).then(response =>{
-  console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<")
-  console.log(response)
+  //console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<")
+  //console.log(response)
 
   var datadetallada = response.data
   if(datadetallada){
@@ -81,10 +81,10 @@ axios({
   }
 
   render() { 
-    console.log(this.state.data_servicio)
-    console.log(this.state.nombre)
-    console.log(this.state.total)
-    var precioloco = this.state.total
+  //  console.log(this.state.data_servicio)
+    //console.log(this.state.nombre)
+    //console.log(this.state.total)
+    var precioloco = this.state.total * 100
     console.log(precioloco)
     return ( 
       <Fragment>
@@ -307,12 +307,12 @@ axios({
         title={`${this.state.data_servicio.nombre}`}
         description={`${this.state.detalle}`}
         onToken={token => {
-          console.log("token received", token.id);
+          console.log("token received", token);
 
 var datos = {
-  "monto": 1000,
-  "descripcion": "virus en al pc",
-  "correo": "admin@gmailcom",
+  "monto": precioloco,
+  "descripcion": this.state.data_servicio.nombre,
+  "correo": token.email,
   "token": token.id
 }
 
@@ -357,7 +357,7 @@ var datos = {
             {({ openCulqi, setAmount, amount }) => {
               return (
                 <div>
-            <Button variant="contained" color="secondary"  onClick={openCulqi}>
+            <Button variant="contained" color="secondary"  onClick={openCulqi} className="botonculqui"> 
               Culqui
             </Button>
              {/**<button

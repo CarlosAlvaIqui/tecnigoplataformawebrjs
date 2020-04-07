@@ -67,10 +67,14 @@ componentDidMount(){
             Authorization: `Bearer `+localStorage.getItem('tokenuser')
           }
         }).then(response =>{
-          console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<")
+          {/**console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<")
           console.log(response)
+                  console.log(almacendata)
+                              console.log("usuario token >>>>>>>"+ xusertonken)
+
+ */}
+          
           var almacendata = response.data
-          console.log(almacendata)
 
                 if(almacendata){
                   this.setState({
@@ -81,7 +85,6 @@ componentDidMount(){
                 }
 
           var xusertonken = localStorage.getItem("tokenuser")
-            console.log("usuario token >>>>>>>"+ xusertonken)
           //window.location.href='/Serviceslanding'
 
         }).catch(error => {
@@ -98,8 +101,8 @@ componentDidMount(){
             Authorization: `Bearer `+localStorage.getItem('tokenuser')
           }
         }).then(response =>{
-          console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<RESPUESTA DIRECCIONES DEL USUARIO")
-          console.log(response.data)
+         // console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<RESPUESTA DIRECCIONES DEL USUARIO")
+          //console.log(response.data)
           var almacenadirecciones = response.data
           this.setState({
             direccion_usuario : almacenadirecciones
@@ -242,18 +245,6 @@ getdesdireccion = (direcciones) =>{
 }
 
   render() {
- console.log("agas  "+ this.state.serviciosapi  )
- console.log("agas  "+ this.state.servicios  )
- console.log("agas  "+ this.state.seccion_preguntas  )
- console.log("agas  "+ this.state.direccion_usuario  )
-
-
-
- console.log(this.state.servicio_escojido)
- console.log("<<<<<<<<<<<<<>>>>>>>>>>>")
- console.log(this.state.nombrecodigo)
- console.log("direciones codigo  ")
- console.log(this.state.cod_direccion)
 
     return (
 
@@ -314,9 +305,7 @@ getdesdireccion = (direcciones) =>{
           <Typography component="div"  style={{  }}>
             <div className={this.props.classes.root}>
               <Grid container spacing={3}>
-                {
-                  console.log(this.state.servicios)
-                }
+          
 
 
 {
