@@ -302,13 +302,40 @@ axios({
 
            <div className="App">
       <CulqiProvider
-        publicKey="pk_test_RS3TjLLzskve6gut"
+        publicKey="pk_test_4NsQ5ew90aklgwiB"
         amount={`${precioloco}`}
         title={`${this.state.data_servicio.nombre}`}
         description={`${this.state.detalle}`}
         onToken={token => {
-          console.log("token received", token);
-          console.log(this.state.nombre)
+          console.log("token received", token.id);
+
+var datos = {
+  "monto": 1000,
+  "descripcion": "virus en al pc",
+  "correo": "admin@gmailcom",
+  "token": token.id
+}
+
+       axios({
+            method:'post',
+            url:'solicitudes/pago/culqi',
+            headers:{
+              Authorization: `Bearer `+localStorage.getItem('tokenuser')
+            },
+            data:datos
+          }).then(response =>{
+
+              console.log("la respuesta es ", response.status)
+              
+          }).catch(error => {
+              console.log("hay error yano quiero vivirs ", error)
+              console.log("credenciales incorrectas intente nuevamente")
+  
+  
+          })
+
+
+   
         }}
         //
         onError={error => {
