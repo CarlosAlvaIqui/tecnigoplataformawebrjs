@@ -27,15 +27,15 @@ class App extends Component{
     <Layout>
       <Switch>
           <Route path='/' exact component={Inicio}/>
-          <Route path='/Tablahistorial' exact component={Tablahistorial}/>
-          <Route path='/Details' exact component={PruebaCom}/>
-          <Route path='/Serviceslanding' exact component={Serviceslanding}/>
-          <Route path='/Solicitudes' exact component={Solicitudes}/>
-          <Route path='/Detailswork/:id' exact component={Detailswork}/>
-          <Route path='/Newtablehistorial' exact component={Newtablehistorial}/>
-          <Route path="/Tecnicoform" exact component={Tecnicoform}/>
-          <Route path="/Blog" exact component={Blog}/>
-          <Route path="/Loginpage" exact component={Loginpage}/>  
+          <Route path='/Tablahistorial'  component={Tablahistorial}/>
+          <Route path='/Details'  component={PruebaCom}/>
+          <Route path='/Serviceslanding'  component={Serviceslanding}/>
+          <Route path='/Solicitudes'  component={Solicitudes}/>
+          <Route path='/Detailswork/:id'  component={Detailswork}/>
+          <Route path='/Newtablehistorial'  component={Newtablehistorial}/>
+          <Route path="/Tecnicoform"  component={Tecnicoform}/>
+          <Route path="/Blog"  component={Blog}/>
+          <Route path="/Loginpage"  component={Loginpage}/>  
          
           <Route path="/Logout" render={() => {
             localStorage.removeItem('tokenuser')

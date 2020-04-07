@@ -17,7 +17,8 @@ import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
 import tecnigoblanco from '../../assets/img/icons/logotecnigoblanco2.png';
 import axios from '../../utils/axios';
-import { Link,NavLink} from 'react-router-dom';
+import { Link,NavLink,useHistory} from 'react-router-dom';
+import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -65,7 +66,10 @@ var strindatauser = JSON.parse(getitemuser).data.cod
   
   })
 }
-  state = {  
+
+constructor(props){
+  super(props);
+  this.state = {  
 
     statetable: [
 
@@ -74,6 +78,27 @@ var strindatauser = JSON.parse(getitemuser).data.cod
     checked: true
 
   }
+
+  //Validar usuario
+  /*
+  if(si el usuario no esta logeado){
+    this.router.navigate(['/login']);
+  }
+  */
+ var gettokenuser = localStorage.getItem("tokenuser")
+ var getitemuser = localStorage.getItem('data_user')
+
+
+
+if(getitemuser == undefined && gettokenuser == undefined){
+  window.location.href='/'
+
+}
+
+
+
+}
+ 
 
   handleChange = () => {
     this.setState({
@@ -112,8 +137,7 @@ var strindatauser = JSON.parse(getitemuser).data.cod
             </Grid>
  */}
        
-        <br/>
-                <p><strong>Solicitudes</strong></p>
+                <p style={{fontSize:32}}><strong>Solicitudes</strong></p>
                 {
                     this.state.statetable.map(histo => (
                 <div className={useStyles.root} style={{ backgroundColor: '#f4f4f4 ' }} key={histo.cod}>

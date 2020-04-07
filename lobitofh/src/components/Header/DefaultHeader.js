@@ -12,7 +12,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import { Link,NavLink} from 'react-router-dom';
+import { Link,NavLink,useHistory} from 'react-router-dom';
 import tecnigoblancico from '../../assets/img/icons/logotecnigoblanco2.png';
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -47,6 +47,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function PrimarySearchAppBar() {
+  let history = useHistory();
+
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -135,17 +137,20 @@ export default function PrimarySearchAppBar() {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop} style={{paddingTop:10}}>
           <Typography className={classes.title} variant="h6" noWrap >
-          <NavLink className="nav-bar-brand" to="/" activeStyle={{ color: 'white' }}> 
+
+          <button onClick={() => history.push("/")} className="customizebutton">
           Inicio
-          </NavLink>
+         </button>
+        
           </Typography>
 
    
           <Typography className={classes.title} variant="h6" noWrap >
-          <NavLink className="nav-bar-brand" to="/Loginpage" activeStyle={{ color: 'white' }}>
-          Ingresar
-          </NavLink>
+       
             
+          <button onClick={() => history.push("/Loginpage")} className="customizebutton">
+          Ingresar
+         </button>
           </Typography>
 
           {/**

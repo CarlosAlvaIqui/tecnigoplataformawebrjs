@@ -28,10 +28,19 @@ class Detailswork extends Component {
         data_servicio: [],
         nombre: '',
         detalle: '',
-        total: 1000.00
+        total: 0
 
     }
-
+    var gettokenuser = localStorage.getItem("tokenuser")
+    var getitemuser = localStorage.getItem('data_user')
+   
+   
+   
+   if(getitemuser == undefined && gettokenuser == undefined){
+     window.location.href='/'
+   
+   }
+   
   }
 componentWillMount(){
   
@@ -99,7 +108,7 @@ axios({
                
                    <Row>
                       <Col  sm={7}><p><strong>{this.state.data_servicio.nombre}</strong></p><p className="cssdescrip">Al abrir los programas</p></Col>
-    <Col  sm={5}><p className="preciossc">{`$${this.state.data_servicio.precio}`}</p></Col>
+    <Col  sm={5}><p className="preciossc">{`S/${this.state.data_servicio.precio}`}</p></Col>
                   </Row>
                   <hr className="hrstyledeta"/>
                           {/**
@@ -117,7 +126,7 @@ axios({
                       <Row>
                       <Col sm={7}><p><strong>Total =></strong></p></Col>
                      {/**<Col sm={5}>$120.00</Col> */}
-    <Col sm={5}>{`$${this.state.data_servicio.total}`}</Col>
+    <Col sm={5}>{`S/${this.state.data_servicio.total}`}</Col>
                   </Row>
                     </div>
 
@@ -322,7 +331,7 @@ axios({
               return (
                 <div>
             <Button variant="contained" color="secondary"  onClick={openCulqi}>
-              Paypal
+              Culqui
             </Button>
              {/**<button
                     onClick={() => {
@@ -359,10 +368,14 @@ axios({
                       Lea el informe
                       </span>
                     <br />
-                    <Link className="nav-bar-brand" to={"/"}>
-                      <span>Ver Informe</span>
+                    {/**
+                     *      <Link className="nav-bar-brand" to={"/"}>
                     </Link>
 
+                     */}
+                                           <span>Ver Informe</span>
+
+               
                   </p>
                 </div>
               </Grid>

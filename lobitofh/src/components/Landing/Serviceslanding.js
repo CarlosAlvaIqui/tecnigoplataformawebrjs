@@ -111,9 +111,9 @@ componentDidMount(){
 
 
 }
-
-
-  state = {
+constructor(props) {
+  super(props);
+  this.state = {  
     serviciosapi: [
 
     ],
@@ -130,7 +130,19 @@ componentDidMount(){
     nombrecodigo : '',
     cod_direccion : '',
     mesajeespera : false
+
   }
+  var gettokenuser = localStorage.getItem("tokenuser")
+  var getitemuser = localStorage.getItem('data_user')
+ 
+ if(getitemuser == undefined && gettokenuser == undefined){
+   window.location.href='/'
+ 
+ }
+ 
+}
+
+
 
 handlequestion  (serviciosa) {
   console.log("ohh shit here we go again" + serviciosa.nombre)
@@ -276,7 +288,7 @@ getdesdireccion = (direcciones) =>{
                       }
                     </Select>
                   </FormControl>
-                    <p style={{color:'white'}}> {this.state.descripcion}</p>
+                    <p style={{color:'white'}}>otros datos: {this.state.descripcion}</p>
 
               </Col>
           </Row>
@@ -294,7 +306,7 @@ getdesdireccion = (direcciones) =>{
             </div>
           :
 
-          <p className="spantextp">Estaremos contactandole en menos de <span style={{fontSize: 30}}>5</span> minutos</p>
+          <p className="spantextp" style={{fontSize:39}}>Estaremos contactandole en menos de <span style={{fontSize: 39}}>5</span> minutos</p>
 
           }
         <CssBaseline />
@@ -323,10 +335,10 @@ getdesdireccion = (direcciones) =>{
 
                                         <Grid key={i} className="nika" >
                         
-                                            <div className={this.props.classes.paper}>
+                                            <div className={this.props.classes.paper} onClick={() => this.handlequestion(serviciosa)}>
                                             <img src={arraimages[i]} className="miradio" width="90" alt="servicios tecnigo"/>
 
-                                      <p onClick={() => this.handlequestion(serviciosa)} style={{color:'white', fontSize:13}}>{serviciosa.nombre}</p>
+                                      <p  style={{color:'white', fontSize:13}}>{serviciosa.nombre}</p>
                          
                                             </div>
                                         </Grid>

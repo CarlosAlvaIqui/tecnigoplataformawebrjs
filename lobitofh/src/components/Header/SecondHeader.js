@@ -12,8 +12,9 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import { Link,NavLink} from 'react-router-dom';
+import { Link,NavLink,useHistory } from 'react-router-dom';
 import tecnigoblancico from '../../assets/img/icons/logotecnigoblanco2.png';
+
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1,
@@ -46,6 +47,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 export default function PrimarySearchAppBar() {
+  let history = useHistory();
+
   const classes = useStyles();
 
   useEffect(() => {
@@ -135,10 +138,10 @@ export default function PrimarySearchAppBar() {
         <Toolbar >
       
           <Typography className={classes.title} variant="h6" noWrap style={{paddingTop:10}}>
-          <NavLink className="nav-bar-brand" to="/" activeStyle={{ color: 'white' }}>
           <img src={tecnigoblancico}  alt="tecnigoicon" style={{width:30}}/>
-            <span >TecniGo</span>
-          </NavLink>
+            <button onClick={() => history.push("/Serviceslanding")} className="customizebutton">
+            TecniGo
+</button>
             
           </Typography>
 
@@ -152,16 +155,27 @@ export default function PrimarySearchAppBar() {
 </Typography>
           <Typography className={classes.title} variant="h6" noWrap >
          
-          <NavLink className="nav-bar-brand" to={`/Newtablehistorial`} activeStyle={{ color: 'white' }}> 
+          
+          <button onClick={() => history.push("/Newtablehistorial")} className="customizebutton">
           Solicitudes
-          </NavLink>
+          </button>
           </Typography>
 
   <Typography className={classes.title} variant="h6" noWrap onClick={() => window.location.reload()}>
-          <NavLink className="nav-bar-brand" to="/Logout" activeStyle={{ color: 'white' }} >
+
+    {
+      /**
+       *  <NavLink className="nav-bar-brand" to="/Logout" activeStyle={{ color: 'white' }} >
           Salir
           </NavLink>
             
+       */
+    }
+
+<button onClick={() => history.push("/Logout")} className="customizebutton">
+Salir
+</button>
+         
           </Typography>
  
 
