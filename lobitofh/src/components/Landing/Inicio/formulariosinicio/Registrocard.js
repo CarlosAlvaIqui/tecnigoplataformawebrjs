@@ -5,8 +5,7 @@ import Button from '@material-ui/core/Button';
 import axios from '../../../../utils/axios';
 import  { withRouter } from 'react-router-dom';
 import MuiAlert from "@material-ui/lab/Alert";
-import { useHistory } from 'react-router-dom';
-import { Link,NavLink} from 'react-router-dom';
+import { Link,NavLink,useHistory} from 'react-router-dom';
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -109,6 +108,8 @@ sendval= (e) => {
 }
 
 sendtootro = (e) => {
+
+   
   const mostrar = this.state.mostrar
 
   console.log("se dio click")
@@ -120,6 +121,7 @@ sendtootro = (e) => {
 
 
     render() { 
+      const { history } = this.props;
 
         return ( 
             <div className="contformulariotecnico2">

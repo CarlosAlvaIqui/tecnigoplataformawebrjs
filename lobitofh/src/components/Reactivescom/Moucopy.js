@@ -60,9 +60,6 @@ const Mou = (props) => {
       setOpen(true);
     };
   
-    const handleClose = () => {
-      setOpen(false);
-    };
 
 
    const handlecrearsolicitud = (e) => {
@@ -92,8 +89,17 @@ if(props.cod_direccion == ''){
   }).then(response =>{
       console.log("la respuesta de la creaciion de solicitud  ", response )
       Setsolsuccesfull(true)
-      props.valfalse()
       props.showfivemesage(true)
+      setOpen(true);
+
+
+      setTimeout(() => {
+        setOpen(false);
+        props.valfalse()
+
+      }, 2500);
+
+    
   }).catch(error => {
       console.log("hay error yano quiero vivirs ", error)
  
@@ -113,13 +119,6 @@ if(props.cod_direccion == ''){
 
     var questionmap = props.questions
 
-    console.log(questionmap + "<<<<<<<<<<>>>>>>>>>>aea")
-    console.log(props.servicio_escojido.nombre)
-
-    console.log("asdadsadsasadsadsadsadsasad"+props.changepl)
-    console.log("asdadsadsasadsadsadsadsasad"+props.servicio_escojido.cod)
-  console.log(opcion)
-  console.log(aea)
 
     return (
       <>
@@ -135,24 +134,19 @@ if(props.cod_direccion == ''){
         >
           <Modal.Header closeButton>
             <Modal.Title id="example-custom-modal-styling-title">
-    <p>Cod_Usurio : {strindatauser}</p>  
-    <p>Precio : {props.servicio_escojido.precio}</p>
-      <p>Nombre : {props.servicio_escojido.nombre}</p>
-    <p>Cod_Direccion : {props.cod_direccion}</p>
-      
+            <strong className="Titlepopup">Marque que problemas presenta
+</strong>
+
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>
-              {props.id_pregunta}
-              Marque que problemas presenta
-            </p>
+          
             <FormGroup row>
             {
         
 
               questionmap.map(quests => (
-
+                  
                 <div key={quests.cod} style={{paddingLeft:60,paddingRight:60}}>
                 <FormControlLabel
                   control={
@@ -175,7 +169,10 @@ if(props.cod_direccion == ''){
 
              </FormGroup>
             <div>
-            <TextField id="standard-basic" label="Otro" style={{marginLeft:60}}/>
+              <div style={{paddingRight:140}}>
+              <TextField id="standard-basic" label="Otro" style={{marginLeft:60}} fullWidth/>
+
+              </div>
             <br/>
             <br/>
 
@@ -194,14 +191,19 @@ if(props.cod_direccion == ''){
                 <Alert severity="warning">Deve de crear o seleccionar una direccion</Alert>
 
               }
+
               {
+
+<Snackbar open={open} message="Solicitud exitosa" />
+
+              /*
                 solsuccesfull === true ?
                 <Alert severity="success">This is a success message!</Alert>
 
                 :
                   <div>
 
-                    </div>
+                    </div>*/
               }
             </div>  
           </Modal.Body>

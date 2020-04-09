@@ -243,7 +243,7 @@ background-color: green;
 
 .ttservice{
 color: white;
-font-size: 25px;
+font-size: 39px;
 text-align: center;
 /*
 animation-duration: 3s;
@@ -362,13 +362,13 @@ padding-top: 60px;
 .tecgofon{
   background: linear-gradient(180deg, #343D8E,#187581,#00A775);
     height: 400px;
-  margin-bottom: 120px;
+  margin-bottom: 80px;
 }
 
 .tittletec{
   text-align: center;
   color:white;
-  margin-top: 190px;
+  margin-top: 120px;
   font-size: 45px;
 }
 
@@ -526,7 +526,7 @@ float: left;
 }
 
 .hrstyle{
-  border-top: 3px solid ;
+  border-top: 4px solid ;
 }
 .hrstyledeta{
   border-top: 2px solid ;
@@ -773,6 +773,21 @@ float:left ;
   .miicoblac{
     width:30px
   }
+}
+
+.customizebutton{
+  color:white;
+  background: none;
+border: 0;
+/* cursor: default; */
+padding: 0;
+-webkit-user-select: none; /* for button */
+ -webkit-appearance: button; /* for input */
+   -moz-user-select: none;
+    -ms-user-select: none;
+}
+.botonculqui{
+  float: left;
 }
 /*  
 

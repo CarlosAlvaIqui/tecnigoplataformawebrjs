@@ -37,6 +37,18 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import {Row,Col} from 'react-bootstrap';
 
+import recuperarinfor from '../../assets/img/icons/servicios/floppydisk.png';
+import licencia from '../../assets/img/icons/servicios/licencia.png'
+import impresora from '../../assets/img/icons/servicios/impresora.png'
+import virus from '../../assets/img/icons/servicios/virucito2.png'
+import correo from '../../assets/img/icons/servicios/mail.png'
+import internet from '../../assets/img/icons/servicios/internet2.png'
+import pcnoenciende from '../../assets/img/icons/servicios/pcnoenciende2.jpg'
+import install from '../../assets/img/icons/servicios/driver2.png'
+import mantenimiento from '../../assets/img/icons/servicios/mante2.png'
+
+
+var arraimages = [imgb,recuperarinfor,licencia,impresora,virus,correo,internet,pcnoenciende,install,mantenimiento]
 const dataservicio = {
   cod: 0,
    nombre: '',
@@ -55,10 +67,14 @@ componentDidMount(){
             Authorization: `Bearer `+localStorage.getItem('tokenuser')
           }
         }).then(response =>{
-          console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<")
+          {/**console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<")
           console.log(response)
+                  console.log(almacendata)
+                              console.log("usuario token >>>>>>>"+ xusertonken)
+
+ */}
+          
           var almacendata = response.data
-          console.log(almacendata)
 
                 if(almacendata){
                   this.setState({
@@ -69,7 +85,6 @@ componentDidMount(){
                 }
 
           var xusertonken = localStorage.getItem("tokenuser")
-            console.log("usuario token >>>>>>>"+ xusertonken)
           //window.location.href='/Serviceslanding'
 
         }).catch(error => {
@@ -86,8 +101,8 @@ componentDidMount(){
             Authorization: `Bearer `+localStorage.getItem('tokenuser')
           }
         }).then(response =>{
-          console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<RESPUESTA DIRECCIONES DEL USUARIO")
-          console.log(response.data)
+         // console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<RESPUESTA DIRECCIONES DEL USUARIO")
+          //console.log(response.data)
           var almacenadirecciones = response.data
           this.setState({
             direccion_usuario : almacenadirecciones
@@ -99,9 +114,9 @@ componentDidMount(){
 
 
 }
-
-
-  state = {
+constructor(props) {
+  super(props);
+  this.state = {  
     serviciosapi: [
 
     ],
@@ -118,7 +133,19 @@ componentDidMount(){
     nombrecodigo : '',
     cod_direccion : '',
     mesajeespera : false
+
   }
+  var gettokenuser = localStorage.getItem("tokenuser")
+  var getitemuser = localStorage.getItem('data_user')
+ 
+ if(getitemuser == undefined && gettokenuser == undefined){
+   window.location.href='/'
+ 
+ }
+ 
+}
+
+
 
 handlequestion  (serviciosa) {
   console.log("ohh shit here we go again" + serviciosa.nombre)
@@ -218,18 +245,6 @@ getdesdireccion = (direcciones) =>{
 }
 
   render() {
- console.log("agas  "+ this.state.serviciosapi  )
- console.log("agas  "+ this.state.servicios  )
- console.log("agas  "+ this.state.seccion_preguntas  )
- console.log("agas  "+ this.state.direccion_usuario  )
-
-
-
- console.log(this.state.servicio_escojido)
- console.log("<<<<<<<<<<<<<>>>>>>>>>>>")
- console.log(this.state.nombrecodigo)
- console.log("direciones codigo  ")
- console.log(this.state.cod_direccion)
 
     return (
 
@@ -264,7 +279,7 @@ getdesdireccion = (direcciones) =>{
                       }
                     </Select>
                   </FormControl>
-                    <p style={{color:'white'}}> {this.state.descripcion}</p>
+                    <p style={{color:'white'}}>otros datos: {this.state.descripcion}</p>
 
               </Col>
           </Row>
@@ -282,7 +297,7 @@ getdesdireccion = (direcciones) =>{
             </div>
           :
 
-          <p className="spantextp">Estaremos contactandole en menos de <span style={{fontSize: 30}}>5</span> minutos</p>
+          <p className="spantextp" style={{fontSize:39}}>Estaremos contactandole en menos de <span style={{fontSize: 39}}>5</span> minutos</p>
 
           }
         <CssBaseline />
@@ -290,9 +305,7 @@ getdesdireccion = (direcciones) =>{
           <Typography component="div"  style={{  }}>
             <div className={this.props.classes.root}>
               <Grid container spacing={3}>
-                {
-                  console.log(this.state.servicios)
-                }
+          
 
 
 {
@@ -311,10 +324,10 @@ getdesdireccion = (direcciones) =>{
 
                                         <Grid key={i} className="nika" >
                         
-                                            <div className={this.props.classes.paper}>
-                                            <img src={imgb} className="miradio" width="90" alt="servicios tecnigo"/>
+                                            <div className={this.props.classes.paper} onClick={() => this.handlequestion(serviciosa)}>
+                                            <img src={arraimages[i]} className="miradio" width="90" alt="servicios tecnigo"/>
 
-                                      <p onClick={() => this.handlequestion(serviciosa)} style={{color:'white'}}>{serviciosa.nombre}</p>
+                                      <p  style={{color:'white', fontSize:13}}>{serviciosa.nombre}</p>
                          
                                             </div>
                                         </Grid>
@@ -355,8 +368,8 @@ getdesdireccion = (direcciones) =>{
       <br />
       <br />
       <br />
-
-      <Popupnewdireccion 
+{/**
+ *  <Popupnewdireccion 
         showmodal = {this.state.showmodal}
         passproptofalse = {this.passproptofalse}
         direccion_usuario = {this.state.direccion_usuario}
@@ -365,6 +378,8 @@ getdesdireccion = (direcciones) =>{
       <br />
       <br />
 
+ */}
+     
       </React.Fragment>
 
 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,Component,Fragment} from 'react'
 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -15,7 +15,11 @@ import FormControl from '@material-ui/core/FormControl';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
-import tecnigoblanco from '../../assets/img/icons/logotecnigoblanco2.png'
+import tecnigoblanco from '../../assets/img/icons/logotecnigoblanco2.png';
+import axios from '../../utils/axios';
+import { Link,NavLink,useHistory} from 'react-router-dom';
+import { unstable_renderSubtreeIntoContainer } from 'react-dom';
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -28,50 +32,83 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
+class Newtablehistorial extends Component {
+  
+componentDidMount(){
+  var getitemuser = localStorage.getItem('data_user')
+var strindatauser = JSON.parse(getitemuser).data.cod
+  axios({
+    method:'get',
+    url:`solicitudes/usuario/${strindatauser}`,
+    headers:{
+      Authorization: `Bearer `+localStorage.getItem('tokenuser')
+    }
+  }).then(response =>{
+    //console.log(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<")
+    //console.log(response)
+    //console.log(almacendata)
 
-const Newtablehistorial = () => {
-    const classes = useStyles();
-    const [checked, setChecked] = useState(true);
-    const handleChange = event => {
-        setChecked(event.target.checked);
-      };
+    var almacendata = response.data
+
+          if(almacendata){
+            this.setState({
+              statetable : almacendata
+            })
+          }else{
+              console.log("error api")
+          }
+
+    var xusertonken = localStorage.getItem("tokenuser")
+     // console.log("usuario token >>>>>>>"+ xusertonken)
+    //window.location.href='/Serviceslanding'
+
+  }).catch(error => {
+      console.log("hay error yano quiero vivirs ", error)
+  
+  })
+}
+
+constructor(props){
+  super(props);
+  this.state = {  
+
+    statetable: [
+
+
+    ],
+    checked: false
+
+  }
+
+  //Validar usuario
+  /*
+  if(si el usuario no esta logeado){
+    this.router.navigate(['/login']);
+  }
+  */
+ var gettokenuser = localStorage.getItem("tokenuser")
+ var getitemuser = localStorage.getItem('data_user')
 
 
 
-      const [statetable, setStatetable] = React.useState(
-        [
-            { nombre: 'Pc lenta', tecnico: 'Pedro Suares' , fecha : '28 Marzo 13:00' ,atendido : true,id: 1},
-            { nombre: 'Recuperar I.',tecnico: 'Joseph Monteero', fecha : '21 Marzo 10:00', atendido : false,id:2},
-            { nombre: 'Licencia', tecnico: 'Pine Lower' ,fecha : '14 Marzo 15:00', atendido : true,id: 3},
-            { nombre: 'Impresora', tecnico: 'Rick Tower' ,fecha : '02 Marzo 9:00',atendido : true,id: 4},
-            { nombre: 'Virus', tecnico: 'Analisa Melo', fecha : '27 Febrero 16:00',atendido : false,id: 5},
-            { nombre: 'Internet', tecnico: 'Maria Carmela', fecha : '22 Febrero 11:00',atendido : true,id: 6},
-            { nombre: 'No Responde ',tecnico: 'Daniela Piurana', fecha : '14 Febrero 14:00', atendido : false,id: 7},
-            { nombre: 'Instalacion ',tecnico: 'David Jhonson', fecha : '12 Febreo 21:00',atendido : false,id: 8},
-            { nombre: 'Limpieza',tecnico: 'Jose Karm', fecha : '06 Febrero 18:00',atendido : false,id: 9},
-            { nombre: 'Saturacion', tecnico: 'Luis Mink' , fecha : '02 Febrero 10:00', atendido : true,id: 10},
-            { nombre: 'Licencia', tecnico: 'Mark TIen' ,fecha : '15 Marzo 18:00', atendido :false,id: 11},
+if(getitemuser == undefined && gettokenuser == undefined){
+  window.location.href='/'
 
-          ],
-      );
-          const {nombre, tecnico,fecha,atendido,id} = statetable;
-      const [busqueda, Statebusqueda] = React.useState("")
-      const  seacrhhandle = (e) => {
-        Statebusqueda(e.target.value)
-      }
-      const  busquefunc = (e) => {
-        const listaserv = statetable.filter(statetable => statetable.nombre === busqueda)[0]
-        console.log(listaserv)
-        console.log(busqueda)
-      }
+}
 
 
 
+}
+ 
 
-
-    return(
-        <React.Fragment>
-
+  handleChange = () => {
+    this.setState({
+      checked: false
+    })
+  }
+  render() { 
+    return ( 
+    <Fragment>
 <div className="tecgofon">
       <Grid container spacing={3} >
         <Grid item xs={12} >
@@ -88,8 +125,8 @@ const Newtablehistorial = () => {
             <CssBaseline />
       <Container maxWidth="lg">
         <Typography component="div"  >
-
-         <Grid container spacing={2} alignItems="flex-end" >
+{/**
+ *   <Grid container spacing={2} alignItems="flex-end" >
               
              
               <Grid item xs={12} sm={5} >
@@ -99,19 +136,21 @@ const Newtablehistorial = () => {
                 <SearchIcon onClick={() => busquefunc()}/>
               </Grid>   
             </Grid>
-        <br/>
-                <p><strong>Solicitudes</strong></p>
+ */}
+       
+                <p style={{fontSize:32}}><strong>Solicitudes</strong></p>
                 {
-                    statetable.map(histo => (
-                <div className={classes.root} style={{ backgroundColor: '#f4f4f4 ' }} key={histo.id}>
+                    this.state.statetable.map(histo => (
+                <div className={useStyles.root} style={{ backgroundColor: '#f4f4f4 ' }} key={histo.cod}>
                     <Grid container spacing={2} className="conthisto">
 
                         <Grid item xs={12} sm={3}>
                             <div>
                                  <Checkbox
-                                    checked={checked}
-                                    onChange={handleChange}
+                                    checked={this.state.checked}
+                                    onChange={this.handleChange}
                                     value="primary"
+                                    disabled
                                     inputProps={{ 'aria-label': 'primary checkbox' }}
                                 />
                             <img src={flechana} style={{ width: 30}} alt="iconflecha"/>
@@ -121,14 +160,19 @@ const Newtablehistorial = () => {
                             </div>
                         </Grid>
                         <Grid item xs={12} sm={7}>
-                            <div>
-                    <span><strong>{histo.nombre}</strong></span> - Al encender la computadora - Av socabaya 420
-                    <div className="micarhi"> <p className="chodis">{histo.tecnico}</p> </div>
+                            <div style={{paddingTop:10}}>
+                    <span><strong> <NavLink className="nav-bar-brand" to={`/Detailswork/${histo.cod}`} > 
+                    {histo.nombre}
+          </NavLink></strong></span> - Al encender la computadora - {histo.direccion}
+                    <div className="micarhi"> <p className="chodis">{histo.nombreTecncio}</p> </div>
                             </div>
 
                         </Grid>
-                        <Grid item xs={12} sm={2}>
-                            {histo.fecha}
+                        <Grid item xs={12} sm={2} >
+                          <div style={{paddingTop:10}}>
+                          {histo.fechaCreacion}
+                          </div>
+                            
                         </Grid>
                     </Grid>
                     <hr className="hrstyle"/>
@@ -139,10 +183,12 @@ const Newtablehistorial = () => {
         </Typography>
       </Container>
 
-        </React.Fragment>
-
-    )
-
+    </Fragment>
+);
+  }
 }
+ 
+
+
 
 export default Newtablehistorial;
